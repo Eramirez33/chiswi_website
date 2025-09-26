@@ -18,35 +18,21 @@
         tailwind.config = { darkMode: 'class' }
     </script>
 
-    <style>
-        /* Aplicamos la fuente Poppins a todo el cuerpo */
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        /* Colores personalizados para fácil referencia */
-        :root {
-            --color-dark: #1a1a1a;
-            --color-light: #f5f5f5;
-            --color-accent: #d4af37;
-        }
-        /* Para el scroll suave */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <!-- Enlace a la hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-white pt-20"> <!-- Añadimos padding-top para que el header fijo no oculte el contenido -->
+<body class="bg-white pt-28"> <!-- Añadimos padding-top para que el header fijo no oculte el contenido -->
 
     <!-- ============================================ -->
     <!-- HEADER ESTILO LOOM -->
     <!-- ============================================ -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <nav class="container mx-auto px-6 flex items-center justify-between h-20" aria-label="Global">
+        <nav class="container mx-auto px-6 flex items-center justify-between h-28" aria-label="Global">
             <!-- Lado Izquierdo: Logo y Navegación -->
             <div class="flex items-center gap-8">
                 <!-- Logo -->
                 <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
-                    <img class="h-8 w-auto" src="https://placehold.co/150x40/1a1a1a/d4af37?text=Chiswi+Logo" alt="Logo de Chiswi Pasteleria">
+                    <img class="h-28 w-auto p-2 rounded-full" src="chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
                 </a>
                 <!-- Navegación para Desktop -->
                 <div class="hidden md:flex gap-4">
@@ -59,8 +45,12 @@
             <!-- Lado Derecho: Botones y Menú Móvil -->
             <div class="flex items-center gap-4">
                 <!-- Botón CTA para Desktop -->
-                <a href="#contacto" class="hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-5 rounded-lg text-sm hover:bg-yellow-500 transition duration-300 shadow-sm">
-                    Cotiza tu Evento
+                <a href="#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-6 rounded-full text-sm shadow-sm">
+                    <span>Cotiza tu Evento</span>
+                    <svg class="ml-2 transition-transform duration-300 ease-in-out" width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <polyline points="8 1 12 5 8 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></polyline>
+                    </svg>
                 </a>
                 <!-- Botón de Menú Móvil -->
                 <div class="md:hidden">
@@ -311,11 +301,13 @@
     <!-- ============================================ -->
     <!-- JAVASCRIPT -->
     <!-- ============================================ -->
+    
+    <!-- Script de Configuración -->
+    <script src="js/config.js"></script>
+
     <script>
-        function enviarWhatsApp(asunto) {
-            // IMPORTANTE: Reemplaza 'TUNUMERODEWHATSAPP' con tu número de WhatsApp Business.
-            // Incluye el código de país, sin el símbolo '+' ni espacios. Ejemplo: 5491112345678
-            const numeroWhatsApp = 'TUNUMERODEWHATSAPP';
+        function enviarWhatsApp(asunto) {            
+            const numeroWhatsApp = config.numeroWhatsApp;
             
             let mensajeBase = 'Hola, estoy interesado en sus servicios de catering.';
 
