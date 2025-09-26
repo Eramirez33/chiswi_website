@@ -32,7 +32,7 @@
             <div class="flex items-center gap-8">
                 <!-- Logo -->
                 <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
-                    <img class="h-28 w-auto p-2 rounded-full" src="chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
+                    <img class="h-28 w-auto p-2 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
                 </a>
                 <!-- Navegación para Desktop -->
                 <div class="hidden md:flex gap-4">
@@ -44,7 +44,7 @@
 
             <!-- Lado Derecho: Botones y Menú Móvil -->
             <div class="flex items-center gap-4">
-                <!-- Botón CTA para Desktop -->
+                <!-- Botón CTA para Desktop aca puedo cambiar el color de fondo del boton en la clase bg-[#d4af37] -->
                 <a href="#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-6 rounded-full text-sm shadow-sm">
                     <span>Cotiza tu Evento</span>
                     <svg class="ml-2 transition-transform duration-300 ease-in-out" width="13px" height="10px" viewBox="0 0 13 10">
@@ -79,15 +79,23 @@
     <!-- ============================================ -->
     <!-- HERO SECTION -->
     <!-- ============================================ -->
-    <section class="bg-[#1a1a1a] text-white">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+    <section class="relative text-white overflow-hidden">
+        <!-- Contenedor del carrusel de imágenes de fondo -->
+        <div class="absolute inset-0 w-full h-full">
+            <!-- REEMPLAZA LAS IMÁGENES POR LAS TUYAS -->
+            <div class="hero-bg-image" style="background-image: url('img/image-buffet.jpg'); animation-delay: 0s;"></div>
+            <div class="hero-bg-image" style="background-image: url('img/emparedado.jpg'); animation-delay: 5s;"></div>
+            <div class="hero-bg-image" style="background-image: url('img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg'); animation-delay: 10s;"></div>
+        </div>
+        <div class="absolute inset-0 bg-[#1a1a1a]/60"></div>
+        <div class="container mx-auto px-6 py-40 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-up">
                 Eleva tu Evento con Sabor y Elegancia ✨
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
                 En Chiswi Pasteleria transformamos tus reuniones corporativas en experiencias gastronómicas inolvidables.
             </p>
-            <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
+            <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg animate-fade-in-up animation-delay-400">
                 Cotiza tu Evento
             </a>
         </div>
