@@ -13,6 +13,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <script>
+        // Configuración para que Tailwind y Preline UI funcionen bien juntos
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
     <style>
         /* Aplicamos la fuente Poppins a todo el cuerpo */
         body {
@@ -24,14 +29,67 @@
             --color-light: #f5f5f5;
             --color-accent: #d4af37;
         }
+        /* Para el scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-white pt-20"> <!-- Añadimos padding-top para que el header fijo no oculte el contenido -->
 
     <!-- ============================================ -->
-    <!-- HEADER -->
+    <!-- HEADER ESTILO LOOM -->
     <!-- ============================================ -->
-    <header class="bg-[#1a1a1a] text-white">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+        <nav class="container mx-auto px-6 flex items-center justify-between h-20" aria-label="Global">
+            <!-- Lado Izquierdo: Logo y Navegación -->
+            <div class="flex items-center gap-8">
+                <!-- Logo -->
+                <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
+                    <img class="h-8 w-auto" src="https://placehold.co/150x40/1a1a1a/d4af37?text=Chiswi+Logo" alt="Logo de Chiswi Pasteleria">
+                </a>
+                <!-- Navegación para Desktop -->
+                <div class="hidden md:flex gap-4">
+                    <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#servicios">Catálogo</a>
+                    <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#proceso">Nuestro Proceso</a>
+                    <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#paquetes">Paquetes</a>
+                </div>
+            </div>
+
+            <!-- Lado Derecho: Botones y Menú Móvil -->
+            <div class="flex items-center gap-4">
+                <!-- Botón CTA para Desktop -->
+                <a href="#contacto" class="hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-5 rounded-lg text-sm hover:bg-yellow-500 transition duration-300 shadow-sm">
+                    Cotiza tu Evento
+                </a>
+                <!-- Botón de Menú Móvil -->
+                <div class="md:hidden">
+                    <button type="button" class="hs-collapse-toggle flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100" data-hs-collapse="#navbar-mobile" aria-controls="navbar-mobile" aria-label="Toggle navigation">
+                        <svg class="hs-collapse-open:hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                        <svg class="hs-collapse-open:block hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú desplegable para Móvil -->
+        <div id="navbar-mobile" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:hidden bg-white border-t border-gray-200">
+            <div class="flex flex-col gap-2 p-4">
+                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#servicios">Catálogo</a>
+                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#proceso">Nuestro Proceso</a>
+                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#paquetes">Paquetes</a>
+                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#contacto">Contacto</a>
+                <a href="#contacto" class="mt-2 inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-5 rounded-lg text-sm hover:bg-yellow-500 transition duration-300 shadow-sm">
+                    Cotiza tu Evento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section class="bg-[#1a1a1a] text-white">
         <div class="container mx-auto px-6 py-20 text-center">
             <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
                 Eleva tu Evento con Sabor y Elegancia ✨
@@ -39,12 +97,11 @@
             <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
                 En Chiswi Pasteleria transformamos tus reuniones corporativas en experiencias gastronómicas inolvidables.
             </p>
-            <a href="#contacto"
-               class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
+            <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
                 Cotiza tu Evento
             </a>
         </div>
-    </header>
+    </section>
 
     <main>
         <!-- ============================================ -->
@@ -87,6 +144,75 @@
                         <img src="https://placehold.co/400x300/1a1a1a/d4af37?text=Cóctel" alt="Imagen de Cóctel Empresarial" class="w-full h-40 object-cover rounded-md mb-4">
                         <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Cóctel Empresarial</h3>
                         <p class="text-gray-600">Celebra tus logros. Perfecto para lanzamientos, eventos sociales y networking con un toque de distinción.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- NUESTRO PROCESO -->
+        <!-- ============================================ -->
+        <section id="proceso" class="bg-white py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12">
+                    Nuestro Proceso Simplificado 🚀
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Paso 1 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-[#d4af37] mb-2">01</div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Contacto y Asesoría</h3>
+                        <p class="text-gray-600">Nos cuentas tu idea y te asesoramos para encontrar la solución perfecta para tu evento.</p>
+                    </div>
+                    <!-- Paso 2 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-[#d4af37] mb-2">02</div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Diseño de Menú</h3>
+                        <p class="text-gray-600">Creamos una propuesta gastronómica personalizada que se ajuste a tu gusto y presupuesto.</p>
+                    </div>
+                    <!-- Paso 3 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-[#d4af37] mb-2">03</div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Confirmación y Logística</h3>
+                        <p class="text-gray-600">Coordinamos todos los detalles: horarios, lugar de entrega y requerimientos especiales.</p>
+                    </div>
+                    <!-- Paso 4 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
+                        <div class="text-3xl font-bold text-[#d4af37] mb-2">04</div>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">¡A Disfrutar!</h3>
+                        <p class="text-gray-600">Llegamos con puntualidad y una presentación impecable para que tu evento sea un éxito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PAQUETES SUGERIDOS -->
+        <!-- ============================================ -->
+        <section id="paquetes" class="bg-[#f5f5f5] py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12">
+                    Paquetes Populares
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Paquete 1 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col">
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Coffee Break "Esencial"</h3>
+                        <p class="text-gray-600 mb-4">Café, té, jugos, bocadillos dulces y salados. Ideal para reuniones cortas.</p>
+                        <button onclick="enviarWhatsApp('Paquete Coffee Break Esencial')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
+                    </div>
+                    <!-- Paquete 2 -->
+                    <div class="bg-white rounded-lg border-4 border-[#d4af37] shadow-xl p-6 flex flex-col relative">
+                        <span class="absolute top-0 -translate-y-1/2 bg-[#d4af37] text-[#1a1a1a] px-3 py-1 text-sm font-bold rounded-full">MÁS POPULAR</span>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Almuerzo "Ejecutivo"</h3>
+                        <p class="text-gray-600 mb-4">Box lunch gourmet con plato fuerte, acompañante, bebida y postre. Práctico y delicioso.</p>
+                        <button onclick="enviarWhatsApp('Paquete Almuerzo Ejecutivo')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
+                    </div>
+                    <!-- Paquete 3 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col">
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Cóctel "Premium"</h3>
+                        <p class="text-gray-600 mb-4">Selección de canapés fríos y calientes, mini postres y servicio de bebidas. Para eventos de alto nivel.</p>
+                        <button onclick="enviarWhatsApp('Paquete Cóctel Premium')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
                     </div>
                 </div>
             </div>
@@ -156,7 +282,7 @@
                                 <span>Puntualidad y logística garantizada.</span>
                             </li>
                         </ul>
-                        <button onclick="enviarWhatsApp()" class="w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-4 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
+                        <button onclick="enviarWhatsApp('cotización general')" class="w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-4 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
                             Solicitar Cotización por WhatsApp
                         </button>
                     </div>
@@ -172,7 +298,7 @@
         <div class="container mx-auto px-6 text-center text-white">
             <h2 class="text-2xl font-bold mb-4">Hablemos de tu próximo evento</h2>
             <p class="text-gray-400 mb-8">Haz clic en el botón y envíanos un mensaje. Estaremos encantados de atenderte.</p>
-            <button onclick="enviarWhatsApp()" class="bg-[#25D366] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition duration-300 shadow-lg flex items-center justify-center mx-auto">
+            <button onclick="enviarWhatsApp('contacto general')" class="bg-[#25D366] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition duration-300 shadow-lg flex items-center justify-center mx-auto">
                 <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.06 21.94L7.32 20.58C8.77 21.33 10.37 21.72 12.04 21.72C17.5 21.72 21.95 17.27 21.95 11.81C21.95 6.35 17.5 2 12.04 2M12.04 20.13C10.56 20.13 9.12 19.78 7.85 19.11L7.5 18.91L4.41 19.75L5.27 16.78L5.06 16.42C4.31 15.04 3.92 13.5 3.92 11.91C3.92 7.36 7.57 3.71 12.04 3.71C16.51 3.71 20.16 7.36 20.16 11.81C20.16 16.26 16.51 20.13 12.04 20.13M17.41 14.49C17.16 14.24 16.22 13.78 15.97 13.68C15.72 13.58 15.54 13.53 15.37 13.78C15.19 14.03 14.69 14.65 14.52 14.82C14.34 15 14.17 15.02 13.92 14.92C13.67 14.82 12.73 14.5 11.64 13.53C10.79 12.78 10.24 11.85 10.07 11.6C9.89 11.35 10.02 11.22 10.14 11.1C10.25 10.99 10.39 10.81 10.54 10.64C10.69 10.46 10.74 10.34 10.84 10.14C10.94 9.94 10.89 9.77 10.81 9.6C10.74 9.42 10.24 8.2 10.04 7.72C9.85 7.24 9.66 7.32 9.52 7.31C9.38 7.31 9.2 7.31 9.03 7.31C8.85 7.31 8.55 7.38 8.3 7.63C8.05 7.88 7.55 8.35 7.55 9.52C7.55 10.7 8.33 11.82 8.48 12C8.63 12.18 9.9 14.19 11.86 15.02C12.31 15.21 12.65 15.31 12.91 15.39C13.38 15.52 13.85 15.49 14.21 15.42C14.6 15.34 15.54 14.79 15.76 14.54C15.98 14.29 15.98 14.09 15.91 13.99C15.83 13.89 15.68 13.82 15.46 13.72C15.24 13.62 15.04 13.56 14.89 13.51C14.74 13.46 14.6 13.41 14.49 13.29C14.39 13.17 14.31 13.02 14.36 12.85C14.41 12.68 14.91 12.18 15.11 11.96C15.31 11.74 15.51 11.79 15.71 11.89C15.91 11.99 16.85 12.49 17.1 12.61C17.35 12.74 17.6 12.86 17.65 13.01C17.7 13.16 17.7 13.84 17.41 14.49Z"></path></svg>
                 Enviar WhatsApp
             </button>
@@ -186,18 +312,29 @@
     <!-- JAVASCRIPT -->
     <!-- ============================================ -->
     <script>
-        function enviarWhatsApp() {
+        function enviarWhatsApp(asunto) {
             // IMPORTANTE: Reemplaza 'TUNUMERODEWHATSAPP' con tu número de WhatsApp Business.
             // Incluye el código de país, sin el símbolo '+' ni espacios. Ejemplo: 5491112345678
             const numeroWhatsApp = 'TUNUMERODEWHATSAPP';
             
-            const mensaje = encodeURIComponent('Hola, estoy interesado en sus servicios de catering. Me gustaría solicitar una cotización.');
+            let mensajeBase = 'Hola, estoy interesado en sus servicios de catering.';
+
+            if (asunto && asunto.startsWith('Paquete')) {
+                mensajeBase = `Hola, me gustaría recibir más información sobre el ${asunto}.`;
+            } else if (asunto === 'cotización general') {
+                mensajeBase = 'Hola, me gustaría solicitar una cotización para un evento.';
+            }
+
+            const mensaje = encodeURIComponent(mensajeBase);
             
-            const url = `https://wa.me/${numeroWhatsApp}?text=`;
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
             
             window.open(url, '_blank');
         }
     </script>
+
+    <!-- Preline UI Script -->
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js"></script>
 
 </body>
 </html>
