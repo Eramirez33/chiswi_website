@@ -17,35 +17,57 @@ html {
 
 /* Estilos para el nuevo botón CTA */
 .cta-button {
-    position: relative;
-    transition: all 0.2s ease;
-    overflow: hidden; /* Para que el ::before no se salga del borde redondeado */
+  position: relative;
+  margin: auto;
+  padding: 19px 22px;
+  transition: all 0.2s ease;
+  width: 100x;
+  height: 56px;
 }
 
 .cta-button:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(0);
-    display: block;
-    border-radius: 9999px; /* rounded-full */
-    background: rgba(255, 255, 255, 0.4); /* Un blanco semitransparente para el efecto */
-    width: 100%;
-    height: 100%;
-    transition: all 0.4s ease;
-    z-index: 0; /* Detrás del texto y el SVG */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: rgba(255, 171, 157, 0.5);
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
 }
 
+.cta-button span{
+  position: relative;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+
+.cta-button svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #111;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
 .cta-button:hover:before {
-    transform: scale(4);
+  width: 100%;
+  background: #f1e129;
 }
-
-.cta-button span, .cta-button svg {
-    position: relative; /* Para que se muestren por encima del ::before */
-    z-index: 1;
-}
-
 .cta-button:hover svg {
-    transform: translateX(4px); /* Mueve la flecha a la derecha en hover */
+  transform: translateX(0);
+}
+.cta-button:active {
+  transform: scale(0.96);
 }
