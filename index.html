@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chiswi Pasteleria - Catering para Eventos Corporativos</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,46 +25,70 @@
     <!-- Enlace a la hoja de estilos personalizada -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-white pt-28"> <!-- Añadimos padding-top para que el header fijo no oculte el contenido -->
+<body class="bg-white pt-36"> <!-- Ajustamos el padding-top para el nuevo header -->
+
+    <!-- ============================================ -->
+    <!-- TOPBAR -->
+    <!-- ============================================ -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] text-white hidden md:block">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center text-sm">
+            <div class="flex gap-6">
+                <span><i class="fa fa-phone-alt mr-2"></i>+598 97 680 439</span>
+                <span><i class="fa fa-envelope mr-2"></i>info@chiswi.com</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-[#d4af37] transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-[#d4af37] transition-colors"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
 
     <!-- ============================================ -->
     <!-- HEADER ESTILO LOOM -->
     <!-- ============================================ -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <nav class="container mx-auto px-6 flex items-center justify-between h-28" aria-label="Global">
-            <!-- Lado Izquierdo: Logo y Navegación -->
-            <div class="flex items-center gap-8">
-                <!-- Logo -->
-                <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
-                    <img class="h-28 w-auto p-2 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
-                </a>
-                <!-- Navegación para Desktop -->
-                <div class="hidden md:flex gap-4">
+    <header class="fixed top-0 left-0 right-0 z-40 md:top-[36px] w-full">
+        <div class="container mx-auto px-6">
+            <nav class="relative flex items-center justify-between h-20 bg-white/90 backdrop-blur-sm border-b border-gray-200 md:rounded-full md:shadow-lg md:border-none" aria-label="Global">
+                
+                <!-- Lado Izquierdo: Enlaces y Espaciador Invisible -->
+                <div class="hidden md:flex items-center gap-6 pl-6 w-1/3">
                     <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#servicios">Catálogo</a>
                     <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#proceso">Nuestro Proceso</a>
-                    <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#paquetes">Paquetes</a>
                 </div>
-            </div>
 
-            <!-- Lado Derecho: Botones y Menú Móvil -->
-            <div class="flex items-center gap-4">
-                <!-- Botón CTA para Desktop -->
-                <a href="#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-6 rounded-full text-sm shadow-sm">
-                    <span>Cotiza tu Evento</span>
-                    <svg class="ml-2" width="13px" height="10px" viewBox="0 0 13 10">
-                        <path d="M1,5 L11,5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-                        <polyline points="8 1 12 5 8 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></polyline>
-                    </svg>
-                </a>
-                <!-- Botón de Menú Móvil -->
-                <div class="md:hidden">
-                    <button type="button" class="hs-collapse-toggle flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100" data-hs-collapse="#navbar-mobile" aria-controls="navbar-mobile" aria-label="Toggle navigation">
-                        <svg class="hs-collapse-open:hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-                        <svg class="hs-collapse-open:block hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                    </button>
+                <!-- Logo (Centrado en Desktop, Izquierda en Móvil) -->
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
+                        <img class="h-20 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
+                    </a>
                 </div>
-            </div>
-        </nav>
+                
+                <!-- Logo para Móvil (ocupa espacio a la izquierda) -->
+                <div class="md:hidden">
+                     <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
+                        <img class="h-20 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
+                    </a>
+                </div>
+
+                <!-- Lado Derecho: Enlaces, Botón CTA y Menú Móvil -->
+                <div class="flex items-center justify-end gap-6 pr-6 w-1/3">
+                    <div class="hidden md:flex items-center gap-6">
+                        <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#paquetes">Paquetes</a>
+                        <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#faq">Preguntas</a>
+                        <a href="#contacto" class="cta-button inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full text-sm shadow-lg">
+                            <span>Cotiza tu Evento</span>
+                        </a>
+                    </div>
+                    <!-- Botón de Menú Móvil -->
+                    <div class="md:hidden">
+                        <button type="button" class="hs-collapse-toggle flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100" data-hs-collapse="#navbar-mobile" aria-controls="navbar-mobile" aria-label="Toggle navigation">
+                            <svg class="hs-collapse-open:hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                            <svg class="hs-collapse-open:block hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
 
         <!-- Menú desplegable para Móvil -->
         <div id="navbar-mobile" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:hidden bg-white border-t border-gray-200">
@@ -68,6 +96,7 @@
                 <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#servicios">Catálogo</a>
                 <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#proceso">Nuestro Proceso</a>
                 <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#paquetes">Paquetes</a>
+                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#faq">Preguntas</a>
                 <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#contacto">Contacto</a>
                 <a href="#contacto" class="mt-2 inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-5 rounded-lg text-sm hover:bg-yellow-500 transition duration-300 shadow-sm">
                     Cotiza tu Evento

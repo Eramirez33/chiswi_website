@@ -2,11 +2,9 @@
 .cta-button {
   position: relative;
   margin: auto;
-  padding: 19px 22px;
+  padding: 12px 18px; /* Reducimos el padding para que ocupe menos espacio */
   transition: all 0.2s ease;
-  width: 100x;
-  height: 56px;
-  background-color: #f8f6f6;
+  background-color: #f68a3de7;
 }
 
 .cta-button:before {
