@@ -25,20 +25,20 @@
     <!-- Enlace a la hoja de estilos personalizada -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-white pt-28"> <!-- Reducimos el padding para permitir el solapamiento -->
+<body class="bg-white">
 
     <!-- ============================================ -->
-    <!-- TOPBAR -->
+    <!-- TOPBAR FLOTANTE (SOLO INFO) -->
     <!-- ============================================ -->
-    <div class="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] text-white hidden md:block">
-        <div class="container mx-auto px-6 py-2 flex justify-between items-center text-sm">
+    <div class="fixed top-0 left-0 right-0 z-50 h-20 bg-transparent text-white hidden md:block">
+        <div class="container mx-auto px-6 h-full flex justify-between items-start pt-2 text-sm">
             <div class="flex gap-6">
                 <span><i class="fa fa-phone-alt mr-2"></i>+598 97 680 439</span>
                 <span><i class="fa fa-envelope mr-2"></i>info@chiswi.com</span>
             </div>
             <div class="flex gap-4">
-                <a href="#" class="hover:text-[#d4af37] transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-[#d4af37] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
     <!-- ============================================ -->
     <!-- HEADER ESTILO LOOM -->
     <!-- ============================================ -->
-    <header class="fixed top-0 left-0 right-0 z-40 md:top-[36px] w-full">
+    <header class="fixed top-0 left-0 right-0 z-40 pt-4 md:pt-12 w-full">
         <div class="container mx-auto px-6">
             <nav class="relative flex items-center justify-between h-20 bg-white/90 backdrop-blur-sm border-b border-gray-200 md:rounded-full md:shadow-lg md:border-none" aria-label="Global">
                 
@@ -106,30 +106,32 @@
     </header>
 
     <!-- ============================================ -->
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (ahora contiene al Topbar) -->
     <!-- ============================================ -->
-    <section class="relative text-white overflow-hidden -mt-10"> <!-- Margen negativo para solapar con el header -->
+    <section class="relative text-white overflow-hidden min-h-screen flex items-center">
+        <!-- Fondo negro para el Topbar -->
+        <div class="absolute top-0 left-0 right-0 h-20 bg-[#1a1a1a] hidden md:block z-30"></div>
         <!-- Contenedor del carrusel de imágenes de fondo -->
-        <div class="absolute inset-0 w-full h-full">
+        <div class="absolute inset-0 w-full h-full z-0">
             <!-- REEMPLAZA LAS IMÁGENES POR LAS TUYAS -->
             <div class="hero-bg-image" style="background-image: url('img/image-buffet.jpg'); animation-delay: 0s;"></div>
             <div class="hero-bg-image" style="background-image: url('img/emparedado.jpg'); animation-delay: 5s;"></div>
             <div class="hero-bg-image" style="background-image: url('img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg'); animation-delay: 10s;"></div>
         </div>
-        <div class="absolute inset-0 bg-[#1a1a1a]/60"></div>
-        <div class="container mx-auto px-6 py-40 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-up">
-                Eleva tu Evento con Sabor y Elegancia ✨
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-                En Chiswi Pasteleria transformamos tus reuniones corporativas en experiencias gastronómicas inolvidables.
-            </p>
-            <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg animate-fade-in-up animation-delay-400">
-                Cotiza tu Evento
-            </a>
+        <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
+        <div class="container mx-auto px-6 text-center relative z-20 w-full">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-up">
+                    Eleva tu Evento con Sabor y Elegancia ✨
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+                    En Chiswi Pasteleria transformamos tus reuniones corporativas en experiencias gastronómicas inolvidables.
+                </p>
+                <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg animate-fade-in-up animation-delay-400">
+                    Cotiza tu Evento
+                </a>
         </div>
     </section>
-
+    
     <main>
         <!-- ============================================ -->
         <!-- NUESTRO CATÁLOGO (SERVICIOS) -->
