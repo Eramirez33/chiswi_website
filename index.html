@@ -17,6 +17,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
     <script>
         // Configuración para que Tailwind y Preline UI funcionen bien juntos
         tailwind.config = { darkMode: 'class' }
@@ -124,7 +128,7 @@
                     Eleva tu Evento con Sabor y Elegancia ✨
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-                    En Chiswi Pasteleria transformamos tus reuniones corporativas en experiencias gastronómicas inolvidables.
+                    Especialistas en soluciones gastronómicas para eventos corporativos. Elevamos cada reunión con servicio de excelencia y una presentación impecable.
                 </p>
                 <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg animate-fade-in-up animation-delay-400">
                     Cotiza tu Evento
@@ -136,43 +140,68 @@
         <!-- ============================================ -->
         <!-- NUESTRO CATÁLOGO (SERVICIOS) -->
         <!-- ============================================ -->
-        <section id="servicios" class="bg-[#f5f5f5] py-20">
+        <section id="servicios" class="bg-[#f5f5f5] pt-20 pb-24">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12">
-                    Un Servicio para Cada Ocasión
-                </h2>
+                <!-- Contenedor del Título y Controles Personalizados -->
+                <div class="relative flex justify-center items-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a]">
+                        Un Servicio para Cada Ocasión
+                    </h2>
+                    <!-- Controles Personalizados -->
+                    <div class="custom-nav absolute right-0 flex gap-2">
+                        <button id="custom-prev" class="custom-nav-btn">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </button>
+                        <button id="custom-next" class="custom-nav-btn">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Carrusel de Servicios -->
+                <div class="owl-carousel service-carousel">
                     <!-- Card 1: Coffee Break -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center transform hover:-translate-y-2 transition duration-300">
-                        <div class="text-4xl mb-4">☕</div>
-                        <img src="https://placehold.co/400x300/d4af37/1a1a1a?text=Coffee+Break" alt="Imagen de Coffee Break" class="w-full h-40 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Coffee Break</h3>
-                        <p class="text-gray-600">La pausa perfecta para recargar energías. Ideal para reuniones, capacitaciones y seminarios.</p>
+                    <div class="service-item">
+                        <div class="service-img mx-auto">
+                            <img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/buffet-dulce-festivo.jpg" alt="Servicio de Coffee Break">
+                        </div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Coffee Break</h3>
+                            <p class="text-gray-600">Ideal para reuniones o capacitaciones, una pausa para recargar energías.</p>
+                        </div>
                     </div>
 
                     <!-- Card 2: Box Lunch -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center transform hover:-translate-y-2 transition duration-300">
-                        <div class="text-4xl mb-4">🍱</div>
-                        <img src="https://placehold.co/400x300/1a1a1a/d4af37?text=Box+Lunch" alt="Imagen de Box Lunch" class="w-full h-40 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Box Lunch</h3>
-                        <p class="text-gray-600">Soluciones prácticas, higiénicas y personalizadas para tus equipos. Nutrición y sabor en cada caja.</p>
+                    <div class="service-item">
+                        <div class="service-img mx-auto">
+                            <img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/emparedado.jpg" alt="Servicio de Box Lunch">
+                        </div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Box Lunch</h3>
+                            <p class="text-gray-600">Una solución práctica, higiénica y personalizada para tus equipos.</p>
+                        </div>
                     </div>
 
                     <!-- Card 3: Almuerzo Ejecutivo -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center transform hover:-translate-y-2 transition duration-300">
-                        <div class="text-4xl mb-4">🍽️</div>
-                        <img src="https://placehold.co/400x300/d4af37/1a1a1a?text=Almuerzo" alt="Imagen de Almuerzo Ejecutivo" class="w-full h-40 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Almuerzo Ejecutivo</h3>
-                        <p class="text-gray-600">Menús creativos y finger food de alto nivel para impresionar en tus reuniones más importantes.</p>
+                    <div class="service-item">
+                        <div class="service-img mx-auto">
+                            <img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/image-buffet.jpg" alt="Servicio de Almuerzo Ejecutivo">
+                        </div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Almuerzo Ejecutivo</h3>
+                            <p class="text-gray-600">Menús diferentes y creativos, incluyendo opciones de finger food para reuniones de nivel.</p>
+                        </div>
                     </div>
 
                     <!-- Card 4: Cóctel Empresarial -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center transform hover:-translate-y-2 transition duration-300">
-                        <div class="text-4xl mb-4">🥂</div>
-                        <img src="https://placehold.co/400x300/1a1a1a/d4af37?text=Cóctel" alt="Imagen de Cóctel Empresarial" class="w-full h-40 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Cóctel Empresarial</h3>
-                        <p class="text-gray-600">Celebra tus logros. Perfecto para lanzamientos, eventos sociales y networking con un toque de distinción.</p>
+                    <div class="service-item">
+                        <div class="service-img mx-auto">
+                            <img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Cóctel Empresarial">
+                        </div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Cóctel Empresarial</h3>
+                            <p class="text-gray-600">La mejor opción para celebrar logros, eventos sociales o lanzamientos importantes.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -186,30 +215,34 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12">
                     Nuestro Proceso Simplificado 🚀
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-timeline">
                     <!-- Paso 1 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
-                        <div class="text-3xl font-bold text-[#d4af37] mb-2">01</div>
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Contacto y Asesoría</h3>
-                        <p class="text-gray-600">Nos cuentas tu idea y te asesoramos para encontrar la solución perfecta para tu evento.</p>
+                    <div class="timeline-step left step-1">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Contacto y Asesoría</h3>
+                            <p class="text-gray-600">Nos cuentas tu idea y te asesoramos para encontrar la solución perfecta para tu evento.</p>
+                        </div>
                     </div>
                     <!-- Paso 2 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
-                        <div class="text-3xl font-bold text-[#d4af37] mb-2">02</div>
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Diseño de Menú</h3>
-                        <p class="text-gray-600">Creamos una propuesta gastronómica personalizada que se ajuste a tu gusto y presupuesto.</p>
+                    <div class="timeline-step right step-2">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Diseño de Menú</h3>
+                            <p class="text-gray-600">Creamos una propuesta gastronómica personalizada que se ajuste a tu gusto y presupuesto.</p>
+                        </div>
                     </div>
                     <!-- Paso 3 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
-                        <div class="text-3xl font-bold text-[#d4af37] mb-2">03</div>
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Confirmación y Logística</h3>
-                        <p class="text-gray-600">Coordinamos todos los detalles: horarios, lugar de entrega y requerimientos especiales.</p>
+                    <div class="timeline-step left step-3">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Confirmación y Logística</h3>
+                            <p class="text-gray-600">Coordinamos todos los detalles: horarios, lugar de entrega y requerimientos especiales.</p>
+                        </div>
                     </div>
                     <!-- Paso 4 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 text-center">
-                        <div class="text-3xl font-bold text-[#d4af37] mb-2">04</div>
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">¡A Disfrutar!</h3>
-                        <p class="text-gray-600">Llegamos con puntualidad y una presentación impecable para que tu evento sea un éxito.</p>
+                    <div class="timeline-step right step-4">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">¡A Disfrutar!</h3>
+                            <p class="text-gray-600">Llegamos con puntualidad y una presentación impecable para que tu evento sea un éxito.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -364,8 +397,57 @@
         }
     </script>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <!-- Preline UI Script -->
     <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js"></script>
 
+    <!-- Inicialización del Carrusel de Servicios -->
+    <script>
+        $(document).ready(function(){
+            var serviceCarousel = $(".service-carousel");
+            serviceCarousel.owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                margin: 30,
+                dots: false,
+                loop: true,
+                nav: false, // Desactivamos la navegación por defecto
+                responsive: {
+                    0:{ items:1 },
+                    576:{ items:2 },
+                    768:{ items:3 },
+                    992:{ items:4 }
+                }
+            });
+
+            // Controladores de eventos para los botones personalizados
+            $('#custom-next').click(function() {
+                serviceCarousel.trigger('next.owl.carousel');
+            })
+            $('#custom-prev').click(function() {
+                serviceCarousel.trigger('prev.owl.carousel');
+            })
+        });
+    </script>
+
+    <script>
+        // Animación para la línea de tiempo del proceso
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+        });
+
+        const timelineSteps = document.querySelectorAll('.timeline-step');
+        timelineSteps.forEach(step => timelineObserver.observe(step));
+    </script>
 </body>
 </html>

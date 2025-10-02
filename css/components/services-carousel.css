@@ -1,0 +1,63 @@
+/* Ocultar la navegación por defecto de Owl Carousel, que es problemática */
+.service-carousel .owl-nav {
+    display: none !important;
+}
+
+/* Estilos para nuestros botones de navegación personalizados */
+.custom-nav-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    background: #fff;
+    border-radius: 9999px; /* Círculo perfecto */
+    font-size: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.custom-nav-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-dark);
+}
+
+
+/* --- Estilos existentes del carrusel (sin cambios) --- */
+
+.service-carousel .service-item {
+    margin: 0 15px;
+    padding-top: 15px;
+}
+
+.service-carousel .service-img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 150px;
+    z-index: 1;
+}
+
+.service-carousel .service-img::before {
+    position: absolute;
+    content: "";
+    top: 15px;
+    right: 0;
+    bottom: -15px;
+    left: 0;
+    background: var(--color-accent);
+    border-radius: 150px;
+    z-index: -1;
+}
+
+.service-carousel .service-img img {
+    transition: 1s;
+}
+
+.service-carousel .service-item:hover .service-img img {
+    transform: rotate(360deg);
+}
