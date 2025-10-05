@@ -192,37 +192,30 @@
                 <h2 class="scrolling-process-title text-white">
                     De tu idea a un evento inolvidable, sin complicaciones.
                 </h2>
+                <div class="scrolling-process-progress-bar"></div>
                 <ul class="scrolling-process-list" style="--count: 4">
                     <div class="scrolling-process-glow"></div>
                     <li style="--i: 0" data-step="1">
-                        <div class="step-header">
-                            <i class="fas fa-lightbulb step-icon"></i>
-                            <span class="step-number">01</span>
-                        </div>
+                        <i class="fas fa-lightbulb step-icon"></i>
+                        <span class="step-number">01</span>
                         <h3 class="step-title">Damos vida a tu idea</h3>
                         <p class="step-description">Conversamos contigo para entender tu visión y te brindamos asesoría experta para transformarla en una experiencia gastronómica única.</p>
                     </li>
                     <li style="--i: 1" data-step="2">
-                        <div class="step-header">
-                            <i class="fas fa-file-alt step-icon"></i>
-                            <span class="step-number">02</span>
-                        </div>
+                        <i class="fas fa-file-alt step-icon"></i>
+                        <span class="step-number">02</span>
                         <h3 class="step-title">Sabor a tu medida</h3>
                         <p class="step-description">Diseñamos un menú exclusivo para ti, cuidando cada detalle para que refleje el estilo de tu evento y se ajuste a tu presupuesto.</p>
                     </li>
                     <li style="--i: 2" data-step="3">
-                        <div class="step-header">
-                            <i class="fas fa-cogs step-icon"></i>
-                            <span class="step-number">03</span>
-                        </div>
+                        <i class="fas fa-cogs step-icon"></i>
+                        <span class="step-number">03</span>
                         <h3 class="step-title">Nos encargamos de todo</h3>
                         <p class="step-description">Coordinamos la logística de principio a fin. Tú relájate, nosotros nos ocupamos de que cada pieza encaje a la perfección.</p>
                     </li>
                     <li style="--i: 3" data-step="4">
-                        <div class="step-header">
-                            <i class="fas fa-rocket step-icon"></i>
-                            <span class="step-number">04</span>
-                        </div>
+                        <i class="fas fa-rocket step-icon"></i>
+                        <span class="step-number">04</span>
                         <h3 class="step-title">¡A disfrutar!</h3>
                         <p class="step-description">Solo queda disfrutar. Nuestro equipo llega con puntualidad y una presentación impecable para garantizar que todo salga perfecto y tus invitados queden fascinados.</p>
                     </li>
@@ -426,15 +419,15 @@
             const stepItems = document.querySelectorAll('.scrolling-process-list li');
             const listElement = document.querySelector('.scrolling-process-list');
             const glow = document.querySelector('.scrolling-process-glow');
+            const progressBar = document.querySelector('.scrolling-process-progress-bar');
             const totalItems = stepItems.length;
 
-            if (!processSection || !stepItems.length || !glow) return;
+            if (!processSection || !stepItems.length || !glow || !progressBar) return;
 
-            // --- Parámetros de la Animación (puedes ajustar esto) ---
-            const ITEM_SPACING = 800; // Espacio vertical en píxeles entre cada item
-            const FADE_DISTANCE = 2.5; // Qué tan rápido se desvanecen los items (más grande = más rápido)
-            const SCALE_DISTANCE = 0.2; // Qué tan rápido se encogen los items (más grande = más rápido)
-            // ----------------------------------------------------------
+            // --- Parámetros de la Animación ---
+            const ITEM_SPACING = 1050; // Espacio vertical en píxeles entre cada item
+            const FADE_DISTANCE = 2;
+            const SCALE_DISTANCE = 0.1;
 
             function updateCarousel() {
                 const sectionRect = processSection.getBoundingClientRect();
@@ -444,6 +437,9 @@
 
                 let activeIndex = 0;
                 let minDistance = Infinity;
+
+                // 1. Actualizar la barra de progreso
+                progressBar.style.setProperty('--scroll-progress', clampedProgress);
 
                 stepItems.forEach((item, index) => {
                     const itemProgress = index / (totalItems - 1);
@@ -461,6 +457,15 @@
 
                     item.style.transform = `translateY(${itemTranslateY}px) scale(${scale})`;
                     item.style.opacity = opacity;
+                });
+
+                // 2. Activar el item correcto y desactivar los demás
+                stepItems.forEach((item, index) => {
+                    if (index === activeIndex) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
                 });
 
                 const activeItem = stepItems[activeIndex];

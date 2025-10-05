@@ -6,7 +6,7 @@
 @layer components {
     /* La sección ahora actúa como una "pista" de scroll */
     section#proceso {
-        height: 130vh; /* La altura total que dura la animación. ¡Ajusta para cambiar la velocidad del scroll! */
+        height: 250vh; /* La altura total que dura la animación. ¡Ajusta para cambiar la velocidad del scroll! */
         position: relative;
         background-color: #000;
     }
@@ -41,7 +41,7 @@
     .scrolling-process-list {
         position: relative; /* Necesario para la máscara y los items */
         width: 60%;
-        height: 40vh; /* La altura visible del carrusel */
+        height: 70vh; /* La altura visible del carrusel */
         overflow: hidden; /* Oculta los items que se salen */
     }
 
@@ -91,33 +91,114 @@
 
     /* Estilos de texto para los pasos */
     .step-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 0.5rem;
+        display: none; /* Ocultamos el contenedor original */
     }
 
     .step-icon {
-        font-size: 1.5rem; /* Same as step-number */
-        margin-right: 0.75rem;
-        color: inherit; /* Inherit color from the list item */
+        font-size: 5rem; /* Iconos más grandes y protagonistas */
+        margin-bottom: 1.5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.5s ease-out;
+        transform: scale(0.8); /* Estado inactivo: un poco más pequeño */
+        will-change: transform;
     }
 
     .scrolling-process-list .step-number {
         font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 0; /* Remove original margin */
+        margin-bottom: 1rem;
+        display: block;
+        color: rgba(255,255,255,0.4); /* Número más sutil */
     }
 
     .scrolling-process-list .step-title {
-        font-size: 7rem;
+        font-size: 6rem; /* Ligeramente más pequeño para dar espacio al icono */
         font-weight: 1000;
         margin-bottom: 1rem;
     }
 
     .scrolling-process-list .step-description {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         max-width: 45ch;
         margin: auto;
+        line-height: 1.6;
+    }
+
+    /* Cuando un paso está activo, su icono se agranda */
+    .scrolling-process-list li.active .step-icon {
+        transform: scale(1);
+    }
+
+    /* Keyframes para las animaciones */
+    @keyframes spin-slow {
+        from { transform: scale(1) rotate(0deg); }
+        to { transform: scale(1) rotate(360deg); }
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: scale(1) translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: scale(1) translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: scale(1) translateX(5px); }
+    }
+
+    @keyframes grow-and-fade-in {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Aplicar animación según el icono */
+    .scrolling-process-list li[data-step="1"].active .fa-lightbulb {
+        animation: grow-and-fade-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    .scrolling-process-list li[data-step="2"].active .fa-file-alt {
+        animation: grow-and-fade-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    .scrolling-process-list li[data-step="3"].active .fa-cogs {
+        animation: spin-slow 20s linear infinite; /* Gira lentamente de forma contínua */
+    }
+
+    .scrolling-process-list li[data-step="4"].active .fa-rocket {
+        animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) 1s both; /* Retraso para que se active después del foco */
+    }
+
+
+    /* ============================================ */
+    /* PROGRESS BAR                               */
+    /* ============================================ */
+    .scrolling-process-progress-bar {
+        position: absolute;
+        left: 2rem; /* Alineado a la izquierda */
+        top: 50%;
+        transform: translateY(-50%);
+        height: 40vh; /* Altura de la barra */
+        width: 3px;
+        background-color: rgba(255, 255, 255, 0.15); /* Color de fondo de la barra */
+        border-radius: 3px;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .scrolling-process-progress-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-accent); /* Gradiente dorado */
+        transform: scaleY(var(--scroll-progress, 0)); /* Empieza sin relleno y es controlado por JS */
+        transform-origin: bottom;
+        will-change: transform;
+        transition: transform 0.1s linear;
     }
 }
