@@ -186,11 +186,11 @@
 
         <!-- ============================================ -->
         <!-- NUESTRO PROCESO (SCROLLING) -->
-        <!-- ============================================ -->
+        <!-- ============================================ Nuestro Proceso Simplificado 🚀-->
         <section id="proceso" class="bg-black scrolling-process-container">
             <div class="scrolling-process-section container mx-auto">
                 <h2 class="scrolling-process-title text-white">
-                    Nuestro Proceso Simplificado 🚀
+                    Nuestro Proceso Simplificado
                 </h2>
                 <ul class="scrolling-process-list" style="--count: 4">
                     <li style="--i: 0" data-step="1">
@@ -340,6 +340,7 @@
     </footer>
 
     <!-- ============================================ -->
+     ≤
     <!-- JAVASCRIPT -->
     <!-- ============================================ -->
     
@@ -404,34 +405,69 @@
     </script>
 
     <script>
-        // Animación para la sección de proceso con scroll
+        // Animación para la sección de proceso con scroll estilo carrusel
         document.addEventListener('DOMContentLoaded', () => {
-            const stepItems = document.querySelectorAll('.scrolling-process-list li');
-
             if (window.matchMedia("(max-width: 768px)").matches) return;
 
-            // Fallback para navegadores sin soporte de animation-timeline
-            if (!CSS.supports('(animation-timeline: scroll())')) {
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            stepItems.forEach(item => {
-                                item.classList.toggle('is-active', item === entry.target);
-                            });
-                        }
-                    });
-                }, {
-                    rootMargin: '-50% 0px -50% 0px',
-                    threshold: 0
-                });
+            const processSection = document.querySelector('#proceso');
+            const stepItems = document.querySelectorAll('.scrolling-process-list li');
+            const listElement = document.querySelector('.scrolling-process-list');
+            const totalItems = stepItems.length;
 
-                stepItems.forEach(item => observer.observe(item));
+            if (!processSection || !stepItems.length) return;
+
+            // --- Parámetros de la Animación (puedes ajustar esto) ---
+            const ITEM_SPACING = 600; // Espacio vertical en píxeles entre cada item
+            const FADE_DISTANCE = 2.5; // Qué tan rápido se desvanecen los items (más grande = más rápido)
+            const SCALE_DISTANCE = 0; // Qué tan rápido se encogen los items (más grande = más rápido)
+            // ----------------------------------------------------------
+
+            function updateCarousel() {
+                const sectionRect = processSection.getBoundingClientRect();
+                
+                // Progreso del scroll dentro de la sección. 0 = inicio, 1 = final.
+                const scrollableHeight = processSection.scrollHeight - window.innerHeight;
+                const progress = -sectionRect.top / scrollableHeight;
+                const clampedProgress = Math.max(0, Math.min(1, progress));
+
+                stepItems.forEach((item, index) => {
+                    // La posición "ideal" de este item en la línea de tiempo (0 a 1)
+                    const itemProgress = index / (totalItems - 1);
+
+                    // Distancia entre la posición actual del scroll y la posición ideal del item
+                    const distance = itemProgress - clampedProgress;
+
+                    // --- Calcular Transformaciones ---
+                    // Centra la animación en el medio del contenedor de la lista
+                    const baseTranslateY = (listElement.clientHeight / 2) - (item.clientHeight / 2);
+                    const itemTranslateY = baseTranslateY + (distance * ITEM_SPACING);
+                    const scale = Math.max(0.8, 1 - Math.abs(distance * SCALE_DISTANCE));
+                    const opacity = Math.max(0, 1 - Math.abs(distance * FADE_DISTANCE));
+
+                    // Aplicar estilos
+                    item.style.transform = `translateY(${itemTranslateY}px) scale(${scale})`;
+                    item.style.opacity = opacity;
+                });
             }
-            
-            // Activar el primer paso inicialmente
-            if (stepItems.length > 0) {
-                stepItems[0].classList.add('is-active');
-            }
+
+            // Llamada inicial para posicionar los elementos sin transición
+            updateCarousel();
+
+            // Añadir la transición después del primer renderizado para evitar saltos
+            setTimeout(() => {
+                stepItems.forEach(item => {
+                    item.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+                });
+            }, 50);
+
+            // Actualizar en cada frame de animación mientras se hace scroll
+            window.addEventListener('scroll', () => {
+                // Solo actualizamos si la sección está visible
+                const rect = processSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    window.requestAnimationFrame(updateCarousel);
+                }
+            });
         });
     </script>
 </body>
