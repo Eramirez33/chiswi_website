@@ -1,0 +1,116 @@
+/* ============================================ */
+/* SCROLLING PROCESS SECTION                    */
+/* ============================================ */
+
+@layer components {
+    section#proceso .scrolling-process-section {
+        /*
+         * Colores base para los pasos.
+         * Puedes cambiar estos colores a tu gusto.
+        */
+        --step-1-color: #3b82f6; /* blue-500 */
+        --step-2-color: #10b981; /* emerald-500 */
+        --step-3-color: #f97316; /* orange-500 */
+        --step-4-color: #a855f7; /* purple-500 */
+
+        display: flex;
+        width: 100%;
+        padding-left: 5rem;
+        padding-top: 1rem !important; /* Reducido para menos espacio */
+        padding-bottom: 1rem !important; /* Reducido para menos espacio */
+    }
+
+    section#proceso .scrolling-process-title {
+        position: sticky;
+        top: calc(50% - 0.5lh);
+        margin: 0;
+        display: inline-block;
+        height: fit-content;
+        font-weight: 700;
+        font-size: 5rem !important; /* Aumentado para más impacto */
+        line-height: 1.2;
+        width: 40%;
+        padding-right: 2rem;
+    }
+
+    section#proceso .scrolling-process-list {
+        font-weight: 600;
+        padding-inline: 0;
+        margin: 0;
+        list-style-type: none;
+        width: 60%;
+    }
+
+    section#proceso .scrolling-process-list li {
+        min-height: 40vh !important; /* Reducido para hacer la sección más corta */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0.2;
+        transition: opacity 0.5s;
+        /* El color se asignará por variable */
+    }
+
+    /* Asignación de colores por paso */
+    section#proceso .scrolling-process-list li[data-step="1"] { color: var(--step-1-color); }
+    section#proceso .scrolling-process-list li[data-step="2"] { color: var(--step-2-color); }
+    section#proceso .scrolling-process-list li[data-step="3"] { color: var(--step-3-color); }
+    section#proceso .scrolling-process-list li[data-step="4"] { color: var(--step-4-color); }
+
+
+    section#proceso .scrolling-process-list li.is-active {
+        opacity: 1;
+    }
+
+    section#proceso .scrolling-process-list .step-number {
+        font-size: 1.5rem; /* text-2xl */
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    section#proceso .scrolling-process-list .step-title {
+        font-size: 2.25rem; /* text-4xl */
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    section#proceso .scrolling-process-list .step-description {
+        font-size: 1.125rem; /* text-lg */
+        max-width: 45ch; /* Limit line length for readability */
+    }
+
+    /* Add snapping for a better experience */
+    section#proceso.scrolling-process-container {
+        scroll-snap-type: y proximity;
+    }
+
+    section#proceso .scrolling-process-list li {
+        scroll-snap-align: center;
+    }
+
+    /* Fallback for browsers that don't support animation-timeline */
+    @supports not (animation-timeline: scroll()) {
+        /* The JS Intersection Observer will handle the active state */
+    }
+
+    /* If animation-timeline is supported, we can use it for a smoother effect */
+    @supports (animation-timeline: scroll()) and (animation-range: 0% 100%) {
+        section#proceso .scrolling-process-list li {
+            animation: brighten linear both;
+            animation-timeline: view();
+            animation-range: cover calc(50% - 1lh) calc(50% + 1lh);
+        }
+
+        @keyframes brighten {
+            0% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.2;
+            }
+        }
+    }
+}

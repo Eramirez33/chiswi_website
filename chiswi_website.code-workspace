@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "chiswi_website",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "chiswi_website"
+	}
+}

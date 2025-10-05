@@ -2,7 +2,7 @@
 @import url("components/buttons.css");
 @import url("components/hero.css");
 @import url("components/services-carousel.css");
-@import url("components/process-timeline.css");
+@import url("components/scrolling-process.css");
 
 /* Aplicamos la fuente Poppins a todo el cuerpo */
 body {

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --background: #111111;
+    --text: #EEEEEE;
+    --primary: #966844;
+    --secondary: #333333;
+    --accent: #D4AF37;
+}
+
+.fc-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    perspective: 1000px;
+    padding: 4rem 0;
+}
+
+.fc-card {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    background: var(--secondary);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.fc-card .fc-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.fc-card .fc-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.fc-card .fc-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #aaa;
+}
