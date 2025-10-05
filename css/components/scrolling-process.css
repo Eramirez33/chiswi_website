@@ -19,7 +19,7 @@
         --step-3-color: #f97316; /* orange-500 */
         --step-4-color: #a855f7; /* purple-500 */
 
-        height: 100vh; /* Ocupa toda la pantalla */
+        height: 120vh; /* Ocupa toda la pantalla */
         width: 100%;
         position: sticky;
         top: 0;
@@ -54,6 +54,21 @@
         pointer-events: none;
     }
 
+    .scrolling-process-glow {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 80vh; /* Tamaño del resplandor */
+        height: 80vh;
+        background: var(--step-1-color); /* Color inicial */
+        border-radius: 50%;
+        filter: blur(100px); /* El desenfoque que crea el efecto */
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+        z-index: -1; /* Detrás del texto */
+        will-change: transform, opacity;
+    }
+
     .scrolling-process-list li {
         position: absolute;
         left: 0;
@@ -61,6 +76,10 @@
         padding: 1rem 0;
         text-align: center;
         will-change: transform, opacity, scale;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         /* El JS se encarga de la posición y transición */
     }
 
@@ -71,10 +90,23 @@
     .scrolling-process-list li[data-step="4"] { color: var(--step-4-color); }
 
     /* Estilos de texto para los pasos */
+    .step-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .step-icon {
+        font-size: 1.5rem; /* Same as step-number */
+        margin-right: 0.75rem;
+        color: inherit; /* Inherit color from the list item */
+    }
+
     .scrolling-process-list .step-number {
         font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0; /* Remove original margin */
     }
 
     .scrolling-process-list .step-title {
