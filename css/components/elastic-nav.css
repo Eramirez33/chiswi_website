@@ -1,0 +1,86 @@
+/* Original template styles, scoped to nav */
+nav {
+	position: relative;
+	width: fit-content;
+    /* Styling moved to .glass-nav-bar */
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+nav:before {
+    /* Backdrop filter moved to .glass-nav-bar */
+    display: none;
+}
+
+nav > ul {   
+	position: relative;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	height: 55px;
+	isolation: isolate;
+	padding: 0 2rem; /* Increased padding */
+}
+
+nav > ul::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 6px;
+	width: 12px;
+	height: 12px;
+	background: rgb(239, 167, 23);
+	border-radius: 50%;
+	transform: translateX(var(--translate-x, 0)) translateY(var(--translate-y, 0)) rotate(var(--rotate-x, 0deg));
+	transition: none;
+	opacity: 0;
+	z-index: -1;
+	box-shadow: 
+		0 4px 16px rgba(255, 255, 255, 0.4),
+		0 2px 8px rgba(255, 255, 255, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.8),
+		inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+nav > ul li,
+nav > ul li a {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #1a1a1a;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.95rem;
+}
+
+nav > ul li a {
+	padding-inline: 20px;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav > ul li a:hover {
+	color: #000000;
+	transform: translateY(-2px);
+}
+
+nav > ul li a:focus {
+	outline: none;
+}
+
+nav > ul li a.active {
+	color: #000000;
+	transform: translateY(-2px);
+}
+
+nav > ul.show-indicator::after {
+	opacity: 1;
+}
+
+nav > ul li a:active {
+	transform: translateY(-2px);
+}

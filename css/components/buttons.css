@@ -1,55 +1,36 @@
-/* Estilos para el nuevo botón CTA */
+/* Estilos para el botón CTA */
 .cta-button {
   position: relative;
-  margin: auto;
-  padding: 12px 18px; /* Reducimos el padding para que ocupe menos espacio */
   transition: all 0.2s ease;
-  background-color: #f68a3de7;
+  overflow: hidden; /* Oculta el efecto fuera de los bordes del botón */
 }
 
 .cta-button:before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 50%; /* Centra verticalmente */
   left: 0;
+  transform: translateY(-50%); /* Ajuste fino para centrado vertical */
   display: block;
-  border-radius: 28px;
-  background: rgba(255, 171, 157, 0.5);
-  width: 56px;
-  height: 56px;
+  border-radius: 22px; /* La mitad de la altura para que sea un círculo */
+  background: rgba(241, 225, 41, 0.5); /* Color del efecto, similar al hover */
+  width: 44px;  /* Ancho igual a la altura para formar un círculo */
+  height: 44px; /* Altura que coincide con el padding y texto del botón */
   transition: all 0.3s ease;
+  z-index: 0; /* Detrás del texto */
 }
 
-.cta-button span{
+.cta-button span {
   position: relative;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 900;
-  letter-spacing: 0.25em;
-  text-transform: capitalize;
+  z-index: 1; /* Asegura que el texto esté sobre el efecto */
   vertical-align: middle;
 }
 
-.cta-button svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #111;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
-}
-
 .cta-button:hover:before {
-  width: 100%;
+  width: 100%; /* Expande el efecto a todo lo ancho del botón */
   background: #f1e129;
 }
-.cta-button:hover svg {
-  transform: translateX(0);
-}
+
 .cta-button:active {
   transform: scale(0.96);
 }

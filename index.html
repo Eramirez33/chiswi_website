@@ -28,6 +28,9 @@
 
     <!-- Enlace a la hoja de estilos personalizada -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components/elastic-nav.css">
+    <link rel="stylesheet" href="css/components/glass-nav-bar.css">
+    <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
 </head>
 <body class="bg-white">
 
@@ -48,63 +51,50 @@
     </div>
 
     <!-- ============================================ -->
-    <!-- HEADER ESTILO LOOM -->
+    <!-- HEADER ELASTIC NAV -->
     <!-- ============================================ -->
-    <header class="fixed top-0 left-0 right-0 z-40 pt-4 md:pt-12 w-full">
+    <header class="fixed top-0 left-0 right-0 z-40 pt-4 md:pt-8 w-full">
         <div class="container mx-auto px-6">
-            <nav class="relative flex items-center justify-between h-20 bg-white/90 backdrop-blur-sm border-b border-gray-200 md:rounded-full md:shadow-lg md:border-none" aria-label="Global">
-                
-                <!-- Lado Izquierdo: Enlaces y Espaciador Invisible -->
-                <div class="hidden md:flex items-center gap-6 pl-6 w-1/3">
-                    <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#servicios">Catálogo</a>
-                    <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#proceso">Nuestro Proceso</a>
-                </div>
+            <div class="relative h-20 flex items-center">
+                <div class="relative flex items-center justify-between h-20 glass-nav-bar w-full px-4">
+                    <!-- Lado Izquierdo: Enlaces -->
+                    <div class="hidden md:flex items-center justify-start flex-1">
+                        <nav class="elastic-nav">
+                            <ul>
+                                <li><a href="#servicios">Catálogo</a></li>
+                                <li><a href="#proceso">Nuestro Proceso</a></li>
+                            </ul>
+                        </nav>
+                    </div>
 
-                <!-- Logo (Centrado en Desktop, Izquierda en Móvil) -->
-                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
-                        <img class="h-20 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
-                    </a>
-                </div>
-                
-                <!-- Logo para Móvil (ocupa espacio a la izquierda) -->
-                <div class="md:hidden">
-                     <a class="flex-none" href="#" aria-label="Chiswi Pasteleria">
-                        <img class="h-20 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Pasteleria">
-                    </a>
-                </div>
-
-                <!-- Lado Derecho: Enlaces, Botón CTA y Menú Móvil -->
-                <div class="flex items-center justify-end gap-6 pr-6 w-1/3">
-                    <div class="hidden md:flex items-center gap-6">
-                        <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#paquetes">Paquetes</a>
-                        <a class="font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors" href="#faq">Preguntas</a>
-                        <a href="#contacto" class="cta-button inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full text-sm shadow-lg">
-                            <span>Cotiza tu Evento</span>
+                    <!-- Logo (Centrado) -->
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <a class="flex-none" href="#" aria-label="Chiswi Catering">
+                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
                         </a>
                     </div>
-                    <!-- Botón de Menú Móvil -->
-                    <div class="md:hidden">
-                        <button type="button" class="hs-collapse-toggle flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100" data-hs-collapse="#navbar-mobile" aria-controls="navbar-mobile" aria-label="Toggle navigation">
-                            <svg class="hs-collapse-open:hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-                            <svg class="hs-collapse-open:block hidden shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                        </button>
+                    
+                    <!-- Lado Derecho: Enlaces y CTA -->
+                    <div class="flex items-center justify-end flex-1">
+                        <nav class="elastic-nav hidden md:flex">
+                            <ul>
+                                <li><a href="#paquetes">Paquetes</a></li>
+                                <li><a href="#faq">Preguntas</a></li>
+                            </ul>
+                        </nav>
+                        <div class="ml-6">
+                            <a href="#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full text-sm shadow-lg px-6 py-4 hover:bg-yellow-500 transition duration-300">
+                                <span>Cotiza tu Evento</span>
+                            </a>
+                        </div>
+                        <!-- Botón de Menú Móvil (Placeholder) -->
+                        <div class="md:hidden ml-4">
+                            <button type="button" class="flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100">
+                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-
-        <!-- Menú desplegable para Móvil -->
-        <div id="navbar-mobile" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:hidden bg-white border-t border-gray-200">
-            <div class="flex flex-col gap-2 p-4">
-                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#servicios">Catálogo</a>
-                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#proceso">Nuestro Proceso</a>
-                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#paquetes">Paquetes</a>
-                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#faq">Preguntas</a>
-                <a class="font-medium text-gray-600 hover:text-[#1a1a1a] py-2" href="#contacto">Contacto</a>
-                <a href="#contacto" class="mt-2 inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-5 rounded-lg text-sm hover:bg-yellow-500 transition duration-300 shadow-sm">
-                    Cotiza tu Evento
-                </a>
             </div>
         </div>
     </header>
@@ -224,9 +214,41 @@
         </section>
 
         <!-- ============================================ -->
+        <!-- CLIENTES (QUIENES CONFIAN) -->
+        <!-- ============================================ -->
+        <section id="clientes" class="py-20 bg-[#f5f5f5]">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-4">
+                    Quienes Confían en Nosotros
+                </h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                    Estamos orgullosos de haber colaborado con una variedad de empresas y organizaciones líderes en sus sectores.
+                </p>
+                <div class="bg-white rounded-xl shadow-2xl p-8 border border-gray-200">
+                    <div class="owl-carousel client-logo-carousel">
+                        <div class="flex justify-center items-center h-32"><img src="img/mec.png" alt="Logo Ministerio de Educación y Cultura" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_ima.png" alt="Logo Intendencia de Montevideo" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_mides.png" alt="Logo MIDES" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_turismo.png" alt="Logo Ministerio de Turismo" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_elis.png" alt="Logo ELIS" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_fcu.png" alt="Logo FCU" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_udelar.png" alt="Logo UDELAR" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                        <div class="flex justify-center items-center h-32"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#precio" class="inline-block bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
+                        Conviértete en Nuestro Próximo Caso de Éxito
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
         <!-- PAQUETES SUGERIDOS -->
         <!-- ============================================ -->
-        <section id="paquetes" class="bg-[#f5f5f5] py-20">
+        <section id="paquetes" class="bg-white py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12">
                     Paquetes Populares
@@ -346,7 +368,6 @@
     </footer>
 
     <!-- ============================================ -->
-     ≤
     <!-- JAVASCRIPT -->
     <!-- ============================================ -->
     
@@ -407,6 +428,23 @@
             $('#custom-prev').click(function() {
                 serviceCarousel.trigger('prev.owl.carousel');
             })
+
+            // Inicialización del Carrusel de Logos de Clientes
+            var clientCarousel = $(".client-logo-carousel");
+            clientCarousel.owlCarousel({
+                autoplay: true,
+                smartSpeed: 1500,
+                margin: 40,
+                dots: false,
+                loop: true,
+                nav: false,
+                responsive: {
+                    0: { items: 2 },
+                    576: { items: 3 },
+                    768: { items: 4 },
+                    992: { items: 5 }
+                }
+            });
         });
     </script>
 
@@ -499,5 +537,18 @@
             });
         });
     </script>
+    
+    <script src="js/elastic-nav.js"></script>
+
+    <svg style="display: none">
+        <defs>
+            <filter id="wave-distort" x="0%" y="0%" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.0038 0.0038" numOctaves="1" seed="2" result="roughNoise" />
+                <feGaussianBlur in="roughNoise" stdDeviation="8.5" result="softNoise" />
+                <feComposite operator="arithmetic" k1="0" k2="1" k3="2" k4="0" in="softNoise" result="mergedMap" />
+                <feDisplacementMap in="SourceGraphic" in2="mergedMap" scale="-42" xChannelSelector="G" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
 </body>
 </html>
