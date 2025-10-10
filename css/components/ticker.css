@@ -1,0 +1,47 @@
+/* Ticker Styles */
+.ticker-container .swiper {
+    width: 100%;
+}
+
+.ticker-container .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.ticker-container .swiper-slide {
+    height: auto !important;
+    width: auto; /* Let the content define the width */
+}
+
+.horizontal-ticker {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.85vw;
+}
+
+@media screen and (max-width: 767.9px) {
+    .horizontal-ticker {
+        row-gap: 15px;
+    }
+}
+
+.horizontal-ticker__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 128px; /* Same as before */
+    padding: 0 20px; /* Add some spacing between logos */
+}
+
+.horizontal-ticker__slide img {
+    max-width: 100%;
+    max-height: 80px; /* Control the max height of the logos */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.horizontal-ticker__slide:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}

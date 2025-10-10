@@ -30,7 +30,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components/elastic-nav.css">
     <link rel="stylesheet" href="css/components/glass-nav-bar.css">
+    <link rel="stylesheet" href="css/components/ticker.css">
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body class="bg-white">
 
@@ -216,32 +220,61 @@
         <!-- ============================================ -->
         <!-- CLIENTES (QUIENES CONFIAN) -->
         <!-- ============================================ -->
-        <section id="clientes" class="py-20 bg-[#f5f5f5]">
+        <section id="clientes" class="py-20 bg-[#f5f5f5] overflow-hidden">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-4">
                     Quienes Confían en Nosotros
                 </h2>
                 <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Estamos orgullosos de haber colaborado con una variedad de empresas y organizaciones líderes en sus sectores.
+                    Estamos orgullosos de haber colaborado con una variedad de empresas, eventos y organizaciones líderes en sus sectores.
                 </p>
-                <div class="bg-white rounded-xl shadow-2xl p-8 border border-gray-200">
-                    <div class="owl-carousel client-logo-carousel">
-                        <div class="flex justify-center items-center h-32"><img src="img/mec.png" alt="Logo Ministerio de Educación y Cultura" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_ima.png" alt="Logo Intendencia de Montevideo" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_mides.png" alt="Logo MIDES" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_turismo.png" alt="Logo Ministerio de Turismo" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_elis.png" alt="Logo ELIS" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_fcu.png" alt="Logo FCU" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_udelar.png" alt="Logo UDELAR" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
-                        <div class="flex justify-center items-center h-32"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro" class="h-full w-full object-contain p-3 filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300"></div>
+            </div>
+            <div class="ticker-container">
+                <div class="horizontal-ticker">
+                    <!-- Ticker Row 1 (Right to Left) -->
+                    <div id="horizontal-ticker-rtl" class="swiper horizontal-ticker__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA"></div>
+                            <!-- Duplicates for seamless loop -->
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA"></div>
+                        </div>
+                    </div>
+                    <!-- Ticker Row 2 (Left to Right) -->
+                    <div id="horizontal-ticker-ltr" class="swiper horizontal-ticker__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA"></div>
+                            <!-- Duplicates for seamless loop -->
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="text-center mt-12">
-                    <a href="#precio" class="inline-block bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
-                        Conviértete en Nuestro Próximo Caso de Éxito
-                    </a>
-                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#precio" class="inline-block bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
+                    Lleva nuestro sabor a tu evento <span class="ml-2" style="text-shadow: 0 0 3px rgba(0,0,0,0.5);">✨</span>
+                </a>
             </div>
         </section>
 
@@ -398,9 +431,15 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Preline UI Script -->
     <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js"></script>
+
+    <!-- Ticker Script -->
+    <script src="js/ticker.js"></script>
 
     <!-- Inicialización del Carrusel de Servicios -->
     <script>
@@ -428,23 +467,6 @@
             $('#custom-prev').click(function() {
                 serviceCarousel.trigger('prev.owl.carousel');
             })
-
-            // Inicialización del Carrusel de Logos de Clientes
-            var clientCarousel = $(".client-logo-carousel");
-            clientCarousel.owlCarousel({
-                autoplay: true,
-                smartSpeed: 1500,
-                margin: 40,
-                dots: false,
-                loop: true,
-                nav: false,
-                responsive: {
-                    0: { items: 2 },
-                    576: { items: 3 },
-                    768: { items: 4 },
-                    992: { items: 5 }
-                }
-            });
         });
     </script>
 
