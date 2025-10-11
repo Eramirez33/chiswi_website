@@ -49,3 +49,39 @@ html {
                       linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.05) 75%, rgba(0, 0, 0, 0.05));
     background-size: 3px 3px;
 }
+
+/* Estilos para el slideshow de la sección "Nuestra Historia" */
+.historia-slide {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.historia-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilos para el Tooltip de CEDEL */
+.cedel-tooltip-trigger {
+    border-bottom: 1px dotted #d4af37;
+    cursor: pointer;
+}
+
+.cedel-tooltip-trigger:hover + .cedel-tooltip,
+.cedel-tooltip-trigger:focus + .cedel-tooltip,
+.cedel-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -0.5rem);
+}
+
+/* Mobile Menu Styles */
+#mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#mobile-menu.is-open #mobile-menu-panel {
+    transform: translateX(0);
+}

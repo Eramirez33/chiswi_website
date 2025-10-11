@@ -73,6 +73,7 @@
                             <ul>
                                 <li><a href="#servicios">Catálogo</a></li>
                                 <li><a href="#proceso">Nuestro Proceso</a></li>
+                                <li><a href="#historia">Nuestra Historia</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -97,9 +98,9 @@
                                 <span>Cotiza tu Evento</span>
                             </a>
                         </div>
-                        <!-- Botón de Menú Móvil (Placeholder) -->
+                        <!-- Botón de Menú Móvil -->
                         <div class="md:hidden ml-4">
-                            <button type="button" class="flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100">
+                            <button type="button" id="mobile-menu-button" class="flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100">
                                 <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
                             </button>
                         </div>
@@ -108,6 +109,30 @@
             </div>
         </div>
     </header>
+
+    <!-- ============================================ -->
+    <!-- PANEL DE MENÚ MÓVIL -->
+    <!-- ============================================ -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
+        <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
+            <!-- Botón de Cierre -->
+            <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <!-- Enlaces de Navegación -->
+            <nav class="mt-12">
+                <ul class="space-y-6">
+                    <li><a href="#servicios" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Catálogo</a></li>
+                    <li><a href="#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestro Proceso</a></li>
+                    <li><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestra Historia</a></li>
+                    <li><a href="#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Paquetes</a></li>
+                    <li><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Preguntas</a></li>
+                    <li class="pt-6"><a href="#contacto" class="mobile-nav-link w-full text-center cta-button inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-6 py-4 hover:bg-yellow-500 transition duration-300">Cotiza tu Evento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <!-- ============================================ -->
     <!-- HERO SECTION (ahora contiene al Topbar) -->
@@ -144,16 +169,30 @@
                 <!-- Columna de Texto -->
                 <div class="text-left wow slideInLeft">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4" style="font-family: 'Playfair Display', serif;">
-                        Nuestra Historia
+                        Nuestra Historia: Un Viaje de Pasión y Sonrisas
                     </h2>
                     <h3 class="text-xl text-[#d4af37] mb-6" style="font-family: 'Poppins', sans-serif; font-weight: 600;">
-                        Pasión por crear momentos inolvidables.
+                        De un sueño familiar a la mesa de tu evento.
                     </h3>
                     <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
-                        Chiswi no nació en una oficina, sino en la calidez de la cocina familiar. Nació de la convicción de que la comida es más que un producto; es el corazón de nuestros mejores momentos, el lazo que une a las personas y el recuerdo que perdura.
+                        Somos una familia de inmigrantes con un profundo amor por la cocina, la gastronomía y el placer de servir. Todo comenzó en 2017, no en una gran planta de producción, sino en la calidez de nuestro hogar. Allí, entre el aroma de recetas que unen generaciones, nació Chiswi como un sueño: el de convertir nuestra pasión en sonrisas y momentos inolvidables.
+                    </p>
+                    <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
+                        Con dedicación y amor por el detalle, ese sueño fue creciendo. Cada cliente se convirtió en parte de nuestra familia, y poco a poco, nuestra reputación por la calidad y el servicio cercano se extendió, permitiéndonos llegar a más hogares y empresas que confiaron en nosotros.
+                    </p>
+                    <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
+                        El 2022 marcó un antes y un después. Tuvimos el honor de ser seleccionados por 
+                        <span class="relative">
+                            <strong class="font-bold text-black-500 cedel-tooltip-trigger">CEDEL Casavalle</strong>,
+                            <span class="cedel-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-white p-4 rounded-lg shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-300">
+                                <strong class="block text-md font-bold text-[#d4af37]">Nuestro Impulso Local</strong>
+                                <span class="block text-sm text-gray-600 mt-1">CEDEL es el Centro de Desarrollo Económico Local de Montevideo, un pilar que a través de su programa 'Vivero de Empresas' y su plan de comercialización, nos brindó herramientas clave para crecer.</span>
+                            </span>
+                        </span>
+                        un pilar fundamental en nuestro desarrollo. Gracias a su plan de "Vivero de Empresas" y comercialización, recibimos el impulso y las herramientas para fortalecer nuestra entrada en el mercado local y llevar nuestro sueño al siguiente nivel.
                     </p>
                     <p class="text-gray-600 mb-8" style="font-family: 'Roboto', sans-serif;">
-                        Esa misma dedicación, ese cuidado por el detalle y la búsqueda del sabor que emociona, es la promesa que te hacemos. Cada bocado que servimos es un reflejo de nuestra historia y un compromiso con la excelencia de tu evento.
+                        Hoy, con el mismo esfuerzo, dedicación y pasión del primer día, nos hemos convertido en un referente en el rubro. Nuestra esencia sigue intacta: el amor por lo que hacemos y el compromiso de recordar siempre que <strong>Chiswi es una dulce sonrisa</strong>.
                     </p>
                     <div class="firma-container text-center md:text-left">
                         <svg id="signature" class="mx-auto md:mx-0" width="300" height="100" viewBox="0 0 380 150">
@@ -162,11 +201,15 @@
                         <p class="text-2xl font-semibold text-[#1a1a1a] -mt-8" style="font-family: 'Dancing Script', cursive;">Chiswi Catering</p>
                     </div>
                 </div>
-                <!-- Columna de Imagen -->
+                <!-- Columna de Imagen con Slideshow -->
                 <div class="flex justify-center items-center wow slideInRight">
                     <div class="relative w-full max-w-sm">
                         <div class="absolute -top-4 -left-4 w-full h-full border-4 border-[#d4af37] rounded-lg z-0"></div>
-                        <img src="img/buffet-dulce-festivo.jpg" alt="El equipo de Chiswi preparando un evento" class="relative rounded-lg shadow-2xl w-full h-auto object-cover" style="aspect-ratio: 4/5;">
+                        <div id="historia-slideshow" class="relative rounded-lg shadow-2xl w-full overflow-hidden" style="aspect-ratio: 4/5;">
+                            <img src="img/buffet-dulce-festivo.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full object-cover historia-slide active">
+                            <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full object-cover historia-slide">
+                            <img src="img/emparedado.jpg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full object-cover historia-slide">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -607,6 +650,7 @@
     <script src="js/elastic-nav.js"></script>
     <script src="js/ticker.js"></script>
     <script src="js/historia.js"></script>
+    <script src="js/mobile-nav.js"></script>
 
     <svg style="display: none">
         <defs>
