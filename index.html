@@ -31,7 +31,13 @@
     <link rel="stylesheet" href="css/components/elastic-nav.css">
     <link rel="stylesheet" href="css/components/glass-nav-bar.css">
     <link rel="stylesheet" href="css/components/ticker.css">
+    <link rel="stylesheet" href="css/components/historia.css">
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
+
+    <!-- Google Fonts para la sección Historia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
 
     <!-- Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -129,6 +135,44 @@
         </div>
     </section>
     
+    <!-- ============================================ -->
+    <!-- NUESTRA HISTORIA -->
+    <!-- ============================================ -->
+    <section id="historia" class="py-20 bg-canvas border-b-2 border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <!-- Columna de Texto -->
+                <div class="text-left wow slideInLeft">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4" style="font-family: 'Playfair Display', serif;">
+                        Nuestra Historia
+                    </h2>
+                    <h3 class="text-xl text-[#d4af37] mb-6" style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+                        Pasión por crear momentos inolvidables.
+                    </h3>
+                    <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
+                        Chiswi no nació en una oficina, sino en la calidez de la cocina familiar. Nació de la convicción de que la comida es más que un producto; es el corazón de nuestros mejores momentos, el lazo que une a las personas y el recuerdo que perdura.
+                    </p>
+                    <p class="text-gray-600 mb-8" style="font-family: 'Roboto', sans-serif;">
+                        Esa misma dedicación, ese cuidado por el detalle y la búsqueda del sabor que emociona, es la promesa que te hacemos. Cada bocado que servimos es un reflejo de nuestra historia y un compromiso con la excelencia de tu evento.
+                    </p>
+                    <div class="firma-container text-center md:text-left">
+                        <svg id="signature" class="mx-auto md:mx-0" width="300" height="100" viewBox="0 0 380 150">
+                           <path id="signature-path" d="M20,70 Q40,30 70,70 T120,70 M140,70 C160,30 200,30 220,70 C240,110 280,110 300,70 S340,30 360,70" stroke="#1a1a1a" fill="transparent" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-2xl font-semibold text-[#1a1a1a] -mt-8" style="font-family: 'Dancing Script', cursive;">Chiswi Catering</p>
+                    </div>
+                </div>
+                <!-- Columna de Imagen -->
+                <div class="flex justify-center items-center wow slideInRight">
+                    <div class="relative w-full max-w-sm">
+                        <div class="absolute -top-4 -left-4 w-full h-full border-4 border-[#d4af37] rounded-lg z-0"></div>
+                        <img src="img/buffet-dulce-festivo.jpg" alt="El equipo de Chiswi preparando un evento" class="relative rounded-lg shadow-2xl w-full h-auto object-cover" style="aspect-ratio: 4/5;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main>
         <!-- ============================================ -->
         <!-- NUESTRO CATÁLOGO (SERVICIOS) -->
@@ -561,6 +605,8 @@
     </script>
     
     <script src="js/elastic-nav.js"></script>
+    <script src="js/ticker.js"></script>
+    <script src="js/historia.js"></script>
 
     <svg style="display: none">
         <defs>
