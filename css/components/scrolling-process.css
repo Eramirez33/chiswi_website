@@ -4,201 +4,284 @@
 /* ============================================ */
 
 @layer components {
-    /* La sección ahora actúa como una "pista" de scroll */
-    section#proceso {
-        height: 250vh; /* La altura total que dura la animación. ¡Ajusta para cambiar la velocidad del scroll! */
-        position: relative;
-        background-color: #000;
-    }
+    /* ============================================ */
+    /* DESKTOP STYLES (SCROLLING ANIMATION)       */
+    /* ============================================ */
+    @media (min-width: 769px) {
+        /* La sección ahora actúa como una "pista" de scroll */
+        section#proceso {
+            height: 250vh; /* La altura total que dura la animación. ¡Ajusta para cambiar la velocidad del scroll! */
+            position: relative;
+            background-color: #000;
+        }
 
-    /* Este contenedor se pega a la pantalla */
-    .scrolling-process-section {
-        /* --step-1-color: #3b82f6; blue-500 */
-        --step-1-color: #D4AF37; /* blue-500 */
-        --step-2-color: #10b981; /* emerald-500 */
-        --step-3-color: #f97316; /* orange-500 */
-        --step-4-color: #a855f7; /* purple-500 */
+        /* Este contenedor se pega a la pantalla */
+        .scrolling-process-section {
+            /* --step-1-color: #3b82f6; blue-500 */
+            --step-1-color: #D4AF37; /* blue-500 */
+            --step-2-color: #10b981; /* emerald-500 */
+            --step-3-color: #f97316; /* orange-500 */
+            --step-4-color: #a855f7; /* purple-500 */
 
-        height: 120vh; /* Ocupa toda la pantalla */
-        width: 100%;
-        position: sticky;
-        top: 0;
-        display: flex;
-        align-items: center;
-        padding-left: 5rem;
-    }
+            height: 120vh; /* Ocupa toda la pantalla */
+            width: 100%;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            padding-left: 5rem;
+        }
 
-    .scrolling-process-title {
-        width: 40%;
-        padding-right: 2rem;
-        font-weight: 700;
-        font-size: 3.5rem !important;
-        line-height: 1.2;
-        color: #fff;
-    }
+        .scrolling-process-title {
+            width: 40%;
+            padding-right: 2rem;
+            font-weight: 700;
+            font-size: 3.5rem !important;
+            line-height: 1.2;
+            color: #fff;
+        }
 
-    /* La "ventana" del carrusel en la derecha */
-    .scrolling-process-list {
-        position: relative; /* Necesario para la máscara y los items */
-        width: 60%;
-        height: 70vh; /* La altura visible del carrusel */
-        overflow: hidden; /* Oculta los items que se salen */
-    }
+        /* La "ventana" del carrusel en la derecha */
+        .scrolling-process-list {
+            position: relative; /* Necesario para la máscara y los items */
+            width: 60%;
+            height: 70vh; /* La altura visible del carrusel */
+            overflow: hidden; /* Oculta los items que se salen */
+        }
 
-    /* Máscara con gradiente para difuminar */
-    .scrolling-process-list::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, #000 0%, transparent 30%, transparent 70%, #000 100%);
-        pointer-events: none;
-    }
+        /* Máscara con gradiente para difuminar */
+        .scrolling-process-list::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, #000 0%, transparent 30%, transparent 70%, #000 100%);
+            pointer-events: none;
+        }
 
-    .scrolling-process-glow {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 80vh; /* Tamaño del resplandor */
-        height: 80vh;
-        background: var(--step-1-color); /* Color inicial */
-        border-radius: 50%;
-        filter: blur(100px); /* El desenfoque que crea el efecto */
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-        z-index: -1; /* Detrás del texto */
-        will-change: transform, opacity;
-    }
-
-    .scrolling-process-list li {
-        position: absolute;
-        left: 0;
-        right: 0;
-        padding: 1rem 0;
-        text-align: center;
-        will-change: transform, opacity, scale;
-        height: 40vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* El JS se encarga de la posición y transición */
-    }
-
-    /* Asignación de colores */
-    .scrolling-process-list li[data-step="1"] { color: var(--step-1-color); }
-    .scrolling-process-list li[data-step="2"] { color: var(--step-2-color); }
-    .scrolling-process-list li[data-step="3"] { color: var(--step-3-color); }
-    .scrolling-process-list li[data-step="4"] { color: var(--step-4-color); }
-
-    /* Estilos de texto para los pasos */
-    .step-header {
-        display: none; /* Ocultamos el contenedor original */
-    }
-
-    .step-icon {
-        font-size: 5rem; /* Iconos más grandes y protagonistas */
-        margin-bottom: 1.5rem;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.5s ease-out;
-        transform: scale(0.8); /* Estado inactivo: un poco más pequeño */
-        will-change: transform;
-    }
-
-    .scrolling-process-list .step-number {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        display: block;
-        color: rgba(255,255,255,0.4); /* Número más sutil */
-    }
-
-    .scrolling-process-list .step-title {
-        font-size: 6rem; /* Ligeramente más pequeño para dar espacio al icono */
-        font-weight: 1000;
-        margin-bottom: 1rem;
-    }
-
-    .scrolling-process-list .step-description {
-        font-size: 1.7rem;
-        max-width: 45ch;
-        margin: auto;
-        line-height: 1.6;
-    }
-
-    /* Cuando un paso está activo, su icono se agranda */
-    .scrolling-process-list li.active .step-icon {
-        transform: scale(1);
-    }
-
-    /* Keyframes para las animaciones */
-    @keyframes spin-slow {
-        from { transform: scale(1) rotate(0deg); }
-        to { transform: scale(1) rotate(360deg); }
-    }
-
-    @keyframes shake {
-        0%, 100% { transform: scale(1) translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: scale(1) translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: scale(1) translateX(5px); }
-    }
-
-    @keyframes grow-and-fade-in {
-        from {
-            transform: scale(0.5);
+        .scrolling-process-glow {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 80vh; /* Tamaño del resplandor */
+            height: 80vh;
+            background: var(--step-1-color); /* Color inicial */
+            border-radius: 50%;
+            filter: blur(100px); /* El desenfoque que crea el efecto */
             opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+            z-index: -1; /* Detrás del texto */
+            will-change: transform, opacity;
         }
-        to {
+
+        .scrolling-process-list li {
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: 1rem 0;
+            text-align: center;
+            will-change: transform, opacity, scale;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* El JS se encarga de la posición y transición */
+        }
+
+        /* Asignación de colores */
+        .scrolling-process-list li[data-step="1"] { color: var(--step-1-color); }
+        .scrolling-process-list li[data-step="2"] { color: var(--step-2-color); }
+        .scrolling-process-list li[data-step="3"] { color: var(--step-3-color); }
+        .scrolling-process-list li[data-step="4"] { color: var(--step-4-color); }
+
+        /* Estilos de texto para los pasos */
+        .step-header {
+            display: none; /* Ocultamos el contenedor original */
+        }
+
+        .step-icon {
+            font-size: 5rem; /* Iconos más grandes y protagonistas */
+            margin-bottom: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.5s ease-out;
+            transform: scale(0.8); /* Estado inactivo: un poco más pequeño */
+            will-change: transform;
+        }
+
+        .scrolling-process-list .step-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+            color: rgba(255,255,255,0.4); /* Número más sutil */
+        }
+
+        .scrolling-process-list .step-title {
+            font-size: 6rem; /* Ligeramente más pequeño para dar espacio al icono */
+            font-weight: 1000;
+            margin-bottom: 1rem;
+        }
+
+        .scrolling-process-list .step-description {
+            font-size: 1.7rem;
+            max-width: 45ch;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Cuando un paso está activo, su icono se agranda */
+        .scrolling-process-list li.active .step-icon {
             transform: scale(1);
-            opacity: 1;
+        }
+
+        /* Keyframes para las animaciones */
+        @keyframes spin-slow {
+            from { transform: scale(1) rotate(0deg); }
+            to { transform: scale(1) rotate(360deg); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: scale(1) translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: scale(1) translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: scale(1) translateX(5px); }
+        }
+
+        @keyframes grow-and-fade-in {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Aplicar animación según el icono */
+        .scrolling-process-list li[data-step="1"].active .fa-lightbulb {
+            animation: grow-and-fade-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .scrolling-process-list li[data-step="2"].active .fa-file-alt {
+            animation: grow-and-fade-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .scrolling-process-list li[data-step="3"].active .fa-cogs {
+            animation: spin-slow 20s linear infinite; /* Gira lentamente de forma contínua */
+        }
+
+        .scrolling-process-list li[data-step="4"].active .fa-rocket {
+            animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) 1s both; /* Retraso para que se active después del foco */
+        }
+
+
+        /* ============================================ */
+        /* PROGRESS BAR                               */
+        /* ============================================ */
+        .scrolling-process-progress-bar {
+            position: absolute;
+            left: 2rem; /* Alineado a la izquierda */
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40vh; /* Altura de la barra */
+            width: 3px;
+            background-color: rgba(255, 255, 255, 0.15); /* Color de fondo de la barra */
+            border-radius: 3px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .scrolling-process-progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-accent); /* Gradiente dorado */
+            transform: scaleY(var(--scroll-progress, 0)); /* Empieza sin relleno y es controlado por JS */
+            transform-origin: bottom;
+            will-change: transform;
+            transition: transform 0.1s linear;
         }
     }
 
-    /* Aplicar animación según el icono */
-    .scrolling-process-list li[data-step="1"].active .fa-lightbulb {
-        animation: grow-and-fade-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    }
-
-    .scrolling-process-list li[data-step="2"].active .fa-file-alt {
-        animation: grow-and-fade-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    }
-
-    .scrolling-process-list li[data-step="3"].active .fa-cogs {
-        animation: spin-slow 20s linear infinite; /* Gira lentamente de forma contínua */
-    }
-
-    .scrolling-process-list li[data-step="4"].active .fa-rocket {
-        animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) 1s both; /* Retraso para que se active después del foco */
-    }
-
-
     /* ============================================ */
-    /* PROGRESS BAR                               */
+    /* MOBILE STYLES (STATIC LIST)                */
     /* ============================================ */
-    .scrolling-process-progress-bar {
-        position: absolute;
-        left: 2rem; /* Alineado a la izquierda */
-        top: 50%;
-        transform: translateY(-50%);
-        height: 40vh; /* Altura de la barra */
-        width: 3px;
-        background-color: rgba(255, 255, 255, 0.15); /* Color de fondo de la barra */
-        border-radius: 3px;
-        overflow: hidden;
-        z-index: 10;
-    }
+    @media (max-width: 768px) {
+        section#proceso {
+            height: auto;
+            padding: 5rem 0;
+            background-color: #000;
+        }
 
-    .scrolling-process-progress-bar::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--color-accent); /* Gradiente dorado */
-        transform: scaleY(var(--scroll-progress, 0)); /* Empieza sin relleno y es controlado por JS */
-        transform-origin: bottom;
-        will-change: transform;
-        transition: transform 0.1s linear;
+        .scrolling-process-section {
+            position: static;
+            height: auto;
+            display: block;
+            padding: 0 1.5rem;
+        }
+
+        .scrolling-process-title {
+            width: 100%;
+            font-size: 2.5rem !important;
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0;
+        }
+
+        .scrolling-process-list {
+            position: static;
+            width: 100%;
+            height: auto;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+        
+        .scrolling-process-list::after {
+            display: none; /* Ocultar gradiente de máscara */
+        }
+
+        .scrolling-process-glow,
+        .scrolling-process-progress-bar {
+            display: none; /* Ocultar elementos de animación */
+        }
+
+        .scrolling-process-list li {
+            position: static;
+            height: auto;
+            text-align: center;
+            opacity: 1 !important; /* Asegurar visibilidad */
+            transform: none !important; /* Resetear transformaciones de JS */
+            padding: 0;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transform: scale(1);
+        }
+
+        .scrolling-process-list .step-number {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .scrolling-process-list .step-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .scrolling-process-list .step-description {
+            font-size: 1rem;
+            max-width: 100%;
+            color: rgba(255,255,255,0.8);
+        }
     }
 }

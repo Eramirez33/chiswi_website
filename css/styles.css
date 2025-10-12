@@ -86,7 +86,26 @@ html {
     transform: translateX(0);
 }
 
-/* Fix para el layout del menú móvil */
+#mobile-menu-panel {
+    padding: 2rem; /* Reducir padding general */
+}
+
+#mobile-menu nav {
+    margin-top: 3rem; /* Reducir margen superior */
+}
+
 #mobile-menu nav > ul {
     display: block;
+    text-align: center; /* Centrar los elementos de la lista */
+}
+
+#mobile-menu nav > ul > li {
+    margin-bottom: 1.25rem; /* Ajustar el espaciado entre elementos */
+}
+
+#mobile-menu .cta-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* Ajustar ancho al contenido */
 }
