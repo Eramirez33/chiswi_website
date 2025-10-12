@@ -85,3 +85,8 @@ html {
 #mobile-menu.is-open #mobile-menu-panel {
     transform: translateX(0);
 }
+
+/* Fix para el layout del menú móvil */
+#mobile-menu nav > ul {
+    display: block;
+}
