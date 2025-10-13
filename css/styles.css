@@ -104,10 +104,39 @@ html {
 }
 
 #mobile-menu .cta-button {
-    display: block;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     white-space: nowrap;
+}
+
+/* ============================================ */
+/* FOOTER STYLES */
+/* ============================================ */
+
+.footer-logo-container {
+    display: inline-flex; /* Use flex to center child */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 6rem; /* 96px */
+    height: 6rem; /* 96px */
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.footer-logo-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3); /* Use accent color for hover shadow */
+}
+
+.footer-logo-container img {
+    /* Reset previous filter styles */
+    filter: none;
+    /* Control image size within the circle */
+    height: 4.5rem; /* 72px, slightly smaller than container */
+    width: auto;
+    transition: none; /* No separate transition on image */
 }

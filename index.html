@@ -114,7 +114,7 @@
     <!-- PANEL DE MENÚ MÓVIL -->
     <!-- ============================================ -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
-        <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-1/2 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
             <!-- Botón de Cierre -->
             <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -128,7 +128,7 @@
                     <li><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestra Historia</a></li>
                     <li><a href="#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Paquetes</a></li>
                     <li><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Preguntas</a></li>
-                    <li class="pt-6"><a href="#contacto" class="cta-button bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-6 py-4 hover:bg-yellow-500 transition duration-300">Cotiza tu Evento</a></li>
+                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300">Cotiza tu Evento</a></li>
                 </ul>
             </nav>
         </div>
@@ -470,19 +470,83 @@
         </section>
     </main>
 
+    <div class="leading-none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-[100px]">
+            <path d="M0,100 C480,0 960,0 1440,100 Z" fill="#1a1a1a"></path>
+        </svg>
+    </div>
+
     <!-- ============================================ -->
-    <!-- CONTACTO (FOOTER) -->
+    <!-- FOOTER -->
     <!-- ============================================ -->
-    <footer id="contacto" class="bg-[#1a1a1a] border-t border-gray-700 py-12">
-        <div class="container mx-auto px-6 text-center text-white">
-            <h2 class="text-2xl font-bold mb-4">Hablemos de tu próximo evento</h2>
-            <p class="text-gray-400 mb-8">Haz clic en el botón y envíanos un mensaje. Estaremos encantados de atenderte.</p>
-            <button onclick="enviarWhatsApp('contacto general')" class="bg-[#25D366] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition duration-300 shadow-lg flex items-center justify-center mx-auto">
-                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.06 21.94L7.32 20.58C8.77 21.33 10.37 21.72 12.04 21.72C17.5 21.72 21.95 17.27 21.95 11.81C21.95 6.35 17.5 2 12.04 2M12.04 20.13C10.56 20.13 9.12 19.78 7.85 19.11L7.5 18.91L4.41 19.75L5.27 16.78L5.06 16.42C4.31 15.04 3.92 13.5 3.92 11.91C3.92 7.36 7.57 3.71 12.04 3.71C16.51 3.71 20.16 7.36 20.16 11.81C20.16 16.26 16.51 20.13 12.04 20.13M17.41 14.49C17.16 14.24 16.22 13.78 15.97 13.68C15.72 13.58 15.54 13.53 15.37 13.78C15.19 14.03 14.69 14.65 14.52 14.82C14.34 15 14.17 15.02 13.92 14.92C13.67 14.82 12.73 14.5 11.64 13.53C10.79 12.78 10.24 11.85 10.07 11.6C9.89 11.35 10.02 11.22 10.14 11.1C10.25 10.99 10.39 10.81 10.54 10.64C10.69 10.46 10.74 10.34 10.84 10.14C10.94 9.94 10.89 9.77 10.81 9.6C10.74 9.42 10.24 8.2 10.04 7.72C9.85 7.24 9.66 7.32 9.52 7.31C9.38 7.31 9.2 7.31 9.03 7.31C8.85 7.31 8.55 7.38 8.3 7.63C8.05 7.88 7.55 8.35 7.55 9.52C7.55 10.7 8.33 11.82 8.48 12C8.63 12.18 9.9 14.19 11.86 15.02C12.31 15.21 12.65 15.31 12.91 15.39C13.38 15.52 13.85 15.49 14.21 15.42C14.6 15.34 15.54 14.79 15.76 14.54C15.98 14.29 15.98 14.09 15.91 13.99C15.83 13.89 15.68 13.82 15.46 13.72C15.24 13.62 15.04 13.56 14.89 13.51C14.74 13.46 14.6 13.41 14.49 13.29C14.39 13.17 14.31 13.02 14.36 12.85C14.41 12.68 14.91 12.18 15.11 11.96C15.31 11.74 15.51 11.79 15.71 11.89C15.91 11.99 16.85 12.49 17.1 12.61C17.35 12.74 17.6 12.86 17.65 13.01C17.7 13.16 17.7 13.84 17.41 14.49Z"></path></svg>
-                Enviar WhatsApp
-            </button>
-            <div class="mt-8 text-gray-500 text-sm">
-                &copy; 2024 Chiswi Pasteleria. Todos los derechos reservados.
+    <footer id="contacto" class="bg-[#1a1a1a] text-gray-300">
+        <div class="container mx-auto px-6 pt-16 pb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Columna 1: Logo y Redes Sociales -->
+                <div class="lg:col-span-1">
+                    <a href="#" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
+                        <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                    </a>
+                    <p class="text-sm text-gray-400 mb-6 max-w-xs">
+                        Elevando cada evento con servicio de excelencia y una presentación impecable.
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Navegación -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Navegación</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Catálogo</a></li>
+                        <li><a href="#historia" class="hover:text-[#d4af37] transition-colors">Nuestra Historia</a></li>
+                        <li><a href="#proceso" class="hover:text-[#d4af37] transition-colors">Nuestro Proceso</a></li>
+                        <li><a href="#paquetes" class="hover:text-[#d4af37] transition-colors">Paquetes</a></li>
+                        <li><a href="#faq" class="hover:text-[#d4af37] transition-colors">Preguntas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Servicios -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Servicios</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Coffee Break</a></li>
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Contacto -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fa fa-phone-alt mr-3 w-4"></i>
+                            <span>+598 97 680 439</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 w-4"></i>
+                            <span>info@chiswi.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker-alt mr-3 w-4 mt-1"></i>
+                            <span>Montevideo, Uruguay</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Sub-Footer -->
+        <div class="bg-black/50 mt-8 py-4">
+            <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+                &copy; 2025 Chiswi Pasteleria. Todos los derechos reservados.
             </div>
         </div>
     </footer>
