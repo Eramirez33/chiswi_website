@@ -266,6 +266,24 @@
             transform: translateY(0);
         }
 
+        /* Asignación de colores para móvil */
+        .scrolling-process-list li[data-step="1"] .step-title,
+        .scrolling-process-list li[data-step="1"] .step-icon {
+            color: #D4AF37;
+        }
+        .scrolling-process-list li[data-step="2"] .step-title,
+        .scrolling-process-list li[data-step="2"] .step-icon {
+            color: #10b981;
+        }
+        .scrolling-process-list li[data-step="3"] .step-title,
+        .scrolling-process-list li[data-step="3"] .step-icon {
+            color: #f97316;
+        }
+        .scrolling-process-list li[data-step="4"] .step-title,
+        .scrolling-process-list li[data-step="4"] .step-icon {
+            color: #a855f7;
+        }
+
         .step-icon {
             font-size: 3rem;
             margin-bottom: 1rem;

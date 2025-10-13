@@ -104,7 +104,10 @@ html {
 }
 
 #mobile-menu .cta-button {
-    display: inline-block; /* Permitir que el padding defina el ancho */
-    width: auto; /* Ancho automático basado en contenido y padding */
-    white-space: nowrap; /* Evitar que el texto se divida en dos líneas */
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
 }
