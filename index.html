@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chiswi Pasteleria - Catering para Eventos Corporativos</title>
+    <title>Chiswi Catering - Catering para Eventos Corporativos</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    
+    <!-- Animate.css for WOW.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -56,6 +58,7 @@
             <div class="flex gap-4">
                 <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://share.google/ALubfV0RatgmZ2PT7" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Perfil de Google"><i class="fab fa-google"></i></a>
             </div>
         </div>
     </div>
@@ -167,7 +170,7 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <!-- Columna de Texto -->
-                <div class="text-left wow slideInLeft">
+                <div class="text-left wow animate__animated animate__slideInLeft">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4" style="font-family: 'Playfair Display', serif;">
                         Nuestra Historia: Un Viaje de Pasión y Sonrisas
                     </h2>
@@ -202,7 +205,7 @@
                     </div>
                 </div>
                 <!-- Columna de Imagen con Slideshow -->
-                <div class="flex justify-center items-center wow slideInRight">
+                <div class="flex justify-center items-center wow animate__animated animate__slideInRight">
                     <div class="relative w-full max-w-sm">
                         <div class="absolute -top-4 -left-4 w-full h-full border-4 border-[#d4af37] rounded-lg z-0"></div>
                         <div id="historia-slideshow" class="relative rounded-lg shadow-2xl w-full overflow-hidden" style="aspect-ratio: 4/5;">
@@ -223,7 +226,7 @@
         <section id="servicios" class="bg-[#f5f5f5] pt-20 pb-24">
             <div class="container mx-auto px-6">
                 <div class="relative flex justify-center items-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a]">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] wow animate__animated animate__fadeInUp">
                         Un Servicio para Cada Ocasión
                     </h2>
                     <div class="custom-nav absolute right-0 flex gap-2">
@@ -233,28 +236,28 @@
                 </div>
                 
                 <div class="owl-carousel service-carousel">
-                    <div class="service-item">
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.1s">
                         <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/buffet-dulce-festivo.jpg" alt="Servicio de Coffee Break"></div>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Coffee Break</h3>
                             <p class="text-gray-600">Ideal para reuniones o capacitaciones, una pausa para recargar energías.</p>
                         </div>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
                         <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/emparedado.jpg" alt="Servicio de Box Lunch"></div>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Box Lunch</h3>
                             <p class="text-gray-600">Una solución práctica, higiénica y personalizada para tus equipos.</p>
                         </div>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.3s">
                         <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/image-buffet.jpg" alt="Servicio de Almuerzo Ejecutivo"></div>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Almuerzo Ejecutivo</h3>
                             <p class="text-gray-600">Menús diferentes y creativos, incluyendo opciones de finger food para reuniones de nivel.</p>
                         </div>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
                         <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Cóctel Empresarial"></div>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Cóctel Empresarial</h3>
@@ -309,10 +312,10 @@
         <!-- ============================================ -->
         <section id="clientes" class="py-20 bg-[#f5f5f5] overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-4 wow animate__animated animate__fadeInUp">
                     Quienes Confían en Nosotros
                 </h2>
-                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
                     Estamos orgullosos de haber colaborado con una variedad de empresas, eventos y organizaciones líderes en sus sectores.
                 </p>
             </div>
@@ -358,7 +361,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-12">
+            <div class="text-center mt-12 wow animate__animated animate__fadeInUp">
                 <a href="#precio" class="inline-block bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
                     Lleva nuestro sabor a tu evento <span class="ml-2" style="text-shadow: 0 0 3px rgba(0,0,0,0.5);">✨</span>
                 </a>
@@ -370,25 +373,25 @@
         <!-- ============================================ -->
         <section id="paquetes" class="bg-white py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">
                     Paquetes Populares
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <!-- Paquete 1 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col">
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
                         <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Coffee Break "Esencial"</h3>
                         <p class="text-gray-600 mb-4">Café, té, jugos, bocadillos dulces y salados. Ideal para reuniones cortas.</p>
                         <button onclick="enviarWhatsApp('Paquete Coffee Break Esencial')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
                     </div>
                     <!-- Paquete 2 -->
-                    <div class="bg-white rounded-lg border-4 border-[#d4af37] shadow-xl p-6 flex flex-col relative">
+                    <div class="bg-white rounded-lg border-4 border-[#d4af37] shadow-xl p-6 flex flex-col relative wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
                         <span class="absolute top-0 -translate-y-1/2 bg-[#d4af37] text-[#1a1a1a] px-3 py-1 text-sm font-bold rounded-full">MÁS POPULAR</span>
                         <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Almuerzo "Ejecutivo"</h3>
                         <p class="text-gray-600 mb-4">Box lunch gourmet con plato fuerte, acompañante, bebida y postre. Práctico y delicioso.</p>
                         <button onclick="enviarWhatsApp('Paquete Almuerzo Ejecutivo')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
                     </div>
                     <!-- Paquete 3 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col">
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                         <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Cóctel "Premium"</h3>
                         <p class="text-gray-600 mb-4">Selección de canapés fríos y calientes, mini postres y servicio de bebidas. Para eventos de alto nivel.</p>
                         <button onclick="enviarWhatsApp('Paquete Cóctel Premium')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
@@ -402,27 +405,27 @@
         <!-- ============================================ -->
         <section id="faq" class="bg-[#f5f5f5] py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">
                     Resolvemos tus Dudas
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Pregunta 1 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6">
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
                         <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Con cuánta anticipación debo solicitar una cotización?</h3>
                         <p class="text-gray-600">Recomendamos contactarnos con al menos 72 horas de anticipación para eventos pequeños y 2 semanas para eventos de mayor envergadura. Esto nos permite garantizar la disponibilidad y la frescura de todos los ingredientes.</p>
                     </div>
                     <!-- Pregunta 2 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6">
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                         <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Ofrecen opciones para personas con restricciones alimentarias?</h3>
                         <p class="text-gray-600">¡Por supuesto! Nos especializamos en adaptar nuestros menús. Ofrecemos opciones vegetarianas, veganas, sin gluten y sin lactosa. Solo necesitas indicarlo al momento de cotizar para crear la propuesta perfecta.</p>
                     </div>
                     <!-- Pregunta 3 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6">
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                         <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿El servicio incluye personal y menaje?</h3>
                         <p class="text-gray-600">Depende del servicio contratado. Los Box Lunch son de entrega, mientras que los Coffee Breaks, Almuerzos y Cócteles pueden incluir personal de servicio, vajilla y todo lo necesario. Lo detallaremos en tu cotización personalizada.</p>
                     </div>
                     <!-- Pregunta 4 -->
-                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6">
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
                         <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Cuál es su área de cobertura?</h3>
                         <p class="text-gray-600">Actualmente prestamos servicio en [Tu Ciudad/Área de Cobertura]. Para eventos fuera de esta zona, por favor contáctanos para evaluar la viabilidad y posibles costos de traslado.</p>
                     </div>
@@ -437,7 +440,7 @@
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <!-- Columna Izquierda: Texto de Venta -->
-                    <div class="text-center lg:text-left">
+                    <div class="text-center lg:text-left wow animate__animated animate__fadeInLeft">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para Impresionar a tus Invitados?</h2>
                         <p class="text-gray-300 text-lg">
                             Cada evento es único. Permítenos diseñar una propuesta gastronómica a la medida de tus necesidades y presupuesto. Nos encargamos de cada detalle para que tú solo te preocupes de disfrutar.
@@ -445,7 +448,7 @@
                     </div>
                     
                     <!-- Columna Derecha: Card de Cotización -->
-                    <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37]">
+                    <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37] wow animate__animated animate__fadeInRight">
                         <h3 class="text-2xl font-bold mb-4">Tu Evento Incluye:</h3>
                         <ul class="space-y-4 mb-8">
                             <li class="flex items-center">
@@ -472,7 +475,7 @@
 
     <div class="leading-none">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-[100px]">
-            <path d="M0,100 C480,0 960,0 1440,100 Z" fill="#1a1a1a"></path>
+            <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#2c2c2c"></path>
         </svg>
     </div>
 
@@ -496,6 +499,8 @@
                         </a>
                         <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook">
                             <i class="fab fa-facebook-f text-xl"></i>
+                        <a href="https://share.google/ALubfV0RatgmZ2PT7" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Perfil de Google Business">
+                            <i class="fab fa-google text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -546,7 +551,7 @@
         <!-- Sub-Footer -->
         <div class="bg-black/50 mt-8 py-4">
             <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
-                &copy; 2025 Chiswi Pasteleria. Todos los derechos reservados.
+                &copy; 2025 Chiswi Catering. Todos los derechos reservados.
             </div>
         </div>
     </footer>
@@ -588,6 +593,10 @@
 
     <!-- Preline UI Script -->
     <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js"></script>
+
+    <!-- WOW.js for Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>new WOW().init();</script>
 
     <!-- Ticker Script -->
     <script src="js/ticker.js"></script>
