@@ -1,0 +1,27 @@
+.hero-section .hero-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    will-change: transform; /* Performance hint */
+}
+
+/* Make sure the existing background images are inside this container */
+.hero-section .hero-bg-container .hero-bg-image {
+    position: absolute; /* They are already absolute, which is good */
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Move the overlay and content above the new bg container */
+.hero-section .absolute.inset-0.bg-\[\#1a1a1a\]\/70 {
+    z-index: 1;
+}
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}

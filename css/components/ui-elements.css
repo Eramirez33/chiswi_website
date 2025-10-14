@@ -1,0 +1,56 @@
+/* ============================================ */
+/* BANNER DE CAMPAÑA                            */
+/* ============================================ */
+#campaign-banner {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#campaign-banner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Clase de utilidad para ocultar elementos de forma segura y definitiva */
+.is-hidden {
+    display: none !important;
+}
+
+/* ============================================ */
+/* BOTÓN VOLVER ARRIBA                          */
+/* ============================================ */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem; /* 32px */
+    right: 2rem; /* 32px */
+    z-index: 50;
+    background-color: #d4af37; /* Color dorado principal */
+    color: #1a1a1a; /* Color de texto oscuro */
+    width: 3.5rem; /* 56px */
+    height: 3.5rem; /* 56px */
+    border-radius: 9999px; /* fully-rounded */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+#back-to-top:hover {
+    background-color: #c8a22a; /* Un dorado un poco más oscuro al pasar el mouse */
+    transform: scale(1.1);
+}
+
+#back-to-top i {
+    font-size: 1.25rem; /* 20px */
+}
