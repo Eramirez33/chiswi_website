@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css/components/elastic-nav.css">
     <link rel="stylesheet" href="css/components/glass-nav-bar.css">
     <link rel="stylesheet" href="css/components/ticker.css">
-    <link rel="stylesheet" href="css/components/historia.css">
+    <link rel="stylesheet" href="css/components/historia.css?v=1.1">
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
 
     <!-- Google Fonts para la sección Historia -->
@@ -159,7 +159,7 @@
         <!-- Fondo negro para el Topbar -->
         <div class="absolute top-0 left-0 right-0 h-20 bg-[#1a1a1a] hidden md:block z-30"></div>
         <!-- Contenedor del carrusel de imágenes de fondo -->
-        <div id="hero-bg-container" class="absolute inset-0 w-full h-full z-0">
+        <div id="hero-bg-container" class="absolute inset-0 w-full h-full z-0 parallax-element" data-parallax-speed="0.3">
             <div class="hero-bg-image" style="background-image: url('img/image-buffet.jpg'); animation-delay: 0s;"></div>
             <div class="hero-bg-image" style="background-image: url('img/emparedado.jpg'); animation-delay: 5s;"></div>
             <div class="hero-bg-image" style="background-image: url('img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg'); animation-delay: 10s;"></div>
@@ -219,14 +219,13 @@
                         <p class="text-2xl font-semibold text-[#1a1a1a] -mt-8" style="font-family: 'Dancing Script', cursive;">Chiswi Catering</p>
                     </div>
                 </div>
-                <!-- Columna de Imagen con Slideshow -->
+                <!-- Columna de Imagen Corregida -->
                 <div class="flex justify-center items-center wow animate__animated animate__slideInRight">
-                    <div class="relative w-full max-w-sm">
-                        <div class="absolute -top-4 -left-4 w-full h-full border-4 border-[#d4af37] rounded-lg z-0"></div>
-                        <div id="historia-slideshow" class="relative rounded-lg shadow-2xl w-full overflow-hidden" style="aspect-ratio: 4/5;">
-                            <img src="img/buffet-dulce-festivo.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full object-cover historia-slide active">
-                            <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full object-cover historia-slide">
-                            <img src="img/emparedado.jpg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full object-cover historia-slide">
+                    <div class="image-frame-container relative w-full max-w-sm p-2 border-4 border-[#d4af37] rounded-lg bg-white">
+                        <div id="historia-slideshow" class="relative w-full overflow-hidden rounded" style="aspect-ratio: 4/5;">
+                            <img src="img/corp_1.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide active">
+                            <img src="img/corp_2.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide">
+                            <img src="img/corp_3.jpeg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide">
                         </div>
                     </div>
                 </div>
