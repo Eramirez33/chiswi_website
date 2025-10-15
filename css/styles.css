@@ -192,7 +192,7 @@ header {
 #campaign-banner {
     background-color: #d4af37; /* Fondo dorado */
     color: #1a1a1a; /* Letras negras */
-    padding: 0.75rem 0;
+    padding: 0.25rem 0;
     width: 100%;
     overflow: hidden;
     position: fixed; /* Posición fija para que flote sobre el contenido */
