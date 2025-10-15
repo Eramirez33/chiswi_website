@@ -159,7 +159,7 @@
         <!-- Fondo negro para el Topbar -->
         <div class="absolute top-0 left-0 right-0 h-20 bg-[#1a1a1a] hidden md:block z-30"></div>
         <!-- Contenedor del carrusel de imágenes de fondo -->
-        <div class="absolute inset-0 w-full h-full z-0">
+        <div id="hero-bg-container" class="absolute inset-0 w-full h-full z-0">
             <div class="hero-bg-image" style="background-image: url('img/image-buffet.jpg'); animation-delay: 0s;"></div>
             <div class="hero-bg-image" style="background-image: url('img/emparedado.jpg'); animation-delay: 5s;"></div>
             <div class="hero-bg-image" style="background-image: url('img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg'); animation-delay: 10s;"></div>
@@ -761,6 +761,7 @@
     
     <script src="js/scroll-to-top.js"></script>
     <script src="js/ui-helpers.js"></script>
+    <script src="js/parallax.js" defer></script>
 </body>
 </html>      <feComposite operator="arithmetic" k1="0" k2="1" k3="2" k4="0" in="softNoise" result="mergedMap" />
                 <feDisplacementMap in="SourceGraphic" in2="mergedMap" scale="-42" xChannelSelector="G" yChannelSelector="G" />
