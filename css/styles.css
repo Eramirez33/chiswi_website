@@ -254,6 +254,15 @@ header {
     opacity: 1;
 }
 
+@keyframes glow-animation {
+  0%, 100% { text-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
+  50% { text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+}
+
+#campaign-banner a {
+  animation: glow-animation 2.5s infinite;
+}
+
 /* ============================================ */
 /* MARQUEE ANIMATION FOR CAMPAIGN BANNER      */
 /* ============================================ */

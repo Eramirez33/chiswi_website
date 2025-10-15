@@ -7,7 +7,7 @@ const config = {
 // Configuración para el banner de campaña
 const campaignConfig = {
     enabled: true,
-    text: "🎉 <strong>¡Celebra sin estrés en estas fiestas!</strong> Ya estamos agendando tu catering para Navidad y Fin de Año.",
+        text: "🎁 <strong>¡Celebra sin estrés en estas fiestas!</strong> Ya estamos agendando tu catering para Navidad y Fin de Año.",
     ctaText: "Asegura tu fecha aquí",
     ctaSubject: "Campaña Fiestas"
 };
