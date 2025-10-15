@@ -47,9 +47,24 @@
 <body class="bg-white">
 
     <!-- ============================================ -->
+    <!-- CAMPAIGN BANNER -->
+    <!-- ============================================ -->
+    <div id="campaign-banner" class="is-hidden">
+        <div class="campaign-banner-content container mx-auto px-6">
+            <div class="campaign-marquee-wrapper">
+                <div class="animate-marquee">
+                    <div class="campaign-text-container"></div>
+                    <div class="campaign-text-container"></div> <!-- Contenedor duplicado para loop -->
+                </div>
+            </div>
+            <button id="close-campaign-banner" aria-label="Cerrar banner">&times;</button>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
     <!-- TOPBAR FLOTANTE (SOLO INFO) -->
     <!-- ============================================ -->
-    <div class="fixed top-0 left-0 right-0 z-50 h-20 bg-transparent text-white hidden md:block">
+    <div id="top-info-bar" class="fixed top-0 left-0 right-0 z-50 h-15 bg-transparent text-white hidden md:block">
         <div class="container mx-auto px-6 h-full flex justify-between items-start pt-2 text-sm">
             <div class="flex gap-6">
                 <span><i class="fa fa-phone-alt mr-2"></i>+598 97 680 439</span>
@@ -66,7 +81,7 @@
     <!-- ============================================ -->
     <!-- HEADER ELASTIC NAV -->
     <!-- ============================================ -->
-    <header class="fixed top-0 left-0 right-0 z-40 pt-4 md:pt-8 w-full">
+    <header class="fixed top-0 left-0 right-0 z-40 w-full">
         <div class="container mx-auto px-6">
             <div class="relative h-20 flex items-center">
                 <div class="relative flex items-center justify-between h-20 glass-nav-bar w-full px-4">
@@ -736,5 +751,30 @@
             </filter>
         </defs>
     </svg>
+
+    <!-- ============================================ -->
+    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- ============================================ -->
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/ui-helpers.js"></script>
 </body>
-</html>
+</html>      <feComposite operator="arithmetic" k1="0" k2="1" k3="2" k4="0" in="softNoise" result="mergedMap" />
+                <feDisplacementMap in="SourceGraphic" in2="mergedMap" scale="-42" xChannelSelector="G" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- ============================================ -->
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+            <script src="js/scroll-to-top.js"></script>
+            <script src="ui-helpers.js"></script>
+        </body></html>/body></html>
