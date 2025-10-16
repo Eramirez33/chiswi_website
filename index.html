@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chiswi Catering - Catering para Eventos Corporativos</title>
+    <title>Chiswi Catering - Sabor y Elegancia para Todo Evento</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -169,7 +169,7 @@
                     Eleva tu Evento con Sabor y Elegancia ✨
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-                    Especialistas en soluciones gastronómicas para eventos corporativos. Elevamos cada reunión con servicio de excelencia y una presentación impecable.
+                    Creamos experiencias gastronómicas inolvidables para todo tipo de eventos. Desde reuniones familiares hasta grandes celebraciones corporativas, llevamos sabor y elegancia a tu mesa.
                 </p>
                 <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg animate-fade-in-up animation-delay-400">
                     Cotiza tu Evento
@@ -329,7 +329,7 @@
                     Quienes Confían en Nosotros
                 </h2>
                 <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-                    Estamos orgullosos de haber colaborado con una variedad de empresas, eventos y organizaciones líderes en sus sectores.
+                    El sabor de Chiswi ha llegado a familias, eventos y empresas de primer nivel. Estamos orgullosos de la confianza que cada cliente deposita en nosotros.
                 </p>
             </div>
             <div class="ticker-container">
@@ -382,9 +382,24 @@
         </section>
 
         <!-- ============================================ -->
+        <!-- CONECTANDO CORAZONES (INTERNATIONAL ORDERS) -->
+        <!-- ============================================ -->
+        <section id="internacional" class="bg-white py-20">
+            <div class="container mx-auto px-6 text-center wow animate__animated animate__fadeInUp">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">Conectando Corazones a la Distancia ❤️</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    ¿Vives en el extranjero y quieres sorprender a alguien en Uruguay? Gestionamos tu pedido desde cualquier parte del mundo. Ya hemos enviado sonrisas desde México y España. ¡La distancia no es un impedimento para un detalle delicioso!
+                </p>
+                <button onclick="enviarWhatsApp('Pedido Internacional')" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
+                    Sorprende desde el Extranjero
+                </button>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
         <!-- PAQUETES SUGERIDOS -->
         <!-- ============================================ -->
-        <section id="paquetes" class="bg-white py-20">
+        <section id="paquetes" class="bg-[#f5f5f5] py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">
                     Paquetes Populares
@@ -440,7 +455,12 @@
                     <!-- Pregunta 4 -->
                     <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
                         <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Cuál es su área de cobertura?</h3>
-                        <p class="text-gray-600">Actualmente prestamos servicio en [Tu Ciudad/Área de Cobertura]. Para eventos fuera de esta zona, por favor contáctanos para evaluar la viabilidad y posibles costos de traslado.</p>
+                        <p class="text-gray-600">Actualmente prestamos servicio en Montevideo y sus alrededores. Para eventos fuera de esta zona, por favor contáctanos para evaluar la viabilidad y posibles costos de traslado.</p>
+                    </div>
+                    <!-- Pregunta 5 (Nueva) -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+                        <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Puedo hacer un pedido desde el extranjero para alguien en Uruguay?</h3>
+                        <p class="text-gray-600">¡Claro que sí! Nos encanta ser parte de sorpresas a la distancia. Gestionamos tu pedido desde cualquier parte del mundo y lo entregamos con una presentación especial. Contáctanos y coordinamos el detalle perfecto.</p>
                     </div>
                 </div>
             </div>
@@ -504,7 +524,7 @@
                         <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
                     </a>
                     <p class="text-sm text-gray-400 mb-6 max-w-xs">
-                        Elevando cada evento con servicio de excelencia y una presentación impecable.
+                        Sabor y elegancia para tus celebraciones familiares, eventos sociales y reuniones corporativas.
                     </p>
                     <div class="flex gap-5">
                         <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram">
@@ -586,6 +606,8 @@
                 mensajeBase = `Hola, me gustaría recibir más información sobre el ${asunto}.`;
             } else if (asunto === 'cotización general') {
                 mensajeBase = 'Hola, me gustaría solicitar una cotización para un evento.';
+            } else if (asunto === 'Pedido Internacional') {
+                mensajeBase = 'Hola, ¡qué buena noticia que reciben pedidos desde el extranjero! Me gustaría hacer un regalo para alguien en Uruguay.';
             }
 
             const mensaje = encodeURIComponent(mensajeBase);
@@ -760,18 +782,4 @@
     <script src="js/ui-helpers.js"></script>
     <script src="js/parallax.js" defer></script>
 </body>
-</html>      <feComposite operator="arithmetic" k1="0" k2="1" k3="2" k4="0" in="softNoise" result="mergedMap" />
-                <feDisplacementMap in="SourceGraphic" in2="mergedMap" scale="-42" xChannelSelector="G" yChannelSelector="G" />
-            </filter>
-        </defs>
-    </svg>
-
-    <!-- ============================================ -->
-    <!-- BOTÓN SCROLL TO TOP -->
-    <!-- ============================================ -->
-    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-    
-            <script src="js/scroll-to-top.js"></script>
-            <script src="ui-helpers.js"></script>
+</html>
