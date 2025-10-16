@@ -289,22 +289,37 @@ header {
     flex-shrink: 0; /* Evita que el contenedor se encoja */
 }
 
+.campaign-text-container.is-desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .campaign-text-container.is-desktop {
+        display: block;
+    }
+}
+
 @media (max-width: 767px) {
     .campaign-text-container {
         font-size: 0.7rem;
     }
 
     .animate-marquee {
-        width: 100%;
-        animation: none;
+        width: 200%; /* Set to 200% to allow space for the single item to loop */
+        animation: marquee-mobile 15s linear infinite; /* Re-enable animation */
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .animate-marquee > .campaign-text-container {
-        width: auto;
-        white-space: normal;
-        text-align: center;
+        width: 100%; /* The single visible item takes up half the container width */
+        white-space: nowrap; /* Keep text in a single line to scroll */
+        text-align: left;
         padding: 0 1rem;
     }
+}
+
+@keyframes marquee-mobile {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
