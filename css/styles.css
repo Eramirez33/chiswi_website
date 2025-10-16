@@ -24,8 +24,13 @@ html {
 /* Transición suave para elementos fijos */
 #top-info-bar,
 header {
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out;
 }
+
+#top-info-bar.scrolled {
+    background-color: #1a1a1a;
+}
+
 
 /* CTA Pulse Animation */
 .cta-pulse {

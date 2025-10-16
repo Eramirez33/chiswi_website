@@ -75,4 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Lógica para el Top Info Bar ---
+    window.addEventListener('scroll', () => {
+        const topInfoBar = document.getElementById('top-info-bar');
+        if (topInfoBar) {
+            if (window.scrollY > 50) {
+                topInfoBar.classList.add('scrolled');
+            } else {
+                topInfoBar.classList.remove('scrolled');
+            }
+        }
+    });
+
 });
