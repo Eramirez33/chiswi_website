@@ -1,12 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const parallaxBg = document.querySelector('.hero-section .hero-bg-container');
+    const parallaxElements = document.querySelectorAll('.parallax-element');
 
-    if (parallaxBg) {
+    if (parallaxElements.length > 0) {
+        let ticking = false;
+
+        const applyParallax = () => {
+            const scrollY = window.scrollY;
+
+            parallaxElements.forEach(element => {
+                const speed = parseFloat(element.dataset.parallaxSpeed || 0.5);
+                element.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+
+            ticking = false;
+        };
+
         window.addEventListener('scroll', () => {
-            const scrollY = window.pageYOffset;
-            // Apply a vertical transform at 50% of the scroll speed
-            // This makes the background move slower, creating the parallax effect.
-            parallaxBg.style.transform = `translateY(${scrollY * 0.5}px)`;
+            if (!ticking) {
+                window.requestAnimationFrame(applyParallax);
+                ticking = true;
+            }
         });
     }
 });

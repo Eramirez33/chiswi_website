@@ -1,4 +1,780 @@
-                <div class="marquee-content animate-marquee">
-                    <span class="mx-4 campaign-text-container"></span>
-                    <span class="mx-4 campaign-text-container"></span>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiswi Catering - Catering para Eventos Corporativos</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Animate.css for WOW.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <script>
+        // Configuración para que Tailwind y Preline UI funcionen bien juntos
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
+    <!-- Enlace a la hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components/elastic-nav.css">
+    <link rel="stylesheet" href="css/components/glass-nav-bar.css">
+    <link rel="stylesheet" href="css/components/ticker.css">
+    <link rel="stylesheet" href="css/components/historia.css?v=1.1">
+    <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
+
+    <!-- Google Fonts para la sección Historia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="bg-white">
+
+    <!-- ============================================ -->
+    <!-- CAMPAIGN BANNER -->
+    <!-- ============================================ -->
+    <div id="campaign-banner" class="is-hidden">
+        <div class="campaign-banner-content container mx-auto px-6">
+            <div class="campaign-marquee-wrapper">
+                <div class="animate-marquee">
+                    <div class="campaign-text-container"></div>
+                    <div class="campaign-text-container"></div> <!-- Contenedor duplicado para loop -->
                 </div>
+            </div>
+            <button id="close-campaign-banner" aria-label="Cerrar banner">&times;</button>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOPBAR FLOTANTE (SOLO INFO) -->
+    <!-- ============================================ -->
+    <div id="top-info-bar" class="fixed top-0 left-0 right-0 z-50 h-15 bg-transparent text-white hidden md:block">
+        <div class="container mx-auto px-6 h-full flex justify-between items-start pt-2 text-sm">
+            <div class="flex gap-6">
+                <span><i class="fa fa-phone-alt mr-2"></i>+598 97 680 439</span>
+                <span><i class="fa fa-envelope mr-2"></i>info@chiswi.com</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://share.google/ALubfV0RatgmZ2PT7" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Perfil de Google"><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- HEADER ELASTIC NAV -->
+    <!-- ============================================ -->
+    <header class="fixed top-0 left-0 right-0 z-40 w-full">
+        <div class="container mx-auto px-6">
+            <div class="relative h-20 flex items-center">
+                <div class="relative flex items-center justify-between h-20 glass-nav-bar w-full px-4">
+                    <!-- Lado Izquierdo: Enlaces -->
+                    <div class="hidden md:flex items-center justify-start flex-1">
+                        <nav class="elastic-nav">
+                            <ul>
+                                <li><a href="#servicios">Catálogo</a></li>
+                                <li><a href="#historia">Nuestra Historia</a></li>
+                                <li><a href="#proceso">Nuestro Proceso</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Logo (Centrado) -->
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <a class="flex-none" href="#" aria-label="Chiswi Catering">
+                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                        </a>
+                    </div>
+                    
+                    <!-- Lado Derecho: Enlaces y CTA -->
+                    <div class="flex items-center justify-end flex-1">
+                        <nav class="elastic-nav hidden md:flex">
+                            <ul>
+                                <li><a href="#paquetes">Paquetes</a></li>
+                                <li><a href="#faq">Preguntas</a></li>
+                            </ul>
+                        </nav>
+                        <div class="ml-6">
+                            <a href="#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full text-sm shadow-lg px-6 py-4 hover:bg-yellow-500 transition duration-300">
+                                <span>Cotiza tu Evento</span>
+                            </a>
+                        </div>
+                        <!-- Botón de Menú Móvil -->
+                        <div class="md:hidden ml-4">
+                            <button type="button" id="mobile-menu-button" class="flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100">
+                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PANEL DE MENÚ MÓVIL -->
+    <!-- ============================================ -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
+        <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-1/2 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
+            <!-- Botón de Cierre -->
+            <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <!-- Enlaces de Navegación -->
+            <nav class="mt-12">
+                <ul class="space-y-6">
+                    <li><a href="#servicios" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Catálogo</a></li>
+                    <li><a href="#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestro Proceso</a></li>
+                    <li><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestra Historia</a></li>
+                    <li><a href="#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Paquetes</a></li>
+                    <li><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Preguntas</a></li>
+                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300">Cotiza tu Evento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION (ahora contiene al Topbar) -->
+    <!-- ============================================ -->
+    <section class="relative text-white overflow-hidden min-h-screen flex items-center">
+        <!-- Fondo negro para el Topbar -->
+        <div class="absolute top-0 left-0 right-0 h-20 bg-[#1a1a1a] hidden md:block z-30"></div>
+        <!-- Contenedor del carrusel de imágenes de fondo -->
+        <div id="hero-bg-container" class="absolute inset-0 w-full h-full z-0 parallax-element" data-parallax-speed="0.3">
+            <div class="hero-bg-image" style="background-image: url('img/image-buffet.jpg'); animation-delay: 0s;"></div>
+            <div class="hero-bg-image" style="background-image: url('img/emparedado.jpg'); animation-delay: 5s;"></div>
+            <div class="hero-bg-image" style="background-image: url('img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg'); animation-delay: 10s;"></div>
+        </div>
+        <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
+        <div class="container mx-auto px-6 text-center relative z-20 w-full">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-up">
+                    Eleva tu Evento con Sabor y Elegancia ✨
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+                    Especialistas en soluciones gastronómicas para eventos corporativos. Elevamos cada reunión con servicio de excelencia y una presentación impecable.
+                </p>
+                <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg animate-fade-in-up animation-delay-400">
+                    Cotiza tu Evento
+                </a>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- NUESTRA HISTORIA -->
+    <!-- ============================================ -->
+    <section id="historia" class="py-20 bg-canvas border-b-2 border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <!-- Columna de Texto -->
+                <div class="text-left wow animate__animated animate__slideInLeft">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4" style="font-family: 'Playfair Display', serif;">
+                        Nuestra Historia: Un Viaje de Pasión y Sonrisas
+                    </h2>
+                    <h3 class="text-xl text-[#d4af37] mb-6" style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+                        De un sueño familiar a la mesa de tu evento.
+                    </h3>
+                    <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
+                        Somos una familia de inmigrantes con un profundo amor por la cocina, la gastronomía y el placer de servir. Todo comenzó en 2018, no en una gran planta de producción, sino en la calidez de nuestro hogar. Allí, entre el aroma de recetas que unen generaciones, nació Chiswi como un sueño: el de convertir nuestra pasión en sonrisas y momentos inolvidables.
+                    </p>
+                    <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
+                        Con dedicación y amor por el detalle, ese sueño fue creciendo. Cada cliente se convirtió en parte de nuestra familia, y poco a poco, nuestra reputación por la calidad y el servicio cercano se extendió, permitiéndonos llegar a más hogares y empresas que confiaron en nosotros.
+                    </p>
+                    <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
+                        El 2022 marcó un antes y un después. Tuvimos el honor de ser seleccionados por 
+                        <span class="relative">
+                            <strong class="font-bold text-black-500 cedel-tooltip-trigger">CEDEL Casavalle</strong>,
+                            <span class="cedel-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-white p-4 rounded-lg shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-300">
+                                <strong class="block text-md font-bold text-[#d4af37]">Nuestro Impulso Local</strong>
+                                <span class="block text-sm text-gray-600 mt-1">CEDEL es el Centro de Desarrollo Económico Local de Montevideo, un pilar que a través de su programa 'Vivero de Empresas' y su plan de comercialización, nos brindó herramientas clave para crecer.</span>
+                            </span>
+                        </span>
+                        un pilar fundamental en nuestro desarrollo. Gracias a su plan de "Vivero de Empresas" y comercialización, recibimos el impulso y las herramientas para fortalecer nuestra entrada en el mercado local y llevar nuestro sueño al siguiente nivel.
+                    </p>
+                    <p class="text-gray-600 mb-8" style="font-family: 'Roboto', sans-serif;">
+                        Hoy, con el mismo esfuerzo, dedicación y pasión del primer día, nos hemos convertido en un referente en el rubro. Nuestra esencia sigue intacta: el amor por lo que hacemos y el compromiso de recordar siempre que <strong>Chiswi es una dulce sonrisa</strong>.
+                    </p>
+                    <div class="firma-container text-center md:text-left">
+                        <svg id="signature" class="mx-auto md:mx-0" width="300" height="100" viewBox="0 0 380 150">
+                           <path id="signature-path" d="M20,70 Q40,30 70,70 T120,70 M140,70 C160,30 200,30 220,70 C240,110 280,110 300,70 S340,30 360,70" stroke="#1a1a1a" fill="transparent" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                        <p class="text-2xl font-semibold text-[#1a1a1a] -mt-8" style="font-family: 'Dancing Script', cursive;">Chiswi Catering</p>
+                    </div>
+                </div>
+                <!-- Columna de Imagen Corregida -->
+                <div class="flex justify-center items-center wow animate__animated animate__slideInRight">
+                    <div class="image-frame-container relative w-full max-w-sm p-2 border-4 border-[#d4af37] rounded-lg bg-white">
+                        <div id="historia-slideshow" class="relative w-full overflow-hidden rounded" style="aspect-ratio: 4/5;">
+                            <img src="img/corp_1.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide active">
+                            <img src="img/corp_2.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide">
+                            <img src="img/corp_3.jpeg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- ============================================ -->
+        <!-- NUESTRO CATÁLOGO (SERVICIOS) -->
+        <!-- ============================================ -->
+        <section id="servicios" class="bg-[#f5f5f5] pt-20 pb-24">
+            <div class="container mx-auto px-6">
+                <div class="relative flex justify-center items-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] wow animate__animated animate__fadeInUp">
+                        Un Servicio para Cada Ocasión
+                    </h2>
+                    <div class="custom-nav absolute right-0 flex gap-2">
+                        <button id="custom-prev" class="custom-nav-btn"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                        <button id="custom-next" class="custom-nav-btn"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                
+                <div class="owl-carousel service-carousel">
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.1s">
+                        <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/buffet-dulce-festivo.jpg" alt="Servicio de Coffee Break"></div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Coffee Break</h3>
+                            <p class="text-gray-600">Ideal para reuniones o capacitaciones, una pausa para recargar energías.</p>
+                        </div>
+                    </div>
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+                        <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/emparedado.jpg" alt="Servicio de Box Lunch"></div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Box Lunch</h3>
+                            <p class="text-gray-600">Una solución práctica, higiénica y personalizada para tus equipos.</p>
+                        </div>
+                    </div>
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.3s">
+                        <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/image-buffet.jpg" alt="Servicio de Almuerzo Ejecutivo"></div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Almuerzo Ejecutivo</h3>
+                            <p class="text-gray-600">Menús diferentes y creativos, incluyendo opciones de finger food para reuniones de nivel.</p>
+                        </div>
+                    </div>
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
+                        <div class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Cóctel Empresarial"></div>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Cóctel Empresarial</h3>
+                            <p class="text-gray-600">La mejor opción para celebrar logros, eventos sociales o lanzamientos importantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- NUESTRO PROCESO (SCROLLING) -->
+        <!-- ============================================ Nuestro Proceso Simplificado 🚀-->
+        <section id="proceso" class="bg-black scrolling-process-container">
+            <div class="scrolling-process-section container mx-auto">
+                <h2 class="scrolling-process-title text-white">
+                    De tu idea a un evento inolvidable, sin complicaciones.
+                </h2>
+                <div class="scrolling-process-progress-bar"></div>
+                <ul class="scrolling-process-list" style="--count: 4">
+                    <div class="scrolling-process-glow"></div>
+                    <li style="--i: 0" data-step="1" class="mobile-step">
+                        <i class="fas fa-lightbulb step-icon"></i>
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">Damos vida a tu idea</h3>
+                        <p class="step-description">Conversamos contigo para entender tu visión y te brindamos asesoría experta para transformarla en una experiencia gastronómica única.</p>
+                    </li>
+                    <li style="--i: 1" data-step="2" class="mobile-step">
+                        <i class="fas fa-file-alt step-icon"></i>
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">Sabor a tu medida</h3>
+                        <p class="step-description">Diseñamos un menú exclusivo para ti, cuidando cada detalle para que refleje el estilo de tu evento y se ajuste a tu presupuesto.</p>
+                    </li>
+                    <li style="--i: 2" data-step="3" class="mobile-step">
+                        <i class="fas fa-cogs step-icon"></i>
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">Nos encargamos de todo</h3>
+                        <p class="step-description">Coordinamos la logística de principio a fin. Tú relájate, nosotros nos ocupamos de que cada pieza encaje a la perfección.</p>
+                    </li>
+                    <li style="--i: 3" data-step="4" class="mobile-step">
+                        <i class="fas fa-rocket step-icon"></i>
+                        <span class="step-number">04</span>
+                        <h3 class="step-title">¡A disfrutar!</h3>
+                        <p class="step-description">Solo queda disfrutar. Nuestro equipo llega con puntualidad y una presentación impecable para garantizar que todo salga perfecto y tus invitados queden fascinados.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CLIENTES (QUIENES CONFIAN) -->
+        <!-- ============================================ -->
+        <section id="clientes" class="py-20 bg-[#f5f5f5] overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-4 wow animate__animated animate__fadeInUp">
+                    Quienes Confían en Nosotros
+                </h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                    Estamos orgullosos de haber colaborado con una variedad de empresas, eventos y organizaciones líderes en sus sectores.
+                </p>
+            </div>
+            <div class="ticker-container">
+                <div class="horizontal-ticker">
+                    <!-- Ticker Row 1 (Right to Left) -->
+                    <div id="horizontal-ticker-rtl" class="swiper horizontal-ticker__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA"></div>
+                            <!-- Duplicates for seamless loop -->
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA"></div>
+                        </div>
+                    </div>
+                    <!-- Ticker Row 2 (Left to Right) -->
+                    <div id="horizontal-ticker-ltr" class="swiper horizontal-ticker__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA"></div>
+                            <!-- Duplicates for seamless loop -->
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 wow animate__animated animate__fadeInUp">
+                <a href="#precio" class="inline-block bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
+                    Lleva nuestro sabor a tu evento <span class="ml-2" style="text-shadow: 0 0 3px rgba(0,0,0,0.5);">✨</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PAQUETES SUGERIDOS -->
+        <!-- ============================================ -->
+        <section id="paquetes" class="bg-white py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">
+                    Paquetes Populares
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Paquete 1 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Coffee Break "Esencial"</h3>
+                        <p class="text-gray-600 mb-4">Café, té, jugos, bocadillos dulces y salados. Ideal para reuniones cortas.</p>
+                        <button onclick="enviarWhatsApp('Paquete Coffee Break Esencial')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
+                    </div>
+                    <!-- Paquete 2 -->
+                    <div class="bg-white rounded-lg border-4 border-[#d4af37] shadow-xl p-6 flex flex-col relative wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+                        <span class="absolute top-0 -translate-y-1/2 bg-[#d4af37] text-[#1a1a1a] px-3 py-1 text-sm font-bold rounded-full">MÁS POPULAR</span>
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Almuerzo "Ejecutivo"</h3>
+                        <p class="text-gray-600 mb-4">Box lunch gourmet con plato fuerte, acompañante, bebida y postre. Práctico y delicioso.</p>
+                        <button onclick="enviarWhatsApp('Paquete Almuerzo Ejecutivo')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
+                    </div>
+                    <!-- Paquete 3 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Paquete Cóctel "Premium"</h3>
+                        <p class="text-gray-600 mb-4">Selección de canapés fríos y calientes, mini postres y servicio de bebidas. Para eventos de alto nivel.</p>
+                        <button onclick="enviarWhatsApp('Paquete Cóctel Premium')" class="mt-auto w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300">Más Información</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- PREGUNTAS FRECUENTES (FAQ) -->
+        <!-- ============================================ -->
+        <section id="faq" class="bg-[#f5f5f5] py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">
+                    Resolvemos tus Dudas
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Pregunta 1 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                        <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Con cuánta anticipación debo solicitar una cotización?</h3>
+                        <p class="text-gray-600">Recomendamos contactarnos con al menos 72 horas de anticipación para eventos pequeños y 2 semanas para eventos de mayor envergadura. Esto nos permite garantizar la disponibilidad y la frescura de todos los ingredientes.</p>
+                    </div>
+                    <!-- Pregunta 2 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                        <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Ofrecen opciones para personas con restricciones alimentarias?</h3>
+                        <p class="text-gray-600">¡Por supuesto! Nos especializamos en adaptar nuestros menús. Ofrecemos opciones vegetarianas, veganas, sin gluten y sin lactosa. Solo necesitas indicarlo al momento de cotizar para crear la propuesta perfecta.</p>
+                    </div>
+                    <!-- Pregunta 3 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                        <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿El servicio incluye personal y menaje?</h3>
+                        <p class="text-gray-600">Depende del servicio contratado. Los Box Lunch son de entrega, mientras que los Coffee Breaks, Almuerzos y Cócteles pueden incluir personal de servicio, vajilla y todo lo necesario. Lo detallaremos en tu cotización personalizada.</p>
+                    </div>
+                    <!-- Pregunta 4 -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-lg p-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                        <h3 class="font-bold text-lg text-[#1a1a1a] mb-2">¿Cuál es su área de cobertura?</h3>
+                        <p class="text-gray-600">Actualmente prestamos servicio en [Tu Ciudad/Área de Cobertura]. Para eventos fuera de esta zona, por favor contáctanos para evaluar la viabilidad y posibles costos de traslado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SOLICITA TU COTIZACIÓN (PRECIO) -->
+        <!-- ============================================ -->
+        <section id="precio" class="bg-[#1a1a1a] py-20 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Columna Izquierda: Texto de Venta -->
+                    <div class="text-center lg:text-left wow animate__animated animate__fadeInLeft">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para Impresionar a tus Invitados?</h2>
+                        <p class="text-gray-300 text-lg">
+                            Cada evento es único. Permítenos diseñar una propuesta gastronómica a la medida de tus necesidades y presupuesto. Nos encargamos de cada detalle para que tú solo te preocupes de disfrutar.
+                        </p>
+                    </div>
+                    
+                    <!-- Columna Derecha: Card de Cotización -->
+                    <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37] wow animate__animated animate__fadeInRight">
+                        <h3 class="text-2xl font-bold mb-4">Tu Evento Incluye:</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Ingredientes frescos y de la más alta calidad.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Presentación impecable y profesional.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Puntualidad y logística garantizada.</span>
+                            </li>
+                        </ul>
+                        <button onclick="enviarWhatsApp('cotización general')" class="w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-4 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
+                            Solicitar Cotización por WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="leading-none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-[100px]">
+            <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#2c2c2c"></path>
+        </svg>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer id="contacto" class="bg-[#1a1a1a] text-gray-300">
+        <div class="container mx-auto px-6 pt-16 pb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Columna 1: Logo y Redes Sociales -->
+                <div class="lg:col-span-1">
+                    <a href="#" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
+                        <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                    </a>
+                    <p class="text-sm text-gray-400 mb-6 max-w-xs">
+                        Elevando cada evento con servicio de excelencia y una presentación impecable.
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        <a href="https://share.google/ALubfV0RatgmZ2PT7" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Perfil de Google Business">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Navegación -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Navegación</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Catálogo</a></li>
+                        <li><a href="#historia" class="hover:text-[#d4af37] transition-colors">Nuestra Historia</a></li>
+                        <li><a href="#proceso" class="hover:text-[#d4af37] transition-colors">Nuestro Proceso</a></li>
+                        <li><a href="#paquetes" class="hover:text-[#d4af37] transition-colors">Paquetes</a></li>
+                        <li><a href="#faq" class="hover:text-[#d4af37] transition-colors">Preguntas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Servicios -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Servicios</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Coffee Break</a></li>
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
+                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Contacto -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fa fa-phone-alt mr-3 w-4"></i>
+                            <span>+598 97 680 439</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 w-4"></i>
+                            <span>info@chiswi.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker-alt mr-3 w-4 mt-1"></i>
+                            <span>Montevideo, Uruguay</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Sub-Footer -->
+        <div class="bg-black/50 mt-8 py-4">
+            <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+                &copy; 2025 Chiswi Catering. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================ -->
+    
+    <!-- Script de Configuración -->
+    <script src="js/config.js"></script>
+
+    <script>
+        function enviarWhatsApp(asunto) {            
+            const numeroWhatsApp = config.numeroWhatsApp;
+            
+            let mensajeBase = 'Hola, estoy interesado en sus servicios de catering.';
+
+            if (asunto && asunto.startsWith('Paquete')) {
+                mensajeBase = `Hola, me gustaría recibir más información sobre el ${asunto}.`;
+            } else if (asunto === 'cotización general') {
+                mensajeBase = 'Hola, me gustaría solicitar una cotización para un evento.';
+            }
+
+            const mensaje = encodeURIComponent(mensajeBase);
+            
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+            
+            window.open(url, '_blank');
+        }
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Preline UI Script -->
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js"></script>
+
+    <!-- WOW.js for Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>new WOW().init();</script>
+
+    <!-- Ticker Script -->
+    <script src="js/ticker.js"></script>
+
+    <!-- Inicialización del Carrusel de Servicios -->
+    <script>
+        $(document).ready(function(){
+            var serviceCarousel = $(".service-carousel");
+            serviceCarousel.owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                margin: 30,
+                dots: false,
+                loop: true,
+                nav: false, // Desactivamos la navegación por defecto
+                responsive: {
+                    0:{ items:1 },
+                    576:{ items:2 },
+                    768:{ items:3 },
+                    992:{ items:4 }
+                }
+            });
+
+            // Controladores de eventos para los botones personalizados
+            $('#custom-next').click(function() {
+                serviceCarousel.trigger('next.owl.carousel');
+            })
+            $('#custom-prev').click(function() {
+                serviceCarousel.trigger('prev.owl.carousel');
+            })
+        });
+    </script>
+
+    <script>
+        // Animación para la sección de proceso con scroll estilo carrusel
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.matchMedia("(max-width: 768px)").matches) return;
+
+            const processSection = document.querySelector('#proceso');
+            const stepItems = document.querySelectorAll('.scrolling-process-list li');
+            const listElement = document.querySelector('.scrolling-process-list');
+            const glow = document.querySelector('.scrolling-process-glow');
+            const progressBar = document.querySelector('.scrolling-process-progress-bar');
+            const totalItems = stepItems.length;
+
+            if (!processSection || !stepItems.length || !glow || !progressBar) return;
+
+            // --- Parámetros de la Animación ---
+            const ITEM_SPACING = 1050; // Espacio vertical en píxeles entre cada item
+            const FADE_DISTANCE = 2;
+            const SCALE_DISTANCE = 0.1;
+
+            function updateCarousel() {
+                const sectionRect = processSection.getBoundingClientRect();
+                const scrollableHeight = processSection.scrollHeight - window.innerHeight;
+                const progress = -sectionRect.top / scrollableHeight;
+                const clampedProgress = Math.max(0, Math.min(1, progress));
+
+                let activeIndex = 0;
+                let minDistance = Infinity;
+
+                // 1. Actualizar la barra de progreso
+                progressBar.style.setProperty('--scroll-progress', clampedProgress);
+
+                stepItems.forEach((item, index) => {
+                    const itemProgress = index / (totalItems - 1);
+                    const distance = itemProgress - clampedProgress;
+
+                    if (Math.abs(distance) < minDistance) {
+                        minDistance = Math.abs(distance);
+                        activeIndex = index;
+                    }
+
+                    const baseTranslateY = (listElement.clientHeight / 2) - (item.clientHeight / 2);
+                    const itemTranslateY = baseTranslateY + (distance * ITEM_SPACING);
+                    const scale = Math.max(0.8, 1 - Math.abs(distance * SCALE_DISTANCE));
+                    const opacity = Math.max(0, 1 - Math.abs(distance * FADE_DISTANCE));
+
+                    item.style.transform = `translateY(${itemTranslateY}px) scale(${scale})`;
+                    item.style.opacity = opacity;
+                });
+
+                // 2. Activar el item correcto y desactivar los demás
+                stepItems.forEach((item, index) => {
+                    if (index === activeIndex) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+
+                const activeItem = stepItems[activeIndex];
+                const itemProgress = activeIndex / (totalItems - 1);
+                const distance = itemProgress - clampedProgress;
+
+                const baseTranslateY = (listElement.clientHeight / 2) - (glow.clientHeight / 2);
+                const glowTranslateY = baseTranslateY + (distance * ITEM_SPACING);
+                const glowOpacity = Math.max(0, 0.4 - (minDistance * 1.5));
+                const activeColor = getComputedStyle(activeItem).color;
+
+                glow.style.transform = `translate(-50%, ${glowTranslateY}px) scale(0.8)`;
+                glow.style.backgroundColor = activeColor;
+                glow.style.opacity = glowOpacity;
+            }
+
+            updateCarousel();
+
+            setTimeout(() => {
+                stepItems.forEach(item => {
+                    item.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+                });
+                glow.style.transition = 'transform 0.6s ease-out, background-color 0.6s ease-out, opacity 0.6s ease-out';
+            }, 50);
+
+            window.addEventListener('scroll', () => {
+                const rect = processSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    window.requestAnimationFrame(updateCarousel);
+                }
+            });
+        });
+    </script>
+    
+    <script src="js/elastic-nav.js"></script>
+    <script src="js/ticker.js"></script>
+    <script src="js/historia.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/process-mobile-animation.js"></script>
+
+    <svg style="display: none">
+        <defs>
+            <filter id="wave-distort" x="0%" y="0%" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.0038 0.0038" numOctaves="1" seed="2" result="roughNoise" />
+                <feGaussianBlur in="roughNoise" stdDeviation="8.5" result="softNoise" />
+                <feComposite operator="arithmetic" k1="0" k2="1" k3="2" k4="0" in="softNoise" result="mergedMap" />
+                <feDisplacementMap in="SourceGraphic" in2="mergedMap" scale="-42" xChannelSelector="G" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- ============================================ -->
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script src="js/scroll-to-top.js"></script>
+    <script src="js/ui-helpers.js"></script>
+    <script src="js/parallax.js" defer></script>
+</body>
+</html>      <feComposite operator="arithmetic" k1="0" k2="1" k3="2" k4="0" in="softNoise" result="mergedMap" />
+                <feDisplacementMap in="SourceGraphic" in2="mergedMap" scale="-42" xChannelSelector="G" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- ============================================ -->
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+            <script src="js/scroll-to-top.js"></script>
+            <script src="ui-helpers.js"></script>
+        </body></html>/body></html>

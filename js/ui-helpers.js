@@ -3,38 +3,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Lógica para el Banner de Campaña ---
     const campaignBanner = document.getElementById('campaign-banner');
     const closeCampaignBannerBtn = document.getElementById('close-campaign-banner');
+    const topInfoBar = document.getElementById('top-info-bar');
+    const header = document.querySelector('header');
 
-    if (typeof campaignConfig !== 'undefined' && campaignConfig.enabled) {
-        // Construir el contenido del banner desde el objeto de configuración
-        const campaignContent = `${campaignConfig.text} <a href="#" onclick="enviarWhatsApp('${campaignConfig.ctaSubject}'); return false;" class="underline hover:text-black">${campaignConfig.ctaText}</a>`;
+    const adjustLayout = () => {
+        const topBarHeight = (topInfoBar && window.getComputedStyle(topInfoBar).display !== 'none') ? topInfoBar.offsetHeight : 0;
+        let totalOffset = topBarHeight;
+
+        if (campaignBanner && !campaignBanner.classList.contains('is-hidden')) {
+            // Si el banner está visible, lo posicionamos debajo del top-bar
+            campaignBanner.style.top = `${topBarHeight}px`;
+            const bannerHeight = campaignBanner.offsetHeight;
+            totalOffset += bannerHeight;
+        }
         
-        // Poblar todos los contenedores de texto de la marquesina
-        const textContainers = document.querySelectorAll('.campaign-text-container');
-        textContainers.forEach(container => {
+        // Ajustamos el header principal para que se ubique debajo de todo
+        if (header) {
+            header.style.transform = `translateY(${totalOffset}px)`;
+        }
+    };
+
+    if (typeof campaignConfig !== 'undefined' && campaignConfig.enabled && campaignBanner) {
+        // 1. Poblar el contenido del banner
+        const campaignContent = `${campaignConfig.text} <a href="#" onclick="enviarWhatsApp('${campaignConfig.ctaSubject}'); return false;" class="underline hover:text-black">${campaignConfig.ctaText}</a>`;
+        document.querySelectorAll('.campaign-text-container').forEach(container => {
             container.innerHTML = campaignContent;
         });
 
-        // Lógica para mostrar/ocultar basado en la sesión
-        if (campaignBanner && closeCampaignBannerBtn) {
-            if (sessionStorage.getItem('campaignBannerClosed') === 'true') {
-                campaignBanner.classList.add('is-hidden');
-            } else {
-                campaignBanner.classList.remove('is-hidden');
-            }
+        // 2. Decidir si mostrar u ocultar el banner basado en la sesión
+        if (sessionStorage.getItem('campaignBannerClosed') === 'true') {
+            campaignBanner.classList.add('is-hidden');
+        } else {
+            campaignBanner.classList.remove('is-hidden');
+        }
 
-            // Acción del botón de cierre
+        // 3. Ajustar el layout inicial
+        setTimeout(adjustLayout, 100); // Un timeout para asegurar que las alturas se calculen correctamente
+
+        // 4. Lógica del botón de cierre
+        if (closeCampaignBannerBtn) {
             closeCampaignBannerBtn.addEventListener('click', () => {
-                campaignBanner.classList.add('hidden'); // Inicia la transición
+                campaignBanner.classList.add('is-hidden');
                 sessionStorage.setItem('campaignBannerClosed', 'true');
-                
-                campaignBanner.addEventListener('transitionend', () => {
-                    campaignBanner.classList.add('is-hidden');
-                }, { once: true });
+                adjustLayout(); // Re-ajustar el layout al cerrar
             });
         }
-    } else if (campaignBanner) {
-        // Si la campaña está desactivada, asegurarse de que el banner esté oculto
-        campaignBanner.classList.add('is-hidden');
+        
+        // 5. Re-ajustar en caso de que cambie el tamaño de la ventana
+        window.addEventListener('resize', adjustLayout);
     }
 
 
