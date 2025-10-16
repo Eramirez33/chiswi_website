@@ -293,4 +293,21 @@ header {
     .campaign-text-container {
         font-size: 0.7rem;
     }
+
+    .animate-marquee {
+        width: 100%;
+        animation-name: marquee-mobile;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    .animate-marquee > .campaign-text-container {
+        width: 100%;
+    }
+
+    @keyframes marquee-mobile {
+        from { transform: translateX(100%); }
+        to { transform: translateX(-100%); }
+    }
 }
