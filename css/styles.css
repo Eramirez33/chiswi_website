@@ -288,3 +288,9 @@ header {
     white-space: nowrap; /* Evita que el texto se divida */
     flex-shrink: 0; /* Evita que el contenedor se encoja */
 }
+
+@media (max-width: 767px) {
+    .campaign-text-container {
+        font-size: 0.7rem;
+    }
+}
