@@ -88,6 +88,7 @@
                     <div class="hidden md:flex items-center justify-start flex-1">
                         <nav class="elastic-nav">
                             <ul>
+                                <li><a href="index.html">Inicio</a></li>
                                 <li><a href="#servicios">Catálogo</a></li>
                                 <li><a href="#historia">Nuestra Historia</a></li>
                                 <li><a href="#proceso">Nuestro Proceso</a></li>
@@ -97,7 +98,7 @@
 
                     <!-- Logo (Centrado) -->
                     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <a class="flex-none" href="#" aria-label="Chiswi Catering">
+                        <a class="flex-none" href="index.html" aria-label="Chiswi Catering">
                             <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
                         </a>
                     </div>
@@ -140,6 +141,7 @@
             <!-- Enlaces de Navegación -->
             <nav class="mt-12">
                 <ul class="space-y-6">
+                    <li><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Inicio</a></li>
                     <li><a href="#servicios" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Catálogo</a></li>
                     <li><a href="#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestro Proceso</a></li>
                     <li><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestra Historia</a></li>
@@ -375,7 +377,7 @@
                 </div>
             </div>
             <div class="text-center mt-12 wow animate__animated animate__fadeInUp">
-                <a href="#precio" class="inline-block bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
+                <a href="#contacto" class="inline-block bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
                     Lleva nuestro sabor a tu evento <span class="ml-2" style="text-shadow: 0 0 3px rgba(0,0,0,0.5);">✨</span>
                 </a>
             </div>
@@ -388,7 +390,7 @@
             <div class="container mx-auto px-6 text-center wow animate__animated animate__fadeInUp">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">Conectando Corazones a la Distancia ❤️</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-                    ¿Vives en el extranjero y quieres sorprender a alguien en Uruguay? Gestionamos tu pedido desde cualquier parte del mundo. Ya hemos enviado sonrisas desde México y España. ¡La distancia no es un impedimento para un detalle delicioso!
+                    ¿Vives en el extranjero y quieres sorprender a alguien en Uruguay? Gestionamos tu pedido desde cualquier parte del mundo. Ya hemos enviado sonrisas desde países como México y España. ¡La distancia no es un impedimento para un detalle delicioso!
                 </p>
                 <button onclick="enviarWhatsApp('Pedido Internacional')" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
                     Sorprende desde el Extranjero
@@ -466,45 +468,72 @@
             </div>
         </section>
 
+<!-- ============================================ -->
+        <!-- FORMULARIO DE CONTACTO -->
         <!-- ============================================ -->
-        <!-- SOLICITA TU COTIZACIÓN (PRECIO) -->
-        <!-- ============================================ -->
-        <section id="precio" class="bg-[#1a1a1a] py-20 text-white">
+        <section id="contacto" class="bg-[#1a1a1a] py-20 text-white">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Columna Izquierda: Texto de Venta -->
+                    <!-- Columna Izquierda: Texto -->
                     <div class="text-center lg:text-left wow animate__animated animate__fadeInLeft">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para Impresionar a tus Invitados?</h2>
-                        <p class="text-gray-300 text-lg">
-                            Cada evento es único. Permítenos diseñar una propuesta gastronómica a la medida de tus necesidades y presupuesto. Nos encargamos de cada detalle para que tú solo te preocupes de disfrutar.
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Hablemos de tu Evento</h2>
+                        <p class="text-gray-300 text-lg mb-6">
+                            Cada evento es único. Completa el formulario y nos pondremos en contacto a la brevedad para diseñar una propuesta a tu medida.
                         </p>
+                        <div class="space-y-4 text-lg">
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Asesoramiento personalizado.</p>
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Propuestas flexibles y a medida.</p>
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Calidad y sabor garantizados.</p>
+                        </div>
+
+                        <div class="mt-10 text-center lg:text-left">
+                            <p class="text-gray-400 mb-3">Si prefieres una respuesta más directa:</p>
+                            <button onclick="enviarWhatsApp('cotización general')" class="inline-flex items-center bg-[#25D366] text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-600 transition duration-300 shadow-lg cta-pulse">
+                                <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                                Chatea con nosotros
+                            </button>
+                        </div>
                     </div>
                     
-                    <!-- Columna Derecha: Card de Cotización -->
+                    <!-- Columna Derecha: Formulario -->
                     <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37] wow animate__animated animate__fadeInRight">
-                        <h3 class="text-2xl font-bold mb-4">Tu Evento Incluye:</h3>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center">
-                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>Ingredientes frescos y de la más alta calidad.</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>Presentación impecable y profesional.</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span>Puntualidad y logística garantizada.</span>
-                            </li>
-                        </ul>
-                        <button onclick="enviarWhatsApp('cotización general')" class="w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-4 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
-                            Solicitar Cotización por WhatsApp
-                        </button>
+                        <form action="https://formsubmit.co/info@chiswi.com" method="POST">
+                            <h3 class="text-2xl font-bold mb-6">Envíanos tu consulta</h3>
+                            
+                            <!-- Campos del Formulario -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]">
+                                </div>
+                                <div>
+                                    <label for="apellido" class="block text-sm font-medium text-gray-700 mb-1">Apellido</label>
+                                    <input type="text" name="apellido" id="apellido" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email de Contacto</label>
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]">
+                            </div>
+                            <div class="mb-6">
+                                <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                                <textarea name="mensaje" id="mensaje" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]"></textarea>
+                            </div>
+                            
+                            <input type="hidden" name="_subject" value="Nueva consulta de catering desde la web">
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <button type="submit" class="w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-6 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
+                                Enviar Mensaje
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+
 
     <div class="leading-none">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-[100px]">
@@ -515,7 +544,7 @@
     <!-- ============================================ -->
     <!-- FOOTER -->
     <!-- ============================================ -->
-    <footer id="contacto" class="bg-[#1a1a1a] text-gray-300">
+    <footer id="footer-section" class="bg-[#1a1a1a] text-gray-300">
         <div class="container mx-auto px-6 pt-16 pb-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Columna 1: Logo y Redes Sociales -->
@@ -554,7 +583,7 @@
                 <div>
                     <h3 class="text-white font-bold tracking-wider mb-4">Servicios</h3>
                     <ul class="space-y-3">
-                        <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Coffee Break</a></li>
+                        <li><a href="coffee-break.html" class="hover:text-[#d4af37] transition-colors">Coffee Break</a></li>
                         <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
                         <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
                         <li><a href="#servicios" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
@@ -760,16 +789,12 @@
     <script src="js/mobile-nav.js"></script>
     <script src="js/process-mobile-animation.js"></script>
 
-    <svg style="display: none">
-        <defs>
-            <filter id="wave-distort" x="0%" y="0%" width="100%" height="100%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.0038 0.0038" numOctaves="1" seed="2" result="roughNoise" />
-                <feGaussianBlur in="roughNoise" stdDeviation="8.5" result="softNoise" />
-                <feComposite operator="arithmetic" k1="0" k2="1" k3="2" k4="0" in="softNoise" result="mergedMap" />
-                <feDisplacementMap in="SourceGraphic" in2="mergedMap" scale="-42" xChannelSelector="G" yChannelSelector="G" />
-            </filter>
-        </defs>
-    </svg>
+
+
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 
     <!-- ============================================ -->
     <!-- BOTÓN SCROLL TO TOP -->
@@ -781,5 +806,11 @@
     <script src="js/scroll-to-top.js"></script>
     <script src="js/ui-helpers.js"></script>
     <script src="js/parallax.js" defer></script>
+    <!-- ============================================ -->
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <!-- ============================================ -->
+    <a href="javascript:void(0)" onclick="enviarWhatsApp('Consulta desde la web')" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>

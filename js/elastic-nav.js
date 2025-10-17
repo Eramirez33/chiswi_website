@@ -71,22 +71,29 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('mouseenter', () => moveToItem(item));
             item.addEventListener('mouseleave', handleMouseLeave);
             item.addEventListener('click', (e) => {
-                // Prevent page jump, let scroll behavior be smooth
-                e.preventDefault();
-                setActiveItem(item);
-                // Smooth scroll to the section
-                const targetId = item.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                const targetUrl = new URL(item.href);
+                const currentUrl = new URL(window.location.href);
+
+                // Check if the target is on the same page
+                if (targetUrl.pathname === currentUrl.pathname) {
+                    e.preventDefault();
+                    setActiveItem(item);
+                    const targetId = targetUrl.hash;
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    // If it's a different page, let the default browser behavior handle it
+                    // The browser will navigate to the new page and jump to the hash
                 }
             });
         });
 
         nav.addEventListener('mouseleave', handleMouseLeave);
         
-        // Set the first item as active by default, if it exists
-        if (items.length > 0) {
+        // Set the first item as active by default, if it exists and we are on the main page
+        if (items.length > 0 && (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/'))) {
             setTimeout(() => {
                 // Check if another item is already active from another nav
                 if (!document.querySelector('.elastic-nav .active')) {
