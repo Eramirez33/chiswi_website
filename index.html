@@ -5,23 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chiswi Catering - Sabor y Elegancia para Todo Evento</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- Animate.css for WOW.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- DNS prefetch / preconnect para CDNs -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos críticos primero -->
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/glass-nav-bar.css" media="print" onload="this.media='all'">
     
-    <!-- Owl Carousel -->
+    <!-- Google Fonts optimizado -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" 
+          rel="stylesheet"
+          media="print" 
+          onload="this.media='all'">
+
+    <!-- Estilos no críticos con carga diferida -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          media="print" 
+          onload="this.media='all'">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+          media="print" 
+          onload="this.media='all'"/>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Componentes con carga diferida -->
+    <link rel="stylesheet" href="css/components/elastic-nav.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/ticker.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/historia.css?v=1.1" media="print" onload="this.media='all'">
+
+        <!-- Tailwind CSS via CDN: configuración y carga en el head para evitar errores -->
+        <script>
+            window.tailwind = window.tailwind || {};
+            tailwind.config = { darkMode: 'class' };
+        </script>
+        <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         // Configuración para que Tailwind y Preline UI funcionen bien juntos
@@ -29,6 +52,7 @@
     </script>
 
     <!-- Enlace a la hoja de estilos personalizada -->
+    <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components/elastic-nav.css">
     <link rel="stylesheet" href="css/components/glass-nav-bar.css">
@@ -36,10 +60,7 @@
     <link rel="stylesheet" href="css/components/historia.css?v=1.1">
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
 
-    <!-- Google Fonts para la sección Historia -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Fuentes ya cargadas arriba (evitar carga duplicada) -->
 
     <!-- Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -99,7 +120,7 @@
                     <!-- Logo (Centrado) -->
                     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a class="flex-none" href="index.html" aria-label="Chiswi Catering">
-                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering" width="96" height="96" loading="eager" decoding="async">
                         </a>
                     </div>
                     
@@ -161,9 +182,15 @@
         <div class="absolute top-0 left-0 right-0 h-20 bg-[#1a1a1a] hidden md:block z-30"></div>
         <!-- Contenedor del carrusel de imágenes de fondo -->
         <div id="hero-bg-container" class="absolute inset-0 w-full h-full z-0 parallax-element" data-parallax-speed="0.3">
-            <div class="hero-bg-image" style="background-image: url('img/image-buffet.jpg'); animation-delay: 0s;"></div>
-            <div class="hero-bg-image" style="background-image: url('img/emparedado.jpg'); animation-delay: 5s;"></div>
-            <div class="hero-bg-image" style="background-image: url('img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg'); animation-delay: 10s;"></div>
+            <div class="hero-bg-image">
+                <img src="img/image-buffet.jpg" alt="Buffet elegante servido" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" style="animation-delay: 0s;">
+            </div>
+            <div class="hero-bg-image">
+                <img src="img/emparedado.jpg" alt="Emparedados gourmet" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy" style="animation-delay: 5s;">
+            </div>
+            <div class="hero-bg-image">
+                <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy" style="animation-delay: 10s;">
+            </div>
         </div>
         <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
         <div class="container mx-auto px-6 text-center relative z-20 w-full">
@@ -224,9 +251,9 @@
                 <div class="flex justify-center items-center wow animate__animated animate__slideInRight">
                     <div class="image-frame-container relative w-full max-w-sm p-2 border-4 border-[#d4af37] rounded-lg bg-white">
                         <div id="historia-slideshow" class="relative w-full overflow-hidden rounded" style="aspect-ratio: 4/5;">
-                            <img src="img/corp_1.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide active">
-                            <img src="img/corp_2.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide">
-                            <img src="img/corp_3.jpeg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide">
+                            <img src="img/corp_1.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide active" width="600" height="750" loading="lazy" decoding="async">
+                            <img src="img/corp_2.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide" width="600" height="750" loading="lazy" decoding="async">
+                            <img src="img/corp_3.jpeg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide" width="600" height="750" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -252,28 +279,28 @@
                 
                 <div class="owl-carousel service-carousel">
                     <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.1s">
-                        <a href="coffee-break.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/buffet-dulce-festivo.jpg" alt="Servicio de Coffee Break"></a>
+                        <a href="coffee-break.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/buffet-dulce-festivo.jpg" alt="Servicio de Coffee Break" width="400" height="400" loading="lazy" decoding="async"></a>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Coffee Break</h3>
                             <p class="text-gray-600">Ideal para reuniones o capacitaciones, una pausa para recargar energías.</p>
                         </div>
                     </div>
                     <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
-                        <a href="box-lunch.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/emparedado.jpg" alt="Servicio de Box Lunch"></a>
+                        <a href="box-lunch.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/emparedado.jpg" alt="Servicio de Box Lunch" width="400" height="400" loading="lazy" decoding="async"></a>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Box Lunch</h3>
                             <p class="text-gray-600">Una solución práctica, higiénica y personalizada para tus equipos.</p>
                         </div>
                     </div>
                     <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.3s">
-                        <a href="almuerzo-ejecutivo.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/image-buffet.jpg" alt="Servicio de Almuerzo Ejecutivo"></a>
+                        <a href="almuerzo-ejecutivo.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/image-buffet.jpg" alt="Servicio de Almuerzo Ejecutivo" width="400" height="400" loading="lazy" decoding="async"></a>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Almuerzo Ejecutivo</h3>
                             <p class="text-gray-600">Menús diferentes y creativos, incluyendo opciones de finger food para reuniones de nivel.</p>
                         </div>
                     </div>
                     <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
-                        <a href="coctel-empresarial.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Cóctel Empresarial"></a>
+                        <a href="coctel-empresarial.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Cóctel Empresarial" width="400" height="400" loading="lazy" decoding="async"></a>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Cóctel Empresarial</h3>
                             <p class="text-gray-600">La mejor opción para celebrar logros, eventos sociales o lanzamientos importantes.</p>
@@ -622,7 +649,7 @@
     <!-- JAVASCRIPT -->
     <!-- ============================================ -->
     
-    <!-- Script de Configuración -->
+    <!-- Script de Configuración (se mantiene sin defer porque se usa inline) -->
     <script src="js/config.js"></script>
 
     <script>
@@ -647,51 +674,61 @@
         }
     </script>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- Owl Carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- jQuery (con defer porque se usa solo para carousel) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <!-- Owl Carousel (con defer porque no es crítico) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
     
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS (con defer para carruseles) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
-    <!-- Preline UI Script -->
-    <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js"></script>
+    <!-- Preline UI Script (con defer para UI components) -->
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js" defer></script>
 
-    <!-- WOW.js for Scroll Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>new WOW().init();</script>
+    <!-- WOW.js for Scroll Animations (con defer y init después de carga) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof WOW === 'function') {
+                new WOW().init();
+            }
+        });
+    </script>
 
 
 
     <!-- Inicialización del Carrusel de Servicios -->
-    <script>
-        $(document).ready(function(){
-            var serviceCarousel = $(".service-carousel");
-            serviceCarousel.owlCarousel({
-                autoplay: true,
-                smartSpeed: 1000,
-                margin: 30,
-                dots: false,
-                loop: true,
-                nav: false, // Desactivamos la navegación por defecto
-                responsive: {
-                    0:{ items:1 },
-                    576:{ items:2 },
-                    768:{ items:3 },
-                    992:{ items:4 }
+        <script>
+            // Esperar a que jQuery y Owl Carousel estén disponibles antes de inicializar
+            function initServiceCarousel() {
+                if (window.jQuery && typeof jQuery.fn.owlCarousel === 'function') {
+                    var serviceCarousel = $(".service-carousel");
+                    serviceCarousel.owlCarousel({
+                        autoplay: true,
+                        smartSpeed: 1000,
+                        margin: 30,
+                        dots: false,
+                        loop: true,
+                        nav: false,
+                        responsive: {
+                            0: { items: 1 },
+                            576: { items: 2 },
+                            768: { items: 3 },
+                            992: { items: 4 }
+                        }
+                    });
+                    $('#custom-next').click(function() {
+                        serviceCarousel.trigger('next.owl.carousel');
+                    });
+                    $('#custom-prev').click(function() {
+                        serviceCarousel.trigger('prev.owl.carousel');
+                    });
+                } else {
+                    setTimeout(initServiceCarousel, 50);
                 }
-            });
-
-            // Controladores de eventos para los botones personalizados
-            $('#custom-next').click(function() {
-                serviceCarousel.trigger('next.owl.carousel');
-            })
-            $('#custom-prev').click(function() {
-                serviceCarousel.trigger('prev.owl.carousel');
-            })
-        });
-    </script>
+            }
+            initServiceCarousel();
+        </script>
 
     <script>
         // Animación para la sección de proceso con scroll estilo carrusel
@@ -783,19 +820,15 @@
         });
     </script>
     
-    <script src="js/elastic-nav.js"></script>
-    <script src="js/ticker.js"></script>
-    <script src="js/historia.js"></script>
-    <script src="js/mobile-nav.js"></script>
-    <script src="js/process-mobile-animation.js"></script>
-
-
-
-
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
+    <!-- Scripts no críticos cargados al final -->
+    <!-- (El script de Tailwind ya está en el head) -->
+    <script src="js/elastic-nav.js" defer></script>
+    <script src="js/ticker.js" defer></script>
+    <script src="js/historia.js" defer></script>
+    <script src="js/mobile-nav.js" defer></script>
+    <script src="js/process-mobile-animation.js" defer></script>
+</body>
+</html>
     <!-- ============================================ -->
     <!-- BOTÓN SCROLL TO TOP -->
     <!-- ============================================ -->
@@ -803,8 +836,8 @@
         <i class="fas fa-arrow-up"></i>
     </a>
     
-    <script src="js/scroll-to-top.js"></script>
-    <script src="js/ui-helpers.js"></script>
+    <script src="js/scroll-to-top.js" defer></script>
+    <script src="js/ui-helpers.js" defer></script>
     <script src="js/parallax.js" defer></script>
     <!-- ============================================ -->
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
