@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Box Lunch para Empresas y Eventos | Chiswi Catering</title>
+    <meta name="description" content="Soluciones prácticas y deliciosas de Box Lunch para equipos de trabajo y eventos. Menús personalizables y opciones saludables. ¡Cotiza ahora!">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Animate.css for WOW.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components/glass-nav-bar.css">
+    <link rel="stylesheet" href="css/components/elastic-nav.css">
+    <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
+</head>
+<body class="bg-white">
+
+    <!-- ============================================ -->
+    <!-- HEADER (similar al de index.html) -->
+    <!-- ============================================ -->
+    <header class="fixed top-0 left-0 right-0 z-40 w-full">
+        <div class="container mx-auto px-6">
+            <div class="relative h-20 flex items-center">
+                <div class="relative flex items-center justify-between h-20 glass-nav-bar w-full px-4">
+                    <!-- Lado Izquierdo: Enlaces -->
+                    <div class="hidden md:flex items-center justify-start flex-1">
+                        <nav class="elastic-nav">
+                            <ul>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="index.html#servicios">Catálogo</a></li>
+                                <li><a href="index.html#historia">Nuestra Historia</a></li>
+                                <li><a href="index.html#proceso">Nuestro Proceso</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Logo (Centrado) -->
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <a class="flex-none" href="index.html" aria-label="Chiswi Catering">
+                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                        </a>
+                    </div>
+                    
+                    <!-- Lado Derecho: Enlaces y CTA -->
+                    <div class="flex items-center justify-end flex-1">
+                        <nav class="elastic-nav hidden md:flex">
+                            <ul>
+                                <li><a href="index.html#paquetes">Paquetes</a></li>
+                                <li><a href="index.html#faq">Preguntas</a></li>
+                            </ul>
+                        </nav>
+                        <div class="ml-6">
+                            <a href="index.html#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full text-sm shadow-lg px-6 py-4 hover:bg-yellow-500 transition duration-300">
+                                <span>Cotiza tu Evento</span>
+                            </a>
+                        </div>
+                        <!-- Botón de Menú Móvil -->
+                        <div class="md:hidden ml-4">
+                            <button type="button" id="mobile-menu-button" class="flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100">
+                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PANEL DE MENÚ MÓVIL -->
+    <!-- ============================================ -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
+        <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-1/2 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
+            <!-- Botón de Cierre -->
+            <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <!-- Enlaces de Navegación -->
+            <nav class="mt-12">
+                <ul class="space-y-6">
+                    <li><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Inicio</a></li>
+                    <li><a href="index.html#servicios" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Catálogo</a></li>
+                    <li><a href="index.html#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestro Proceso</a></li>
+                    <li><a href="index.html#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestra Historia</a></li>
+                    <li><a href="index.html#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Paquetes</a></li>
+                    <li><a href="index.html#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Preguntas</a></li>
+                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300">Cotiza tu Evento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!-- ============================================ -->
+        <!-- HERO SECTION PARA BOX LUNCH -->
+        <!-- ============================================ -->
+        <section class="relative text-white overflow-hidden min-h-[60vh] flex items-center pt-20">
+            <div class="absolute inset-0 w-full h-full z-0">
+                <img src="img/emparedado.jpg" alt="Variedad de Box Lunch servidos" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
+            <div class="container mx-auto px-6 text-center relative z-20 w-full">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 wow animate__animated animate__fadeInUp">
+                    Box Lunch: La Solución Práctica y Deliciosa
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                    Optimiza el tiempo de tus equipos y eventos con nuestros Box Lunch gourmet. Una opción higiénica, personalizable y llena de sabor.
+                </p>
+                <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                    Cotiza tu Box Lunch
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- DESCRIPCIÓN DEL SERVICIO -->
+        <!-- ============================================ -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 wow animate__animated animate__fadeInUp">Almuerzos Nutritivos y a la Medida de tu Equipo</h2>
+                    <p class="text-gray-600 text-lg mb-12 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                        Cada Box Lunch está diseñado para ofrecer una comida completa y equilibrada. Nos adaptamos a tus necesidades, garantizando frescura, calidad y una presentación impecable en cada entrega.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Feature 1 -->
+                    <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                        <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                            <i class="fas fa-box-open text-4xl text-[#d4af37] mb-4"></i>
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Presentación Individual</h3>
+                            <p class="text-gray-600">Cada menú se entrega en un empaque seguro e higiénico, ideal para una logística sencilla y rápida.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                        <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                            <i class="fas fa-utensils text-4xl text-[#d4af37] mb-4"></i>
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Menús Variados</h3>
+                            <p class="text-gray-600">Ofrecemos una amplia gama de opciones, desde sándwiches gourmet y ensaladas hasta platos calientes.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                        <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                            <i class="fas fa-leaf text-4xl text-[#d4af37] mb-4"></i>
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Ingredientes Frescos</h3>
+                            <p class="text-gray-600">Priorizamos el uso de productos de estación para garantizar un sabor y una calidad nutricional superior.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                        <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                            <i class="fas fa-truck text-4xl text-[#d4af37] mb-4"></i>
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Entrega Puntual</h3>
+                            <p class="text-gray-600">Coordinamos la logística para que tus almuerzos lleguen a tiempo, listos para disfrutar donde sea.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- GALERÍA DE FOTOS -->
+        <!-- ============================================ -->
+        <section class="py-20 bg-[#f5f5f5]">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">Así Lucen Nuestros Box Lunch</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.1s">
+                        <img src="img/product-1.jpg" alt="Foto de un box lunch 1" class="w-full h-full object-cover rounded-lg shadow-md">
+                    </div>
+                    <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+                        <img src="img/product-2.jpg" alt="Foto de un box lunch 2" class="w-full h-full object-cover rounded-lg shadow-md">
+                    </div>
+                    <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.3s">
+                        <img src="img/product-3.jpg" alt="Foto de un box lunch 3" class="w-full h-full object-cover rounded-lg shadow-md">
+                    </div>
+                    <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
+                        <img src="img/product-4.jpg" alt="Foto de un box lunch 4" class="w-full h-full object-cover rounded-lg shadow-md">
+                    </div>
+                </div>
+                <p class="text-center text-gray-500 mt-4 text-sm">Nota: Las imágenes son representativas de nuestro estilo y calidad.</p>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- FORMULARIO DE CONTACTO -->
+        <!-- ============================================ -->
+        <section id="contacto" class="bg-[#1a1a1a] py-20 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Columna Izquierda: Texto -->
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Hablemos de tu Evento</h2>
+                        <p class="text-gray-300 text-lg mb-6">
+                            Cada evento es único. Completa el formulario y nos pondremos en contacto a la brevedad para diseñar una propuesta a tu medida.
+                        </p>
+                        <div class="space-y-4 text-lg">
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Asesoramiento personalizado.</p>
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Propuestas flexibles y a medida.</p>
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Calidad y sabor garantizados.</p>
+                        </div>
+
+                        <div class="mt-10 text-center lg:text-left">
+                            <p class="text-gray-400 mb-3">Si prefieres una respuesta más directa:</p>
+                            <button onclick="enviarWhatsApp('cotización de Box Lunch')" class="inline-flex items-center bg-[#25D366] text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-600 transition duration-300 shadow-lg cta-pulse">
+                                <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                                Chatea con nosotros
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna Derecha: Formulario -->
+                    <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37]">
+                        <form action="https://formsubmit.co/estefanoramirez@gmail.com" method="POST">
+                            <h3 class="text-2xl font-bold mb-6">Envíanos tu consulta</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]">
+                                </div>
+                                <div>
+                                    <label for="apellido" class="block text-sm font-medium text-gray-700 mb-1">Apellido</label>
+                                    <input type="text" name="apellido" id="apellido" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email de Contacto</label>
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]">
+                            </div>
+                            <div class="mb-6">
+                                <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                                <textarea name="mensaje" id="mensaje" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]"></textarea>
+                            </div>
+                            
+                            <input type="hidden" name="_subject" value="Nueva consulta de catering desde la web">
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <button type="submit" class="w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-6 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER (similar al de index.html) -->
+    <!-- ============================================ -->
+    <footer class="bg-[#1a1a1a] text-gray-300 border-t border-gray-700">
+        <div class="container mx-auto px-6 pt-16 pb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Columna 1: Logo y Redes Sociales -->
+                <div>
+                    <a href="index.html" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
+                        <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                    </a>
+                    <p class="text-sm text-gray-400 mb-6 max-w-xs">
+                        Sabor y elegancia para tus celebraciones familiares, eventos sociales y reuniones corporativas.
+                    </p>
+                </div>
+                <!-- Columna 2: Navegación -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Navegación</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#servicios" class="hover:text-[#d4af37] transition-colors">Catálogo</a></li>
+                        <li><a href="index.html#historia" class="hover:text-[#d4af37] transition-colors">Nuestra Historia</a></li>
+                        <li><a href="index.html#proceso" class="hover:text-[#d4af37] transition-colors">Nuestro Proceso</a></li>
+                    </ul>
+                </div>
+                <!-- Columna 3: Servicios -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Servicios</h3>
+                    <ul class="space-y-3">
+                        <li><a href="coffee-break.html" class="hover:text-[#d4af37] transition-colors">Coffee Break</a></li>
+                        <li><a href="box-lunch.html" class="text-[#d4af37] font-bold">Box Lunch</a></li>
+                        <li><a href="almuerzo-ejecutivo.html" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
+                        <li><a href="coctel-empresarial.html" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
+                    </ul>
+                </div>
+                <!-- Columna 4: Contacto -->
+                <div>
+                    <h3 class="text-white font-bold tracking-wider mb-4">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fa fa-phone-alt mr-3 w-4"></i><span>+598 97 680 439</span></li>
+                        <li class="flex items-center"><i class="fa fa-envelope mr-3 w-4"></i><span>info@chiswi.com</span></li>
+                        <li class="flex items-start"><i class="fa fa-map-marker-alt mr-3 w-4 mt-1"></i><span>Montevideo, Uruguay</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-black/50 mt-8 py-4">
+            <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+                &copy; 2025 Chiswi Catering. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts necesarios -->
+    <script src="js/config.js"></script>
+    <script>
+        function enviarWhatsApp(asunto) {
+            const numeroWhatsApp = config.numeroWhatsApp;
+            let mensajeBase = `Hola, me gustaría recibir más información sobre el servicio de ${asunto}`;
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeBase)}`;
+            window.open(url, '_blank');
+        }
+
+        function enviarEmail(asunto) {
+            const email = config.email;
+            const subject = encodeURIComponent(`Consulta sobre servicio de ${asunto}`);
+            const body = encodeURIComponent(`Hola, me gustaría recibir más información sobre el servicio de ${asunto}.
+
+(Por favor, detalla aquí tu consulta)`);
+            const url = `mailto:${email}?subject=${subject}&body=${body}`;
+            window.location.href = url;
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/elastic-nav.js"></script>
+    <!-- ============================================ -->
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <!-- ============================================ -->
+    <a href="javascript:void(0)" onclick="enviarWhatsApp('Consulta sobre Box Lunch')" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
