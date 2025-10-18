@@ -12,6 +12,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Preload de imágenes críticas del hero -->
+    <link rel="preload" as="image" href="img/image-buffet.jpg">
+    <link rel="preload" as="image" href="img/emparedado.jpg">
+    <link rel="preload" as="image" href="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg">
+    <link rel="preload" as="image" href="img/5856.jpg">
+
     <!-- Estilos críticos primero -->
     <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/components/glass-nav-bar.css" media="print" onload="this.media='all'">
@@ -99,6 +105,16 @@
     </div>
 
     <!-- ============================================ -->
+    <!-- Filtros SVG para efectos visuales -->
+    <svg class="hidden">
+        <defs>
+            <filter id="wave-distort">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
+            </filter>
+        </defs>
+    </svg>
+
     <!-- HEADER ELASTIC NAV -->
     <!-- ============================================ -->
     <header class="fixed top-0 left-0 right-0 z-40 w-full">
@@ -183,13 +199,16 @@
         <!-- Contenedor del carrusel de imágenes de fondo -->
         <div id="hero-bg-container" class="absolute inset-0 w-full h-full z-0 parallax-element" data-parallax-speed="0.3">
             <div class="hero-bg-image">
-                <img src="img/image-buffet.jpg" alt="Buffet elegante servido" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" style="animation-delay: 0s;">
+                <img src="img/image-buffet.jpg" alt="Buffet elegante servido" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high">
             </div>
             <div class="hero-bg-image">
-                <img src="img/emparedado.jpg" alt="Emparedados gourmet" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy" style="animation-delay: 5s;">
+                <img src="img/emparedado.jpg" alt="Emparedados gourmet" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
             </div>
             <div class="hero-bg-image">
-                <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy" style="animation-delay: 10s;">
+                <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
+            </div>
+            <div class="hero-bg-image">
+                <img src="img/5856.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
             </div>
         </div>
         <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
@@ -304,6 +323,20 @@
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
                             <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Cóctel Empresarial</h3>
                             <p class="text-gray-600">La mejor opción para celebrar logros, eventos sociales o lanzamientos importantes.</p>
+                        </div>
+                    </div>
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
+                        <a href="pizza-party.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Pizza Party a la Leña" width="400" height="400" loading="lazy" decoding="async"></a>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Pizza Party a la Leña</h3>
+                            <p class="text-gray-600">3 horas de show en vivo con auténtico sabor a horno de leña. ¡Una fiesta inolvidable!</p>
+                        </div>
+                    </div>
+                    <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.6s">
+                        <a href="fiestas-y-celebraciones.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Fiestas y Celebraciones" width="400" height="400" loading="lazy" decoding="async"></a>
+                        <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Fiestas y Celebraciones</h3>
+                            <p class="text-gray-600">Bodas, cumpleaños y eventos especiales. Creamos momentos inolvidables a tu medida.</p>
                         </div>
                     </div>
                 </div>
@@ -614,6 +647,8 @@
                         <li><a href="box-lunch.html" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
                         <li><a href="almuerzo-ejecutivo.html" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
                         <li><a href="coctel-empresarial.html" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
+                        <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Party a la Leña</a></li>
+                        <li><a href="fiestas-y-celebraciones.html" class="hover:text-[#d4af37] transition-colors">Fiestas y Celebraciones</a></li>
                     </ul>
                 </div>
 
@@ -839,6 +874,7 @@
     <script src="js/scroll-to-top.js" defer></script>
     <script src="js/ui-helpers.js" defer></script>
     <script src="js/parallax.js" defer></script>
+    <script src="js/hero-carousel.js" defer></script>
     <!-- ============================================ -->
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <!-- ============================================ -->

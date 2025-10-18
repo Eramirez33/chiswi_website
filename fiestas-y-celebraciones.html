@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicio de Cóctel Empresarial para Eventos | Chiswi Catering</title>
-    <meta name="description" content="Celebra tus logros con nuestro servicio de Cóctel Empresarial. Bocadillos gourmet y una presentación que impresionará a tus invitados. ¡Cotiza ahora!">
+    <title>Catering para Fiestas y Celebraciones | Bodas, Cumpleaños y Eventos | Chiswi Catering</title>
+    <meta name="description" content="Hacemos de tu celebración un momento inolvidable. Ofrecemos catering para bodas, cumpleaños, 15 años y todo tipo de fiestas. Sabor y elegancia para tus eventos más especiales.">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Poppins -->
+    <!-- Google Fonts: Poppins & Dancing Script -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = { darkMode: 'class' }
@@ -28,24 +28,12 @@
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
 </head>
 <body class="bg-white">
-    <!-- Filtros SVG para efectos visuales -->
-    <svg class="hidden">
-        <defs>
-            <filter id="wave-distort">
-                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
-            </filter>
-        </defs>
-    </svg>
 
-    <!-- ============================================ -->
-    <!-- HEADER (similar al de index.html) -->
-    <!-- ============================================ -->
+    <!-- HEADER -->
     <header class="fixed top-0 left-0 right-0 z-40 w-full">
         <div class="container mx-auto px-6">
             <div class="relative h-20 flex items-center">
                 <div class="relative flex items-center justify-between h-20 glass-nav-bar w-full px-4">
-                    <!-- Lado Izquierdo: Enlaces -->
                     <div class="hidden md:flex items-center justify-start flex-1">
                         <nav class="elastic-nav">
                             <ul>
@@ -56,15 +44,11 @@
                             </ul>
                         </nav>
                     </div>
-
-                    <!-- Logo (Centrado) -->
                     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a class="flex-none" href="index.html" aria-label="Chiswi Catering">
                             <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
                         </a>
                     </div>
-                    
-                    <!-- Lado Derecho: Enlaces y CTA -->
                     <div class="flex items-center justify-end flex-1">
                         <nav class="elastic-nav hidden md:flex">
                             <ul>
@@ -77,7 +61,6 @@
                                 <span>Cotiza tu Evento</span>
                             </a>
                         </div>
-                        <!-- Botón de Menú Móvil -->
                         <div class="md:hidden ml-4">
                             <button type="button" id="mobile-menu-button" class="flex justify-center items-center size-9 text-gray-500 rounded-full hover:bg-gray-100">
                                 <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
@@ -89,17 +72,12 @@
         </div>
     </header>
 
-    <!-- ============================================ -->
     <!-- PANEL DE MENÚ MÓVIL -->
-    <!-- ============================================ -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
         <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-1/2 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
-            <!-- Botón de Cierre -->
             <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            
-            <!-- Enlaces de Navegación -->
             <nav class="mt-12">
                 <ul class="space-y-6">
                     <li><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Inicio</a></li>
@@ -115,131 +93,110 @@
     </div>
 
     <main>
-        <!-- ============================================ -->
-        <!-- HERO SECTION PARA CÓCTEL EMPRESARIAL -->
-        <!-- ============================================ -->
+        <!-- HERO SECTION PARA FIESTAS Y CELEBRACIONES -->
         <section class="relative text-white overflow-hidden min-h-[60vh] flex items-center pt-20">
             <div class="absolute inset-0 w-full h-full z-0">
-                <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Mesa de Cóctel Empresarial servida" class="w-full h-full object-cover">
+                <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Mesa de celebración con deliciosa comida de catering" class="w-full h-full object-cover">
             </div>
             <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
             <div class="container mx-auto px-6 text-center relative z-20 w-full">
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 wow animate__animated animate__fadeInUp">
-                    Cócteles Empresariales para Celebrar el Éxito
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 wow animate__animated animate__fadeInUp" style="font-family: 'Dancing Script', cursive;">
+                    Celebraciones Mágicas, Sabores Inolvidables
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    La mejor opción para celebrar logros, eventos sociales o lanzamientos importantes con una propuesta gastronómica que refleja la excelencia de tu marca.
+                    Bodas, cumpleaños, aniversarios o simplemente ganas de festejar. Nos dedicamos a crear el menú perfecto que acompañe la emoción de tus momentos más importantes.
                 </p>
                 <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                    Cotiza tu Cóctel
+                    Planea tu Celebración
                 </a>
             </div>
         </section>
 
-        <!-- ============================================ -->
         <!-- DESCRIPCIÓN DEL SERVICIO -->
-        <!-- ============================================ -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 wow animate__animated animate__fadeInUp">Una Experiencia Gastronómica para tus Eventos</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 wow animate__animated animate__fadeInUp">Tu Evento, a tu Manera</h2>
                     <p class="text-gray-600 text-lg mb-12 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                        Nuestro servicio de Cóctel Empresarial está diseñado para impresionar. Ofrecemos una selección de bocadillos gourmet, tanto fríos como calientes, y un servicio de bebidas que se adapta a la formalidad de tu evento.
+                        Cada celebración es un mundo. Por eso, te escuchamos y diseñamos una propuesta gastronómica a medida. Desde finger food moderno y estaciones temáticas hasta menús de varios pasos, nos adaptamos a tu estilo, tu espacio y tus sueños.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
                     <!-- Feature 1 -->
                     <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
                         <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                            <i class="fas fa-cocktail text-4xl text-[#d4af37] mb-4"></i>
-                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Bocadillos Gourmet</h3>
-                            <p class="text-gray-600">Una selección de canapés, brochetas y otras delicias en formato miniatura, elaborados con ingredientes de primera calidad.</p>
+                            <i class="fas fa-ring text-4xl text-[#d4af37] mb-4"></i>
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Bodas y Aniversarios</h3>
+                            <p class="text-gray-600">Creamos experiencias culinarias elegantes y románticas que tus invitados recordarán por siempre.</p>
                         </div>
                     </div>
                     <!-- Feature 2 -->
                     <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                         <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                            <i class="fas fa-wine-bottle text-4xl text-[#d4af37] mb-4"></i>
-                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Barra de Bebidas</h3>
-                            <p class="text-gray-600">Ofrecemos una barra de bebidas completa, con vinos, espumantes, cócteles, jugos naturales y refrescos.</p>
+                            <i class="fas fa-birthday-cake text-4xl text-[#d4af37] mb-4"></i>
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Cumpleaños y 15 Años</h3>
+                            <p class="text-gray-600">Menús divertidos, estaciones de comida interactiva y todo lo necesario para una fiesta llena de sabor y alegría.</p>
                         </div>
                     </div>
                     <!-- Feature 3 -->
                     <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                         <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                            <i class="fas fa-candy-cane text-4xl text-[#d4af37] mb-4"></i>
-                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Estaciones de Comida</h3>
-                            <p class="text-gray-600">Podemos incluir estaciones temáticas de comida, como quesos y fiambres, para enriquecer la experiencia.</p>
-                        </div>
-                    </div>
-                    <!-- Feature 4 -->
-                    <div class="wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                        <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                            <i class="fas fa-user-friends text-4xl text-[#d4af37] mb-4"></i>
-                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Servicio Profesional</h3>
-                            <p class="text-gray-600">Nuestro personal se encarga de todos los detalles, permitiéndote disfrutar del evento junto a tus invitados.</p>
+                            <i class="fas fa-glass-cheers text-4xl text-[#d4af37] mb-4"></i>
+                            <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Eventos Sociales</h3>
+                            <p class="text-gray-600">Bautismos, reuniones familiares o cualquier excusa para celebrar. Nos encargamos de la comida para que tú solo disfrutes.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============================================ -->
         <!-- GALERÍA DE FOTOS -->
-        <!-- ============================================ -->
         <section class="py-20 bg-[#f5f5f5]">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">Así Lucen Nuestros Cócteles Empresariales</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">Momentos que Dejamos en la Memoria</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.1s">
-                        <img src="img/portfolio-5.jpg" alt="Foto de un cóctel empresarial 1" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <img src="img/portfolio-1.jpg" alt="Foto de una boda servida por Chiswi Catering" class="w-full h-full object-cover rounded-lg shadow-md">
                     </div>
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
-                        <img src="img/portfolio-6.jpg" alt="Foto de un cóctel empresarial 2" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <img src="img/portfolio-2.jpg" alt="Foto de un cumpleaños servido por Chiswi Catering" class="w-full h-full object-cover rounded-lg shadow-md">
                     </div>
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.3s">
-                        <img src="img/corp_1.jpg" alt="Foto de un cóctel empresarial 3" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <img src="img/portfolio-3.jpg" alt="Foto de una fiesta de 15 años servida por Chiswi Catering" class="w-full h-full object-cover rounded-lg shadow-md">
                     </div>
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
-                        <img src="img/corp_2.jpg" alt="Foto de un cóctel empresarial 4" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <img src="img/portfolio-4.jpg" alt="Foto de un evento social servido por Chiswi Catering" class="w-full h-full object-cover rounded-lg shadow-md">
                     </div>
                 </div>
                 <p class="text-center text-gray-500 mt-4 text-sm">Nota: Las imágenes son representativas de nuestro estilo y calidad.</p>
             </div>
         </section>
 
-        <!-- ============================================ -->
         <!-- FORMULARIO DE CONTACTO -->
-        <!-- ============================================ -->
         <section id="contacto" class="bg-[#1a1a1a] py-20 text-white">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Columna Izquierda: Texto -->
                     <div class="text-center lg:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Hablemos de tu Evento</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Sueñas con una Celebración Perfecta?</h2>
                         <p class="text-gray-300 text-lg mb-6">
-                            Cada evento es único. Completa el formulario y nos pondremos en contacto a la brevedad para diseñar una propuesta a tu medida.
+                            Hagámoslo realidad. Contáctanos y empecemos a darle forma al evento que tienes en mente.
                         </p>
                         <div class="space-y-4 text-lg">
-                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Asesoramiento personalizado.</p>
-                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Propuestas flexibles y a medida.</p>
-                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Calidad y sabor garantizados.</p>
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Propuestas 100% personalizadas.</p>
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Cuidamos cada detalle estético y de sabor.</p>
+                            <p class="flex items-center justify-center lg:justify-start"><i class="fa fa-check-circle text-[#d4af37] mr-3"></i>Compromiso con la excelencia y la puntualidad.</p>
                         </div>
-
                         <div class="mt-10 text-center lg:text-left">
-                            <p class="text-gray-400 mb-3">Si prefieres una respuesta más directa:</p>
-                            <button onclick="enviarWhatsApp('cotización de Cóctel Empresarial')" class="inline-flex items-center bg-[#25D366] text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-600 transition duration-300 shadow-lg cta-pulse">
+                            <p class="text-gray-400 mb-3">O si prefieres una respuesta inmediata:</p>
+                            <button onclick="enviarWhatsApp('cotización para Fiesta o Celebración')" class="inline-flex items-center bg-[#25D366] text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-600 transition duration-300 shadow-lg cta-pulse">
                                 <i class="fab fa-whatsapp mr-3 text-xl"></i>
                                 Chatea con nosotros
                             </button>
                         </div>
                     </div>
-                    
-                    <!-- Columna Derecha: Formulario -->
                     <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37]">
-                        <form action="https://formsubmit.co/estefanoramirez@gmail.com" method="POST">
+                        <form action="https://formsubmit.co/info@chiswi.com" method="POST">
                             <h3 class="text-2xl font-bold mb-6">Envíanos tu consulta</h3>
-                            
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                 <div>
                                     <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
@@ -256,12 +213,10 @@
                             </div>
                             <div class="mb-6">
                                 <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                                <textarea name="mensaje" id="mensaje" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]"></textarea>
+                                <textarea name="mensaje" id="mensaje" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#d4af37] focus:border-[#d4af37]" placeholder="Cuéntanos sobre tu evento: tipo de celebración, fecha estimada, cantidad de invitados, etc."></textarea>
                             </div>
-                            
-                            <input type="hidden" name="_subject" value="Nueva consulta de catering desde la web">
+                            <input type="hidden" name="_subject" value="Nueva consulta para Fiesta/Celebración desde la web">
                             <input type="hidden" name="_captcha" value="false">
-
                             <button type="submit" class="w-full bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-6 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg">
                                 Enviar Mensaje
                             </button>
@@ -272,6 +227,7 @@
         </section>
     </main>
 
+    <!-- FOOTER -->
     <div class="leading-none">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-[100px]">
             <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#2c2c2c"></path>

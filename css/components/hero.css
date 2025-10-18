@@ -23,7 +23,14 @@
     animation-delay: 0.4s;
 }
 
-/* Estilos para el carrusel de fondo del Hero */
+
+/* --- HERO SLIDESHOW AUTOMÁTICO --- */
+:root {
+    --hero-img-duration: 6s; /* Tiempo visible por imagen */
+}
+
+
+
 .hero-bg-image {
     position: absolute;
     inset: 0;
@@ -32,21 +39,69 @@
     background-size: cover;
     background-position: center;
     opacity: 0;
-    animation: hero-slideshow-ken-burns 15s linear infinite;
+    animation-name: hero-slideshow-ken-burns;
+    animation-duration: calc(var(--hero-img-count) * var(--hero-img-duration));
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: opacity 0.5s ease-in-out;
+    background-position: center;
+    background-size: cover;
 }
 
-/* Keyframes Opción 1: Efecto Ken Burns (Zoom y Paneo) */
-@keyframes hero-slideshow-ken-burns {
-    0% { opacity: 0; transform: scale(1.05) rotate(1deg); }
-    10% { opacity: 1; }
-    33.33% { opacity: 1; transform: scale(1.1) rotate(-1deg); }
-    43.33%, 100% { opacity: 0; }
+#hero-bg-container {
+    background-color: #1a1a1a; /* Fondo oscuro para evitar parpadeo blanco */
 }
 
-/* Keyframes Opción 2: Efecto de Deslizamiento (Slide) */
-@keyframes hero-slideshow-slide {
-    0% { opacity: 0; transform: translateX(-50%) scale(1.2); }
-    10% { opacity: 1; transform: translateX(0) scale(1.2); }
-    33.33% { opacity: 1; transform: translateX(0) scale(1.2); }
-    43.33%, 100% { opacity: 0; transform: translateX(50%) scale(1.2); }
+/* Generar delays automáticos para cualquier cantidad de imágenes */
+@media (min-width: 0px) {
+    #hero-bg-container > .hero-bg-image:nth-child(1) { animation-delay: calc(0 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(2) { animation-delay: calc(1 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(3) { animation-delay: calc(2 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(4) { animation-delay: calc(3 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(5) { animation-delay: calc(4 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(6) { animation-delay: calc(5 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(7) { animation-delay: calc(6 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(8) { animation-delay: calc(7 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(9) { animation-delay: calc(8 * var(--hero-img-duration)); }
+    #hero-bg-container > .hero-bg-image:nth-child(10) { animation-delay: calc(9 * var(--hero-img-duration)); }
+}
+
+
+/* Los keyframes para hero-slideshow-ken-burns se generan dinámicamente con JavaScript (js/hero-carousel.js) */
+
+
+/* Usar animación automática y progresiva */
+
+
+
+/* Delays automáticos ya definidos arriba con nth-child y custom properties */
+
+
+/* Ajuste para garantizar que todas las imágenes se muestren correctamente */
+#hero-bg-container > .hero-bg-image {
+    animation-name: hero-slideshow-ken-burns;
+    animation-duration: calc(var(--hero-img-count) * var(--hero-img-duration));
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both; /* Asegura que las imágenes mantengan su estado al inicio y final */
+}
+
+/* Ajuste en los delays para evitar solapamientos */
+#hero-bg-container > .hero-bg-image:nth-child(1) {
+    animation-delay: 0s;
+}
+#hero-bg-container > .hero-bg-image:nth-child(2) {
+    animation-delay: calc(1 * var(--hero-img-duration));
+}
+#hero-bg-container > .hero-bg-image:nth-child(3) {
+    animation-delay: calc(2 * var(--hero-img-duration));
+}
+
+/* Ajuste para suavizar la transición */
+.hero-bg-image img {
+    transition: opacity 0.8s ease-in-out;
+    will-change: opacity;
 }

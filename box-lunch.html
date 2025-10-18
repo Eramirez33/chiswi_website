@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicio de Box Lunch para Empresas y Eventos | Chiswi Catering</title>
-    <meta name="description" content="Soluciones prácticas y deliciosas de Box Lunch para equipos de trabajo y eventos. Menús personalizables y opciones saludables. ¡Cotiza ahora!">
+    <title>Servicio de Box Lunch para Eventos y Ocasiones Especiales | Chiswi Catering</title>
+    <meta name="description" content="Soluciones prácticas y deliciosas de Box Lunch para todo tipo de eventos, reuniones o simplemente para disfrutar. Menús personalizables y opciones saludables. ¡Cotiza ahora!">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -28,6 +28,15 @@
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
 </head>
 <body class="bg-white">
+    <!-- Filtros SVG para efectos visuales -->
+    <svg class="hidden">
+        <defs>
+            <filter id="wave-distort">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
+            </filter>
+        </defs>
+    </svg>
 
     <!-- ============================================ -->
     <!-- HEADER (similar al de index.html) -->
@@ -119,7 +128,7 @@
                     Box Lunch: La Solución Práctica y Deliciosa
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    Optimiza el tiempo de tus equipos y eventos con nuestros Box Lunch gourmet. Una opción higiénica, personalizable y llena de sabor.
+                    La opción ideal para disfrutar de una comida completa, fresca y deliciosa en cualquier lugar. Perfecta para eventos, paseos, reuniones o simplemente para darte un gusto.
                 </p>
                 <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
                     Cotiza tu Box Lunch
@@ -133,9 +142,9 @@
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 wow animate__animated animate__fadeInUp">Almuerzos Nutritivos y a la Medida de tu Equipo</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 wow animate__animated animate__fadeInUp">Comida Fresca y a tu Medida, Lista para Llevar</h2>
                     <p class="text-gray-600 text-lg mb-12 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                        Cada Box Lunch está diseñado para ofrecer una comida completa y equilibrada. Nos adaptamos a tus necesidades, garantizando frescura, calidad y una presentación impecable en cada entrega.
+                        Cada Box Lunch está diseñado para ofrecer una experiencia gastronómica completa y equilibrada. Nos adaptamos a tus gustos y necesidades, garantizando frescura, calidad y una presentación impecable en cada entrega.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -144,7 +153,7 @@
                         <div class="p-6 bg-[#f5f5f5] rounded-lg shadow-sm hover:shadow-lg transition-shadow">
                             <i class="fas fa-box-open text-4xl text-[#d4af37] mb-4"></i>
                             <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Presentación Individual</h3>
-                            <p class="text-gray-600">Cada menú se entrega en un empaque seguro e higiénico, ideal para una logística sencilla y rápida.</p>
+                            <p class="text-gray-600">Cada menú se entrega en un empaque seguro y práctico, ideal para disfrutar en cualquier momento y lugar.</p>
                         </div>
                     </div>
                     <!-- Feature 2 -->
@@ -228,7 +237,7 @@
                     
                     <!-- Columna Derecha: Formulario -->
                     <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37]">
-                        <form action="https://formsubmit.co/estefanoramirez@gmail.com" method="POST">
+                        <form action="https://formsubmit.co/info@chiswi.com" method="POST">
                             <h3 class="text-2xl font-bold mb-6">Envíanos tu consulta</h3>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -263,41 +272,48 @@
         </section>
     </main>
 
-    <!-- ============================================ -->
-    <!-- FOOTER (similar al de index.html) -->
-    <!-- ============================================ -->
-    <footer class="bg-[#1a1a1a] text-gray-300 border-t border-gray-700">
+    <div class="leading-none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-[100px]">
+            <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#2c2c2c"></path>
+        </svg>
+    </div>
+    <footer id="footer-section" class="bg-[#1a1a1a] text-gray-300">
         <div class="container mx-auto px-6 pt-16 pb-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                <!-- Columna 1: Logo y Redes Sociales -->
-                <div>
-                    <a href="index.html" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
+                <div class="lg:col-span-1">
+                    <a href="#" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
                         <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
                     </a>
                     <p class="text-sm text-gray-400 mb-6 max-w-xs">
                         Sabor y elegancia para tus celebraciones familiares, eventos sociales y reuniones corporativas.
                     </p>
+                    <div class="flex gap-5">
+                        <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="https://share.google/ALubfV0RatgmZ2PT7" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Perfil de Google Business"><i class="fab fa-google text-xl"></i></a>
+                    </div>
                 </div>
-                <!-- Columna 2: Navegación -->
                 <div>
                     <h3 class="text-white font-bold tracking-wider mb-4">Navegación</h3>
                     <ul class="space-y-3">
                         <li><a href="index.html#servicios" class="hover:text-[#d4af37] transition-colors">Catálogo</a></li>
                         <li><a href="index.html#historia" class="hover:text-[#d4af37] transition-colors">Nuestra Historia</a></li>
                         <li><a href="index.html#proceso" class="hover:text-[#d4af37] transition-colors">Nuestro Proceso</a></li>
+                        <li><a href="index.html#paquetes" class="hover:text-[#d4af37] transition-colors">Paquetes</a></li>
+                        <li><a href="index.html#faq" class="hover:text-[#d4af37] transition-colors">Preguntas</a></li>
                     </ul>
                 </div>
-                <!-- Columna 3: Servicios -->
                 <div>
                     <h3 class="text-white font-bold tracking-wider mb-4">Servicios</h3>
                     <ul class="space-y-3">
                         <li><a href="coffee-break.html" class="hover:text-[#d4af37] transition-colors">Coffee Break</a></li>
-                        <li><a href="box-lunch.html" class="text-[#d4af37] font-bold">Box Lunch</a></li>
+                        <li><a href="box-lunch.html" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
                         <li><a href="almuerzo-ejecutivo.html" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
                         <li><a href="coctel-empresarial.html" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
+                        <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Party a la Leña</a></li>
+                        <li><a href="fiestas-y-celebraciones.html" class="hover:text-[#d4af37] transition-colors">Fiestas y Celebraciones</a></li>
                     </ul>
                 </div>
-                <!-- Columna 4: Contacto -->
                 <div>
                     <h3 class="text-white font-bold tracking-wider mb-4">Contacto</h3>
                     <ul class="space-y-4">
@@ -315,35 +331,33 @@
         </div>
     </footer>
 
-    <!-- Scripts necesarios -->
+    <!-- JAVASCRIPT -->
     <script src="js/config.js"></script>
     <script>
-        function enviarWhatsApp(asunto) {
+        function enviarWhatsApp(asunto) {            
             const numeroWhatsApp = config.numeroWhatsApp;
-            let mensajeBase = `Hola, me gustaría recibir más información sobre el servicio de ${asunto}`;
-            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeBase)}`;
+            let mensajeBase = 'Hola, estoy interesado en sus servicios de catering.';
+            if (asunto) {
+                mensajeBase = `Hola, me gustaría recibir más información sobre su servicio de ${asunto}.`;
+            }
+            const mensaje = encodeURIComponent(mensajeBase);
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
             window.open(url, '_blank');
         }
-
-        function enviarEmail(asunto) {
-            const email = config.email;
-            const subject = encodeURIComponent(`Consulta sobre servicio de ${asunto}`);
-            const body = encodeURIComponent(`Hola, me gustaría recibir más información sobre el servicio de ${asunto}.
-
-(Por favor, detalla aquí tu consulta)`);
-            const url = `mailto:${email}?subject=${subject}&body=${body}`;
-            window.location.href = url;
-        }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>new WOW().init();</script>
-    <script src="js/mobile-nav.js"></script>
-    <script src="js/elastic-nav.js"></script>
-    <!-- ============================================ -->
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <!-- ============================================ -->
-    <a href="javascript:void(0)" onclick="enviarWhatsApp('Consulta sobre Box Lunch')" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof WOW === 'function') {
+                new WOW().init();
+            }
+        });
+    </script>
+    <script src="js/elastic-nav.js" defer></script>
+    <script src="js/mobile-nav.js" defer></script>
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
+    <script src="js/scroll-to-top.js" defer></script>
+    <script src="js/ui-helpers.js" defer></script>
+    <a href="javascript:void(0)" onclick="enviarWhatsApp('Consulta desde la web')" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>

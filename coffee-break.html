@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicio de Coffee Break para Eventos en Montevideo | Chiswi Catering</title>
-    <meta name="description" content="Eleva tus reuniones con nuestro servicio de coffee break. Ingredientes frescos, presentación impecable y puntualidad garantizada. ¡Cotiza tu evento aquí!">
+    <title>Servicio de Coffee Break para Eventos y Reuniones | Chiswi Catering</title>
+    <meta name="description" content="Eleva tus pausas con nuestro servicio de coffee break. Ingredientes frescos, presentación impecable y puntualidad para todo tipo de eventos. ¡Cotiza tu evento aquí!">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -28,6 +28,15 @@
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
 </head>
 <body class="bg-white">
+    <!-- Filtros SVG para efectos visuales -->
+    <svg class="hidden">
+        <defs>
+            <filter id="wave-distort">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
+            </filter>
+        </defs>
+    </svg>
 
     <!-- ============================================ -->
     <!-- HEADER (similar al de index.html) -->
@@ -119,7 +128,7 @@
                     Coffee Breaks que Inspiran Conexiones
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                    Transforma las pausas de tus eventos en momentos productivos y deliciosos, diseñados para recargar energías y fomentar el networking.
+                    Una pausa perfecta para cualquier ocasión. Ya sea una reunión de trabajo, una charla entre amigos o una celebración familiar, nuestro coffee break está diseñado para deleitar a tus invitados y recargar energías con un toque de sabor.
                 </p>
                 <a href="#contacto" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
                     Cotiza tu Coffee Break
@@ -228,7 +237,7 @@
                     
                     <!-- Columna Derecha: Formulario -->
                     <div class="bg-white text-[#1a1a1a] rounded-lg shadow-2xl p-8 border-4 border-[#d4af37]">
-                        <form action="https://formsubmit.co/estefanoramirez@gmail.com" method="POST">
+                        <form action="https://formsubmit.co/info@chiswi.com" method="POST">
                             <h3 class="text-2xl font-bold mb-6">Envíanos tu consulta</h3>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -263,21 +272,38 @@
         </section>
     </main>
 
+    <div class="leading-none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-[100px]">
+            <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z" fill="#2c2c2c"></path>
+        </svg>
+    </div>
+
     <!-- ============================================ -->
-    <!-- FOOTER (similar al de index.html) -->
+    <!-- FOOTER -->
     <!-- ============================================ -->
-    <footer class="bg-[#1a1a1a] text-gray-300 border-t border-gray-700">
+    <footer id="footer-section" class="bg-[#1a1a1a] text-gray-300">
         <div class="container mx-auto px-6 pt-16 pb-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Columna 1: Logo y Redes Sociales -->
-                <div>
-                    <a href="index.html" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
+                <div class="lg:col-span-1">
+                    <a href="#" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
                         <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
                     </a>
                     <p class="text-sm text-gray-400 mb-6 max-w-xs">
                         Sabor y elegancia para tus celebraciones familiares, eventos sociales y reuniones corporativas.
                     </p>
+                    <div class="flex gap-5">
+                        <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Facebook">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        <a href="https://share.google/ALubfV0RatgmZ2PT7" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#d4af37] transition-colors" aria-label="Visita nuestro Perfil de Google Business">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                    </div>
                 </div>
+
                 <!-- Columna 2: Navegación -->
                 <div>
                     <h3 class="text-white font-bold tracking-wider mb-4">Navegación</h3>
@@ -285,29 +311,45 @@
                         <li><a href="index.html#servicios" class="hover:text-[#d4af37] transition-colors">Catálogo</a></li>
                         <li><a href="index.html#historia" class="hover:text-[#d4af37] transition-colors">Nuestra Historia</a></li>
                         <li><a href="index.html#proceso" class="hover:text-[#d4af37] transition-colors">Nuestro Proceso</a></li>
+                        <li><a href="index.html#paquetes" class="hover:text-[#d4af37] transition-colors">Paquetes</a></li>
+                        <li><a href="index.html#faq" class="hover:text-[#d4af37] transition-colors">Preguntas</a></li>
                     </ul>
                 </div>
+
                 <!-- Columna 3: Servicios -->
                 <div>
                     <h3 class="text-white font-bold tracking-wider mb-4">Servicios</h3>
                     <ul class="space-y-3">
-                        <li><a href="coffee-break.html" class="text-[#d4af37] font-bold">Coffee Break</a></li>
-                        <li><a href="#" class="hover:text-[#d4af37] transition-colors">Box Lunch (próximamente)</a></li>
-                        <li><a href="#" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo (próximamente)</a></li>
-                        <li><a href="#" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial (próximamente)</a></li>
+                        <li><a href="coffee-break.html" class="hover:text-[#d4af37] transition-colors">Coffee Break</a></li>
+                        <li><a href="box-lunch.html" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
+                        <li><a href="almuerzo-ejecutivo.html" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
+                        <li><a href="coctel-empresarial.html" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
+                        <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Party a la Leña</a></li>
+                        <li><a href="fiestas-y-celebraciones.html" class="hover:text-[#d4af37] transition-colors">Fiestas y Celebraciones</a></li>
                     </ul>
                 </div>
+
                 <!-- Columna 4: Contacto -->
                 <div>
                     <h3 class="text-white font-bold tracking-wider mb-4">Contacto</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-center"><i class="fa fa-phone-alt mr-3 w-4"></i><span>+598 97 680 439</span></li>
-                        <li class="flex items-center"><i class="fa fa-envelope mr-3 w-4"></i><span>info@chiswi.com</span></li>
-                        <li class="flex items-start"><i class="fa fa-map-marker-alt mr-3 w-4 mt-1"></i><span>Montevideo, Uruguay</span></li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone-alt mr-3 w-4"></i>
+                            <span>+598 97 680 439</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 w-4"></i>
+                            <span>info@chiswi.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker-alt mr-3 w-4 mt-1"></i>
+                            <span>Montevideo, Uruguay</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+        <!-- Sub-Footer -->
         <div class="bg-black/50 mt-8 py-4">
             <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
                 &copy; 2025 Chiswi Catering. Todos los derechos reservados.
@@ -315,28 +357,64 @@
         </div>
     </footer>
 
-    <!-- Scripts necesarios -->
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================ -->
+    
+    <!-- Script de Configuración (se mantiene sin defer porque se usa inline) -->
     <script src="js/config.js"></script>
+
     <script>
-        function enviarWhatsApp(asunto) {
+        function enviarWhatsApp(asunto) {            
             const numeroWhatsApp = config.numeroWhatsApp;
-            let mensajeBase = `Hola, me gustaría recibir más información sobre el servicio de ${asunto}.`;
-            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeBase)}`;
+            
+            let mensajeBase = 'Hola, estoy interesado en sus servicios de catering.';
+
+            if (asunto && asunto.startsWith('Paquete')) {
+                mensajeBase = `Hola, me gustaría recibir más información sobre el ${asunto}.`;
+            } else if (asunto === 'cotización general') {
+                mensajeBase = 'Hola, me gustaría solicitar una cotización para un evento.';
+            } else if (asunto === 'Pedido Internacional') {
+                mensajeBase = 'Hola, ¡qué buena noticia que reciben pedidos desde el extranjero! Me gustaría hacer un regalo para alguien en Uruguay.';
+            } else if (asunto) {
+                mensajeBase = `Hola, me gustaría recibir más información sobre el servicio de ${asunto}.`;
+            }
+
+            const mensaje = encodeURIComponent(mensajeBase);
+            
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+            
             window.open(url, '_blank');
         }
-
-        function enviarEmail(asunto) {
-            const email = config.email;
-            const subject = encodeURIComponent(`Consulta sobre servicio de ${asunto}`);
-            const body = encodeURIComponent(`Hola, me gustaría recibir más información sobre el servicio de ${asunto}.\n\n(Por favor, detalla aquí tu consulta)`);
-            const url = `mailto:${email}?subject=${subject}&body=${body}`;
-            window.location.href = url;
-        }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>new WOW().init();</script>
-    <script src="js/mobile-nav.js"></script>
-    <script src="js/elastic-nav.js"></script>
+
+    <!-- jQuery (con defer porque se usa solo para carousel) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    
+    <!-- WOW.js for Scroll Animations (con defer y init después de carga) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof WOW === 'function') {
+                new WOW().init();
+            }
+        });
+    </script>
+
+    <!-- Scripts no críticos cargados al final -->
+    <script src="js/elastic-nav.js" defer></script>
+    <script src="js/mobile-nav.js" defer></script>
+    
+    <!-- ============================================ -->
+    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- ============================================ -->
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script src="js/scroll-to-top.js" defer></script>
+    <script src="js/ui-helpers.js" defer></script>
+
     <!-- ============================================ -->
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <!-- ============================================ -->
