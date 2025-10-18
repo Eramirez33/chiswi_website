@@ -64,6 +64,7 @@
     <link rel="stylesheet" href="css/components/glass-nav-bar.css">
     <link rel="stylesheet" href="css/components/ticker.css">
     <link rel="stylesheet" href="css/components/historia.css?v=1.1">
+    <link rel="stylesheet" href="css/components/dropdown-menu.css">
     <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
 
     <!-- Fuentes ya cargadas arriba (evitar carga duplicada) -->
@@ -126,9 +127,20 @@
                         <nav class="elastic-nav">
                             <ul>
                                 <li><a href="index.html">Inicio</a></li>
-                                <li><a href="#servicios">Catálogo</a></li>
-                                <li><a href="#historia">Nuestra Historia</a></li>
-                                <li><a href="#proceso">Nuestro Proceso</a></li>
+                                <li class="dropdown">
+                                    <a href="index.html#servicios">Catálogo</a>
+                                    <div class="dropdown-content">
+                                        <a href="coffee-break.html">Coffee Break</a>
+                                        <a href="pizza-party.html">Pizza Libre</a>
+                                        <a href="fiestas-y-celebraciones.html">Fiestas y Celebraciones</a>
+                                        <a href="box-lunch.html">Box Lunch</a>
+                                        <a href="almuerzo-ejecutivo.html">Almuerzo Ejecutivo</a>
+                                        <a href="coctel-empresarial.html">Cóctel Empresarial</a>
+                                        <a href="index.html#internacional">Gestión Internacional</a>
+                                    </div>
+                                </li>
+                                <li><a href="index.html#historia">Nuestra Historia</a></li>
+                                <li><a href="index.html#proceso">Nuestro Proceso</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -136,7 +148,7 @@
                     <!-- Logo (Centrado) -->
                     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a class="flex-none" href="index.html" aria-label="Chiswi Catering">
-                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering" width="96" height="96" loading="eager" decoding="async">
+                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
                         </a>
                     </div>
                     
@@ -144,12 +156,12 @@
                     <div class="flex items-center justify-end flex-1">
                         <nav class="elastic-nav hidden md:flex">
                             <ul>
-                                <li><a href="#paquetes">Paquetes</a></li>
-                                <li><a href="#faq">Preguntas</a></li>
+                                <li><a href="index.html#paquetes">Paquetes</a></li>
+                                <li><a href="index.html#faq">Preguntas</a></li>
                             </ul>
                         </nav>
                         <div class="ml-6">
-                            <a href="#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full text-sm shadow-lg px-6 py-4 hover:bg-yellow-500 transition duration-300">
+                            <a href="index.html#contacto" class="cta-button hidden md:inline-flex items-center justify-center bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full text-sm shadow-lg px-6 py-4 hover:bg-yellow-500 transition duration-300">
                                 <span>Cotiza tu Evento</span>
                             </a>
                         </div>
@@ -169,7 +181,7 @@
     <!-- PANEL DE MENÚ MÓVIL -->
     <!-- ============================================ -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
-        <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-1/2 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-4/5 max-w-md bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
             <!-- Botón de Cierre -->
             <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -178,13 +190,24 @@
             <!-- Enlaces de Navegación -->
             <nav class="mt-12">
                 <ul class="space-y-6">
-                    <li><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Inicio</a></li>
-                    <li><a href="#servicios" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Catálogo</a></li>
-                    <li><a href="#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestro Proceso</a></li>
-                    <li><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestra Historia</a></li>
-                    <li><a href="#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Paquetes</a></li>
-                    <li><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Preguntas</a></li>
-                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300">Cotiza tu Evento</a></li>
+                    <li><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Inicio</a></li>
+                    <li>
+                        <span class="mobile-nav-link text-xl text-gray-800 font-semibold mb-2 block">Catálogo</span>
+                        <ul class="pl-2 space-y-2">
+                            <li><a href="coffee-break.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Coffee Break</a></li>
+                            <li><a href="pizza-party.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Pizza Libre</a></li>
+                            <li><a href="fiestas-y-celebraciones.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Fiestas y Celebraciones</a></li>
+                            <li><a href="box-lunch.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Box Lunch</a></li>
+                            <li><a href="almuerzo-ejecutivo.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Almuerzo Ejecutivo</a></li>
+                            <li><a href="coctel-empresarial.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Cóctel Empresarial</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Nuestro Proceso</a></li>
+                    <li><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Nuestra Historia</a></li>
+                    <li><a href="#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Paquetes</a></li>
+                    <li><a href="#internacional" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Gestión Internacional</a></li>
+                    <li><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Preguntas</a></li>
+                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300 block whitespace-normal">Cotiza tu Evento</a></li>
                 </ul>
             </nav>
         </div>
@@ -247,20 +270,20 @@
                     </p>
                     <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
                         El 2022 marcó un antes y un después. Tuvimos el honor de ser seleccionados por 
-                        <span class="relative">
-                            <strong class="font-bold text-black-500 cedel-tooltip-trigger">CEDEL Casavalle</strong>,
-                            <span class="cedel-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-white p-4 rounded-lg shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-300">
-                                <strong class="block text-md font-bold text-[#d4af37]">Nuestro Impulso Local</strong>
-                                <span class="block text-sm text-gray-600 mt-1">CEDEL es el Centro de Desarrollo Económico Local de Montevideo, un pilar que a través de su programa 'Vivero de Empresas' y su plan de comercialización, nos brindó herramientas clave para crecer.</span>
-                            </span>
-                        </span>
-                        un pilar fundamental en nuestro desarrollo. Gracias a su plan de "Vivero de Empresas" y comercialización, recibimos el impulso y las herramientas para fortalecer nuestra entrada en el mercado local y llevar nuestro sueño al siguiente nivel.
-                    </p>
-                    <p class="text-gray-600 mb-8" style="font-family: 'Roboto', sans-serif;">
-                        Hoy, con el mismo esfuerzo, dedicación y pasión del primer día, nos hemos convertido en un referente en el rubro. Nuestra esencia sigue intacta: el amor por lo que hacemos y el compromiso de recordar siempre que <strong>Chiswi es una dulce sonrisa</strong>.
-                    </p>
-                    <div class="firma-container text-center md:text-left">
-                        <svg id="signature" class="mx-auto md:mx-0" width="300" height="100" viewBox="0 0 380 150">
+                        <li class="relative">
+                            <button type="button" id="mobile-catalogo-toggle" class="mobile-nav-link text-xl text-gray-800 font-semibold mb-2 block w-full text-left focus:outline-none">
+                                Catálogo
+                                <span class="float-right"><i class="fa fa-chevron-down"></i></span>
+                            </button>
+                            <ul id="mobile-catalogo-dropdown" class="pl-2 space-y-2 bg-white rounded-lg shadow-lg border border-gray-200 absolute left-0 right-0 mt-2 z-50 hidden">
+                                <li><a href="coffee-break.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Coffee Break</a></li>
+                                <li><a href="pizza-party.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Pizza Libre</a></li>
+                                <li><a href="fiestas-y-celebraciones.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Fiestas y Celebraciones</a></li>
+                                <li><a href="box-lunch.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Box Lunch</a></li>
+                                <li><a href="almuerzo-ejecutivo.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Almuerzo Ejecutivo</a></li>
+                                <li><a href="coctel-empresarial.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Cóctel Empresarial</a></li>
+                            </ul>
+                        </li>
                            <path id="signature-path" d="M20,70 Q40,30 70,70 T120,70 M140,70 C160,30 200,30 220,70 C240,110 280,110 300,70 S340,30 360,70" stroke="#1a1a1a" fill="transparent" stroke-width="4" stroke-linecap="round"/>
                         </svg>
                         <p class="text-2xl font-semibold text-[#1a1a1a] -mt-8" style="font-family: 'Dancing Script', cursive;">Chiswi Catering</p>
@@ -446,15 +469,79 @@
         <!-- ============================================ -->
         <!-- CONECTANDO CORAZONES (INTERNATIONAL ORDERS) -->
         <!-- ============================================ -->
-        <section id="internacional" class="bg-white py-20">
-            <div class="container mx-auto px-6 text-center wow animate__animated animate__fadeInUp">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">Conectando Corazones a la Distancia ❤️</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-                    ¿Vives en el extranjero y quieres sorprender a alguien en Uruguay? Gestionamos tu pedido desde cualquier parte del mundo. Ya hemos enviado sonrisas desde países como México y España. ¡La distancia no es un impedimento para un detalle delicioso!
-                </p>
-                <button onclick="enviarWhatsApp('Pedido Internacional')" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 shadow-lg cta-pulse">
-                    Sorprende desde el Extranjero
-                </button>
+    <section id="internacional" class="py-20 bg-white border-b-2 border-gray-200 relative overflow-hidden">
+            <!-- Parallax decorative layer (moved by js/parallax.js) -->
+            <div class="parallax-element absolute top-0 right-0 md:w-2/3 md:h-2/3 w-full h-64 z-0 pointer-events-none" data-parallax-speed="0.12" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMinYMin slice" class="w-full h-full">
+                    <defs>
+                        <radialGradient id="goldGrad2" cx="60%" cy="40%" r="60%">
+                            <stop offset="0%" stop-color="#d4af37" stop-opacity="0.18" />
+                            <stop offset="100%" stop-color="#d4af37" stop-opacity="0" />
+                        </radialGradient>
+                        <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fffbe6" stop-opacity="0.7" />
+                            <stop offset="100%" stop-color="#d4af37" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="1200" height="600" fill="url(#goldGrad2)" />
+                    <ellipse cx="900" cy="120" rx="180" ry="60" fill="#d4af37" opacity="0.08" />
+                    <ellipse cx="300" cy="500" rx="120" ry="40" fill="#d4af37" opacity="0.05" />
+                    <path d="M100 100 Q400 0 800 200 T1200 100" stroke="#d4af37" stroke-width="8" opacity="0.13" fill="none" />
+                    <path d="M200 300 Q600 400 1000 300" stroke="url(#shine)" stroke-width="6" opacity="0.18" fill="none" />
+                    <circle cx="1050" cy="80" r="18" fill="#fffbe6" opacity="0.7" />
+                    <circle cx="1150" cy="180" r="8" fill="#d4af37" opacity="0.3" />
+                </svg>
+            </div>
+            
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <div class="wow animate__animated animate__fadeInUp">
+                    <span class="inline-block bg-[#d4af37]/10 text-[#d4af37] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                        🌎 Gestiona desde el Exterior
+                    </span>
+                    
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">
+                        Conectando Corazones a la Distancia <span class="animate-pulse inline-block">❤️</span>
+                    </h2>
+
+                    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-8">
+                        <div class="internacional-card rounded-xl p-6 relative overflow-hidden group wow animate__animated animate__fadeInLeft" data-wow-delay="0.1s">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#d4af37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🌍</div>
+                            <h3 class="font-bold text-lg mb-2 text-[#1a1a1a] relative z-10">Desde Cualquier País</h3>
+                            <p class="text-gray-600 relative z-10">Tu amor no conoce fronteras, nuestro servicio tampoco</p>
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4af37] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                        </div>
+                        <div class="internacional-card rounded-xl p-6 relative overflow-hidden group wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#d4af37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">⚡</div>
+                            <h3 class="font-bold text-lg mb-2 text-[#1a1a1a] relative z-10">Proceso Simple</h3>
+                            <p class="text-gray-600 relative z-10">Coordina fácilmente por WhatsApp, nosotros nos encargamos</p>
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4af37] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                        </div>
+                        <div class="internacional-card rounded-xl p-6 relative overflow-hidden group wow animate__animated animate__fadeInRight" data-wow-delay="0.5s">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#d4af37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">📸</div>
+                            <h3 class="font-bold text-lg mb-2 text-[#1a1a1a] relative z-10">Fotos de Entrega</h3>
+                            <p class="text-gray-600 relative z-10">Recibe fotos del momento especial que creaste</p>
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4af37] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1a1a1a] text-white p-8 rounded-2xl max-w-3xl mx-auto mb-8">
+                        <p class="text-lg mb-4">
+                            "¿Vives en el extranjero y quieres sorprender a alguien en Uruguay? Gestionamos tu pedido desde cualquier parte del mundo. Ya hemos llevado alegría desde México, España, Argentina y más. La distancia no es un impedimento para crear momentos especiales."
+                        </p>
+                        <div class="flex justify-center gap-2">
+                            <span class="inline-block px-3 py-1 bg-[#d4af37]/20 text-[#d4af37] rounded-full text-sm">🇲🇽 México</span>
+                            <span class="inline-block px-3 py-1 bg-[#d4af37]/20 text-[#d4af37] rounded-full text-sm">🇪🇸 España</span>
+                            <span class="inline-block px-3 py-1 bg-[#d4af37]/20 text-[#d4af37] rounded-full text-sm">🇦🇷 Argentina</span>
+                        </div>
+                    </div>
+
+                    <button onclick="enviarWhatsApp('Pedido Internacional')" class="bg-[#d4af37] text-[#1a1a1a] font-bold py-4 px-10 rounded-full text-lg hover:bg-yellow-500 transition duration-300 shadow-xl hover:scale-105 transform cta-pulse">
+                        <span class="mr-2">✈️</span> Sorprende desde el Extranjero
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -649,6 +736,7 @@
                         <li><a href="coctel-empresarial.html" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
                         <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Libre a la Leña</a></li>
                         <li><a href="fiestas-y-celebraciones.html" class="hover:text-[#d4af37] transition-colors">Fiestas y Celebraciones</a></li>
+                        <li><a href="index.html#internacional" class="hover:text-[#d4af37] transition-colors">Gestión Internacional</a></li>
                     </ul>
                 </div>
 
@@ -690,9 +778,7 @@
     <script>
         function enviarWhatsApp(asunto) {            
             const numeroWhatsApp = config.numeroWhatsApp;
-            
             let mensajeBase = 'Hola, estoy interesado en sus servicios de catering.';
-
             if (asunto && asunto.startsWith('Paquete')) {
                 mensajeBase = `Hola, me gustaría recibir más información sobre el ${asunto}.`;
             } else if (asunto === 'cotización general') {
@@ -700,14 +786,29 @@
             } else if (asunto === 'Pedido Internacional') {
                 mensajeBase = 'Hola, ¡qué buena noticia que reciben pedidos desde el extranjero! Me gustaría hacer un regalo para alguien en Uruguay.';
             }
-
             const mensaje = encodeURIComponent(mensajeBase);
-            
             const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
-            
             window.open(url, '_blank');
             return false;
         }
+
+        // Dropdown Catálogo en menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            var catalogoToggle = document.getElementById('mobile-catalogo-toggle');
+            var catalogoDropdown = document.getElementById('mobile-catalogo-dropdown');
+            if (catalogoToggle && catalogoDropdown) {
+                catalogoToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    catalogoDropdown.classList.toggle('hidden');
+                });
+                // Cerrar dropdown si se hace click fuera
+                document.addEventListener('click', function(e) {
+                    if (!catalogoToggle.contains(e.target) && !catalogoDropdown.contains(e.target)) {
+                        catalogoDropdown.classList.add('hidden');
+                    }
+                });
+            }
+        });
     </script>
 
     <!-- jQuery (con defer porque se usa solo para carousel) -->
