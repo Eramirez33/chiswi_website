@@ -186,28 +186,31 @@
             <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            
+
             <!-- Enlaces de Navegación -->
             <nav class="mt-12">
-                <ul class="space-y-6">
-                    <li><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Inicio</a></li>
-                    <li>
-                        <span class="mobile-nav-link text-xl text-gray-800 font-semibold mb-2 block">Catálogo</span>
-                        <ul class="pl-2 space-y-2">
-                            <li><a href="coffee-break.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Coffee Break</a></li>
-                            <li><a href="pizza-party.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Pizza Libre</a></li>
-                            <li><a href="fiestas-y-celebraciones.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Fiestas y Celebraciones</a></li>
-                            <li><a href="box-lunch.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Box Lunch</a></li>
-                            <li><a href="almuerzo-ejecutivo.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Almuerzo Ejecutivo</a></li>
-                            <li><a href="coctel-empresarial.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Cóctel Empresarial</a></li>
+                <ul class="space-y-4 divide-y divide-gray-200">
+                    <li class="pb-2"><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Inicio</a></li>
+                    <li class="pt-2 pb-2 relative">
+                        <button id="mobile-catalogo-toggle" type="button" class="mobile-nav-link text-xl text-gray-800 font-semibold mb-2 block w-full text-left flex items-center justify-between focus:outline-none">
+                            Catálogo
+                            <svg class="w-5 h-5 ml-2 inline-block transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <ul id="mobile-catalogo-dropdown" class="pl-3 space-y-1 bg-gray-50 rounded-lg border border-gray-200 py-2 mt-2 absolute left-0 right-0 z-10 hidden">
+                            <li><a href="coffee-break.html" class="text-lg text-gray-700 hover:text-[#d4af37] block">Coffee Break</a></li>
+                            <li><a href="pizza-party.html" class="text-lg text-gray-700 hover:text-[#d4af37] block">Pizza Libre</a></li>
+                            <li><a href="fiestas-y-celebraciones.html" class="text-lg text-gray-700 hover:text-[#d4af37] block">Fiestas y Celebraciones</a></li>
+                            <li><a href="box-lunch.html" class="text-lg text-gray-700 hover:text-[#d4af37] block">Box Lunch</a></li>
+                            <li><a href="almuerzo-ejecutivo.html" class="text-lg text-gray-700 hover:text-[#d4af37] block">Almuerzo Ejecutivo</a></li>
+                            <li><a href="coctel-empresarial.html" class="text-lg text-gray-700 hover:text-[#d4af37] block">Cóctel Empresarial</a></li>
                         </ul>
                     </li>
-                    <li><a href="#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Nuestro Proceso</a></li>
-                    <li><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Nuestra Historia</a></li>
-                    <li><a href="#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Paquetes</a></li>
-                    <li><a href="#internacional" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Gestión Internacional</a></li>
-                    <li><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block whitespace-normal">Preguntas</a></li>
-                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300 block whitespace-normal">Cotiza tu Evento</a></li>
+                    <li class="pt-2 pb-2"><a href="#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Nuestro Proceso</a></li>
+                    <li class="pt-2 pb-2"><a href="#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Nuestra Historia</a></li>
+                    <li class="pt-2 pb-2"><a href="#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Paquetes</a></li>
+                    <li class="pt-2 pb-2"><a href="#internacional" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Gestión Internacional</a></li>
+                    <li class="pt-2 pb-2"><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Preguntas</a></li>
+                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300 block">Cotiza tu Evento</a></li>
                 </ul>
             </nav>
         </div>
@@ -269,27 +272,14 @@
                         Con dedicación y amor por el detalle, ese sueño fue creciendo. Cada cliente se convirtió en parte de nuestra familia, y poco a poco, nuestra reputación por la calidad y el servicio cercano se extendió, permitiéndonos llegar a más hogares y empresas que confiaron en nosotros.
                     </p>
                     <p class="text-gray-600 mb-4" style="font-family: 'Roboto', sans-serif;">
-                        El 2022 marcó un antes y un después. Tuvimos el honor de ser seleccionados por 
-                        <li class="relative">
-                            <button type="button" id="mobile-catalogo-toggle" class="mobile-nav-link text-xl text-gray-800 font-semibold mb-2 block w-full text-left focus:outline-none">
-                                Catálogo
-                                <span class="float-right"><i class="fa fa-chevron-down"></i></span>
-                            </button>
-                            <ul id="mobile-catalogo-dropdown" class="pl-2 space-y-2 bg-white rounded-lg shadow-lg border border-gray-200 absolute left-0 right-0 mt-2 z-50 hidden">
-                                <li><a href="coffee-break.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Coffee Break</a></li>
-                                <li><a href="pizza-party.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Pizza Libre</a></li>
-                                <li><a href="fiestas-y-celebraciones.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Fiestas y Celebraciones</a></li>
-                                <li><a href="box-lunch.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Box Lunch</a></li>
-                                <li><a href="almuerzo-ejecutivo.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Almuerzo Ejecutivo</a></li>
-                                <li><a href="coctel-empresarial.html" class="mobile-nav-link text-lg text-gray-700 hover:text-[#d4af37] block whitespace-normal">Cóctel Empresarial</a></li>
-                            </ul>
-                        </li>
-                           <path id="signature-path" d="M20,70 Q40,30 70,70 T120,70 M140,70 C160,30 200,30 220,70 C240,110 280,110 300,70 S340,30 360,70" stroke="#1a1a1a" fill="transparent" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                        <p class="text-2xl font-semibold text-[#1a1a1a] -mt-8" style="font-family: 'Dancing Script', cursive;">Chiswi Catering</p>
-                    </div>
+                        El 2022 marcó un antes y un después. Tuvimos el honor de ser seleccionados por instituciones y empresas de primer nivel, lo que nos impulsó a crecer y profesionalizarnos aún más, manteniendo siempre el trato cercano y la pasión por cada detalle.
+                    </p>
+                    <svg width="380" height="100" viewBox="0 0 380 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-2">
+                        <path id="signature-path" d="M20,70 Q40,30 70,70 T120,70 M140,70 C160,30 200,30 220,70 C240,110 280,110 300,70 S340,30 360,70" stroke="#1a1a1a" fill="transparent" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                    <p class="text-2xl font-semibold text-[#1a1a1a] mt-2" style="font-family: 'Dancing Script', cursive;">Chiswi Catering</p>
                 </div>
-                <!-- Columna de Imagen Corregida -->
+                <!-- Columna de Imagen -->
                 <div class="flex justify-center items-center wow animate__animated animate__slideInRight">
                     <div class="image-frame-container relative w-full max-w-sm p-2 border-4 border-[#d4af37] rounded-lg bg-white">
                         <div id="historia-slideshow" class="relative w-full overflow-hidden rounded" style="aspect-ratio: 4/5;">
@@ -796,10 +786,15 @@
         document.addEventListener('DOMContentLoaded', function() {
             var catalogoToggle = document.getElementById('mobile-catalogo-toggle');
             var catalogoDropdown = document.getElementById('mobile-catalogo-dropdown');
+            var mobileMenuPanel = document.getElementById('mobile-menu-panel');
             if (catalogoToggle && catalogoDropdown) {
                 catalogoToggle.addEventListener('click', function(e) {
                     e.stopPropagation();
                     catalogoDropdown.classList.toggle('hidden');
+                });
+                // Evitar cierre del menú móvil al hacer clic en los enlaces del dropdown
+                catalogoDropdown.addEventListener('click', function(e) {
+                    e.stopPropagation();
                 });
                 // Cerrar dropdown si se hace click fuera
                 document.addEventListener('click', function(e) {

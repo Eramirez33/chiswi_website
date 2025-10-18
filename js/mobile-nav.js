@@ -38,8 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close menu when a link is clicked
+    // Close menu when a link is clicked, except if inside the Catálogo dropdown
     mobileNavLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', function(e) {
+            // Si el enlace está dentro del dropdown de Catálogo, no cerrar el menú
+            const catalogoDropdown = document.getElementById('mobile-catalogo-dropdown');
+            if (catalogoDropdown && catalogoDropdown.contains(link)) {
+                // No cerrar el menú móvil
+                return;
+            }
+            closeMenu();
+        });
     });
 });
