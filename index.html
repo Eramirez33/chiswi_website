@@ -326,9 +326,9 @@
                         </div>
                     </div>
                     <div class="service-item wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
-                        <a href="pizza-party.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Pizza Party a la Leña" width="400" height="400" loading="lazy" decoding="async"></a>
+                        <a href="pizza-party.html" class="service-img mx-auto"><img class="rounded-full w-full h-full bg-white p-3 object-cover" src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Servicio de Pizza Libre a la Leña" width="400" height="400" loading="lazy" decoding="async"></a>
                         <div class="relative text-center bg-white rounded-lg p-4 pb-5 -mt-[75px]">
-                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Pizza Party a la Leña</h3>
+                            <h3 class="text-xl font-bold mt-16 mb-3 pt-2">Pizza Libre a la Leña</h3>
                             <p class="text-gray-600">3 horas de show en vivo con auténtico sabor a horno de leña. ¡Una fiesta inolvidable!</p>
                         </div>
                     </div>
@@ -647,7 +647,7 @@
                         <li><a href="box-lunch.html" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
                         <li><a href="almuerzo-ejecutivo.html" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
                         <li><a href="coctel-empresarial.html" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
-                        <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Party a la Leña</a></li>
+                        <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Libre a la Leña</a></li>
                         <li><a href="fiestas-y-celebraciones.html" class="hover:text-[#d4af37] transition-colors">Fiestas y Celebraciones</a></li>
                     </ul>
                 </div>
@@ -706,6 +706,7 @@
             const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
             
             window.open(url, '_blank');
+            return false;
         }
     </script>
 
@@ -878,7 +879,7 @@
     <!-- ============================================ -->
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <!-- ============================================ -->
-    <a href="javascript:void(0)" onclick="enviarWhatsApp('Consulta desde la web')" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="javascript:void(0)" onclick="return enviarWhatsApp('Consulta desde la web')" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>

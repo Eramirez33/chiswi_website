@@ -310,7 +310,7 @@
                         <li><a href="box-lunch.html" class="hover:text-[#d4af37] transition-colors">Box Lunch</a></li>
                         <li><a href="almuerzo-ejecutivo.html" class="hover:text-[#d4af37] transition-colors">Almuerzo Ejecutivo</a></li>
                         <li><a href="coctel-empresarial.html" class="hover:text-[#d4af37] transition-colors">Cóctel Empresarial</a></li>
-                        <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Party a la Leña</a></li>
+                        <li><a href="pizza-party.html" class="hover:text-[#d4af37] transition-colors">Pizza Libre a la Leña</a></li>
                         <li><a href="fiestas-y-celebraciones.html" class="hover:text-[#d4af37] transition-colors">Fiestas y Celebraciones</a></li>
                     </ul>
                 </div>
@@ -343,6 +343,7 @@
             const mensaje = encodeURIComponent(mensajeBase);
             const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
             window.open(url, '_blank');
+            return false;
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
@@ -358,6 +359,6 @@
     <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
     <script src="js/scroll-to-top.js" defer></script>
     <script src="js/ui-helpers.js" defer></script>
-    <a href="javascript:void(0)" onclick="enviarWhatsApp('Consulta desde la web')" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+    <a href="javascript:void(0)" onclick="return enviarWhatsApp('Consulta desde la web')" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
