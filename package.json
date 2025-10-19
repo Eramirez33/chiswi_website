@@ -1,0 +1,21 @@
+{
+  "name": "chiswi_website",
+  "version": "1.0.0",
+  "description": "Sitio web de Chiswi Catering",
+  "scripts": {
+    "build:css": "cleancss -o css/bundle.min.css css/styles.css css/components/elastic-nav.css css/components/glass-nav-bar.css css/components/ticker.css css/components/historia.css css/components/dropdown-menu.css css/components/services-carousel.css",
+    "build:js": "uglifyjs js/elastic-nav.js js/ticker.js js/historia.js js/mobile-nav.js js/process-mobile-animation.js js/scroll-to-top.js js/ui-helpers.js js/parallax.js js/hero-carousel.js -o js/bundle.min.js -c -m",
+    "build": "npm-run-all build:css build:js",
+    "watch:css": "npm run build:css -- --watch",
+    "watch:js": "onchange 'js/**/*.js' -- npm run build:js",
+    "watch": "npm-run-all --parallel watch:css watch:js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "uglify-js": "^3.17.4"
+  }
+}

@@ -10,23 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Animate.css for WOW.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="img/image-buffet.webp">
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     
     <script>
         tailwind.config = { darkMode: 'class' }
     </script>
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components/glass-nav-bar.css">
-    <link rel="stylesheet" href="css/components/elastic-nav.css">
-    <link rel="stylesheet" href="css/components/dropdown-menu.css">
-    <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
+    <link rel="stylesheet" href="css/bundle.min.css">
+    <link rel="icon" href="img/chiswi_logo-removebg-preview.webp" type="image/webp">
 </head>
 <body class="bg-white">
     <!-- Filtros SVG para efectos visuales -->
@@ -72,7 +68,10 @@
                     <!-- Logo (Centrado) -->
                     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a class="flex-none" href="index.html" aria-label="Chiswi Catering">
-                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                            <picture>
+                                <source srcset="img/chiswi_logo-removebg-preview.webp" type="image/webp">
+                                <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering" width="96" height="96">
+                            </picture>
                         </a>
                     </div>
                     
@@ -167,7 +166,10 @@
         <!-- ============================================ -->
         <section class="relative text-white overflow-hidden min-h-screen flex items-center pt-20">
             <div class="absolute inset-0 w-full h-full z-0">
-                <img src="img/image-buffet.jpg" alt="Mesa de Almuerzo Ejecutivo servida" class="w-full h-full object-cover">
+                <picture>
+                    <source srcset="img/image-buffet.webp" type="image/webp">
+                    <img src="img/image-buffet.jpg" alt="Mesa de Almuerzo Ejecutivo servida" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high">
+                </picture>
             </div>
             <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
             <div class="container mx-auto px-6 text-center relative z-20 w-full">
@@ -239,16 +241,28 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1a1a1a] mb-12 wow animate__animated animate__fadeInUp">Así Lucen Nuestros Almuerzos Ejecutivos</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.1s">
-                        <img src="img/service-1.jpg" alt="Foto de un almuerzo ejecutivo 1" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <picture>
+                            <source srcset="img/service-1.webp" type="image/webp">
+                            <img src="img/service-1.jpg" alt="Foto de un almuerzo ejecutivo 1" class="w-full h-full object-cover rounded-lg shadow-md" width="400" height="400" loading="lazy">
+                        </picture>
                     </div>
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
-                        <img src="img/service-2.jpg" alt="Foto de un almuerzo ejecutivo 2" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <picture>
+                            <source srcset="img/service-2.webp" type="image/webp">
+                            <img src="img/service-2.jpg" alt="Foto de un almuerzo ejecutivo 2" class="w-full h-full object-cover rounded-lg shadow-md" width="400" height="400" loading="lazy">
+                        </picture>
                     </div>
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.3s">
-                        <img src="img/service-3.jpg" alt="Foto de un almuerzo ejecutivo 3" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <picture>
+                            <source srcset="img/service-3.webp" type="image/webp">
+                            <img src="img/service-3.jpg" alt="Foto de un almuerzo ejecutivo 3" class="w-full h-full object-cover rounded-lg shadow-md" width="400" height="400" loading="lazy">
+                        </picture>
                     </div>
                     <div class="wow animate__animated animate__zoomIn" data-wow-delay="0.4s">
-                        <img src="img/service-4.jpg" alt="Foto de un almuerzo ejecutivo 4" class="w-full h-full object-cover rounded-lg shadow-md">
+                        <picture>
+                            <source srcset="img/service-4.webp" type="image/webp">
+                            <img src="img/service-4.jpg" alt="Foto de un almuerzo ejecutivo 4" class="w-full h-full object-cover rounded-lg shadow-md" width="400" height="400" loading="lazy">
+                        </picture>
                     </div>
                 </div>
                 <p class="text-center text-gray-500 mt-4 text-sm">Nota: Las imágenes son representativas de nuestro estilo y calidad.</p>
@@ -329,7 +343,10 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div class="lg:col-span-1">
                     <a href="#" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
-                        <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                        <picture>
+                            <source srcset="img/chiswi_logo-removebg-preview.webp" type="image/webp">
+                            <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering" width="80" height="80">
+                        </picture>
                     </a>
                     <p class="text-sm text-gray-400 mb-6 max-w-xs">
                         Sabor y elegancia para tus celebraciones familiares, eventos sociales y reuniones corporativas.
@@ -378,33 +395,7 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
-    <script src="js/config.js"></script>
-    <script>
-        function enviarWhatsApp(asunto) {            
-            const numeroWhatsApp = config.numeroWhatsApp;
-            let mensajeBase = 'Hola, estoy interesado en sus servicios de catering.';
-            if (asunto) {
-                mensajeBase = `Hola, me gustaría recibir más información sobre su servicio de ${asunto}.`;
-            }
-            const mensaje = encodeURIComponent(mensajeBase);
-            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
-            window.open(url, '_blank');
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof WOW === 'function') {
-                new WOW().init();
-            }
-        });
-    </script>
-    <script src="js/elastic-nav.js" defer></script>
-    <script src="js/mobile-nav.js" defer></script>
-    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
-    <script src="js/scroll-to-top.js" defer></script>
-    <script src="js/ui-helpers.js" defer></script>
+    <script src="js/bundle.min.js" defer></script>
     <a href="javascript:void(0)" onclick="return enviarWhatsApp('Consulta desde la web')" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
     </body>
         <script>

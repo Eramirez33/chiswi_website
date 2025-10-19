@@ -39,6 +39,29 @@ Este proyecto está construido principalmente con tecnologías front-end estánd
 - **Font Awesome:** Para los íconos utilizados en todo el sitio.
 - **Preline UI (vía CDN):** Algunos componentes y funcionalidades de UI.
 
+### Herramientas de Desarrollo
+- **Node.js / npm:** Para la gestión de dependencias y la ejecución de scripts.
+- **Uglify-JS:** Para minificar archivos JavaScript.
+- **Clean-CSS-CLI:** Para combinar y minificar archivos CSS.
+- **npm-run-all:** Para ejecutar múltiples scripts simultáneamente.
+- **onchange:** Para observar cambios en los archivos y reconstruir los bundles automáticamente.
+
+## 🚀 Instalación y Uso Local
+
+1.  Clona el repositorio.
+2.  Instala las dependencias de desarrollo:
+    ```bash
+    npm install
+    ```
+3.  Para generar los archivos de producción (`bundle.min.css` y `bundle.min.js`) una sola vez:
+    ```bash
+    npm run build
+    ```
+4.  Para trabajar en modo "watch" (observa cambios y reconstruye automáticamente):
+    ```bash
+    npm run watch
+    ```
+
 ## 📂 Estructura del Proyecto
 
 El repositorio está organizado de la siguiente manera:
@@ -49,16 +72,17 @@ El repositorio está organizado de la siguiente manera:
 │   ├── styles.css               # Hoja de estilos principal
 │   └── components/              # Estilos para componentes específicos (botones, hero, etc.)
 ├── img/
-│   └── ...                      # Todas las imágenes y logos del sitio
+│   └── ...                      # Imágenes y logos del sitio
 ├── js/
 │   ├── config.js                # Configuración central (ej. número de WhatsApp)
 │   ├── campaign-config.js       # Configuración del banner de campaña
 │   ├── ticker.js                # Lógica para el carrusel de clientes (Swiper.js)
 │   ├── historia.js              # Lógica para el slideshow de la sección de historia
 │   ├── mobile-nav.js            # Lógica para el menú de navegación en móviles
-│   ├── ui-helpers.js            # Scripts para funcionalidades de UI (banner, scroll top, etc.)
-│   └── ...                      # Otros scripts para componentes específicos
+│   └── ...                      # Otros scripts para componentes
 ├── index.html                   # Archivo principal del sitio web
+├── package.json                 # Define las dependencias y scripts del proyecto
+├── .gitignore                   # Especifica qué archivos ignorar en Git
 └── README.md                    # Este archivo
 ```
 

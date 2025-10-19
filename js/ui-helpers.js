@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // 5. Re-ajustar en caso de que cambie el tamaño de la ventana
-        window.addEventListener('resize', adjustLayout);
+        window.addEventListener('resize', adjustLayout, { passive: true });
     }
 
 
     // --- Lógica para el Botón "Volver Arriba" ---
-    const backToTopButton = document.getElementById('back-to-top');
+    const backToTopButton = document.getElementById('scrollToTopButton');
 
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 backToTopButton.classList.remove('visible');
             }
-        });
+        }, { passive: true });
 
         backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
@@ -85,6 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 topInfoBar.classList.remove('scrolled');
             }
         }
-    });
+    }, { passive: true });
 
 });

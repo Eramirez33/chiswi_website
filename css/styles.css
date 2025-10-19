@@ -393,3 +393,11 @@ header {
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
+
+/* Ajuste fino para el top-bar en pantallas muy pequeñas */
+@media (max-width: 380px) {
+    #top-info-bar .flex.gap-2.md\:gap-6 {
+        font-size: 0.65rem; /* 10.4px, un poco más pequeño que text-xs */
+        gap: 0.5rem; /* Reduce el espacio entre teléfono y email */
+    }
+}

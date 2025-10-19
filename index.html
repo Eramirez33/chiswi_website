@@ -12,62 +12,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload de imágenes críticas del hero -->
-    <link rel="preload" as="image" href="img/image-buffet.jpg">
-    <link rel="preload" as="image" href="img/emparedado.jpg">
-    <link rel="preload" as="image" href="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg">
-    <link rel="preload" as="image" href="img/5856.jpg">
-
-    <!-- Estilos críticos primero -->
-    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/components/glass-nav-bar.css" media="print" onload="this.media='all'">
+    <!-- Preload de la imagen LCP (Largest Contentful Paint) en formato WebP -->
+    <link rel="preload" as="image" href="img/image-buffet.webp">
     
     <!-- Google Fonts optimizado -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" 
           rel="stylesheet"
           media="print" 
           onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    </noscript>
 
-    <!-- Estilos no críticos con carga diferida -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
-          media="print" 
-          onload="this.media='all'">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-          media="print" 
-          onload="this.media='all'"/>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-    <!-- Componentes con carga diferida -->
-    <link rel="stylesheet" href="css/components/elastic-nav.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/components/ticker.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/components/historia.css?v=1.1" media="print" onload="this.media='all'">
-
-        <!-- Tailwind CSS via CDN: configuración y carga en el head para evitar errores -->
-        <script>
-            window.tailwind = window.tailwind || {};
-            tailwind.config = { darkMode: 'class' };
-        </script>
-        <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         // Configuración para que Tailwind y Preline UI funcionen bien juntos
         tailwind.config = { darkMode: 'class' }
     </script>
 
-    <!-- Enlace a la hoja de estilos personalizada -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components/elastic-nav.css">
-    <link rel="stylesheet" href="css/components/glass-nav-bar.css">
-    <link rel="stylesheet" href="css/components/ticker.css">
-    <link rel="stylesheet" href="css/components/historia.css?v=1.1">
-    <link rel="stylesheet" href="css/components/dropdown-menu.css">
-    <link rel="icon" href="img/chiswi_logo-removebg-preview.png" type="image/png">
+    <!-- Estilos consolidados y de librerías -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bundle.min.css">
 
-    <!-- Fuentes ya cargadas arriba (evitar carga duplicada) -->
+    <link rel="icon" href="img/chiswi_logo-removebg-preview.webp" type="image/webp">
 
     <!-- Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -148,7 +120,10 @@
                     <!-- Logo (Centrado) -->
                     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a class="flex-none" href="index.html" aria-label="Chiswi Catering">
-                            <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                            <picture>
+                                <source srcset="img/chiswi_logo-removebg-preview.webp" type="image/webp">
+                                <img class="h-24 w-auto p-1 rounded-full" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering" width="96" height="96">
+                            </picture>
                         </a>
                     </div>
                     
@@ -225,16 +200,28 @@
         <!-- Contenedor del carrusel de imágenes de fondo -->
         <div id="hero-bg-container" class="absolute inset-0 w-full h-full z-0 parallax-element" data-parallax-speed="0.3">
             <div class="hero-bg-image">
-                <img src="img/image-buffet.jpg" alt="Buffet elegante servido" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high">
+                <picture>
+                    <source srcset="img/image-buffet.webp" type="image/webp">
+                    <img src="img/image-buffet.jpg" alt="Buffet elegante servido" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high">
+                </picture>
             </div>
             <div class="hero-bg-image">
-                <img src="img/emparedado.jpg" alt="Emparedados gourmet" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
+                <picture>
+                    <source srcset="img/emparedado.webp" type="image/webp">
+                    <img src="img/emparedado.jpg" alt="Emparedados gourmet" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
+                </picture>
             </div>
             <div class="hero-bg-image">
-                <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
+                <picture>
+                    <source srcset="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.webp" type="image/webp">
+                    <img src="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
+                </picture>
             </div>
             <div class="hero-bg-image">
-                <img src="img/5856.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
+                <picture>
+                    <source srcset="img/5856.webp" type="image/webp">
+                    <img src="img/5856.jpg" alt="Buffet festivo con canapés" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
+                </picture>
             </div>
         </div>
         <div class="absolute inset-0 bg-[#1a1a1a]/70 z-10"></div>
@@ -283,9 +270,18 @@
                 <div class="flex justify-center items-center wow animate__animated animate__slideInRight">
                     <div class="image-frame-container relative w-full max-w-sm p-2 border-4 border-[#d4af37] rounded-lg bg-white">
                         <div id="historia-slideshow" class="relative w-full overflow-hidden rounded" style="aspect-ratio: 4/5;">
-                            <img src="img/corp_1.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide active" width="600" height="750" loading="lazy" decoding="async">
-                            <img src="img/corp_2.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide" width="600" height="750" loading="lazy" decoding="async">
-                            <img src="img/corp_3.jpeg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide" width="600" height="750" loading="lazy" decoding="async">
+                            <picture>
+                                <source srcset="img/corp_1.webp" type="image/webp">
+                                <img src="img/corp_1.jpg" alt="Imagen 1 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide active" width="600" height="750" loading="lazy" decoding="async">
+                            </picture>
+                            <picture>
+                                <source srcset="img/corp_2.webp" type="image/webp">
+                                <img src="img/corp_2.jpg" alt="Imagen 2 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide" width="600" height="750" loading="lazy" decoding="async">
+                            </picture>
+                            <picture>
+                                <source srcset="img/corp_3.webp" type="image/webp">
+                                <img src="img/corp_3.jpeg" alt="Imagen 3 del equipo de Chiswi" class="absolute inset-0 w-full h-full historia-slide" width="600" height="750" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -412,39 +408,39 @@
                     <!-- Ticker Row 1 (Right to Left) -->
                     <div id="horizontal-ticker-rtl" class="swiper horizontal-ticker__slider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA" width="120" height="60" loading="lazy"></div>
                             <!-- Duplicates for seamless loop -->
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/mec.png" alt="Logo MEC" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_ima.png" alt="Logo IMA" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mides.png" alt="Logo MIDES" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_turismo.png" alt="Logo Turismo" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_elis.png" alt="Logo ELIS" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_fcu.png" alt="Logo FCU" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_connectia.png" alt="Logo ConnectIA" width="120" height="60" loading="lazy"></div>
                         </div>
                     </div>
                     <!-- Ticker Row 2 (Left to Right) -->
                     <div id="horizontal-ticker-ltr" class="swiper horizontal-ticker__slider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA" width="120" height="60" loading="lazy"></div>
                             <!-- Duplicates for seamless loop -->
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP"></div>
-                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_mercociudades.png" alt="Logo Mercociudades" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_udelar.png" alt="Logo UDELAR" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_grupocentro.jpg" alt="Logo Grupo Centro" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_vexels.png" alt="Logo Vexels" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_anep.png" alt="Logo ANEP" width="120" height="60" loading="lazy"></div>
+                            <div class="swiper-slide horizontal-ticker__slide"><img src="img/logo_wonca.png" alt="Logo WONCA" width="120" height="60" loading="lazy"></div>
                         </div>
                     </div>
                 </div>
@@ -687,7 +683,10 @@
                 <!-- Columna 1: Logo y Redes Sociales -->
                 <div class="lg:col-span-1">
                     <a href="#" aria-label="Chiswi Catering" class="footer-logo-container mb-4">
-                        <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering">
+                        <picture>
+                           <source srcset="img/chiswi_logo-removebg-preview.webp" type="image/webp">
+                           <img class="h-20 w-auto" src="img/chiswi_logo-removebg-preview.png" alt="Logo de Chiswi Catering" width="80" height="80">
+                        </picture>
                     </a>
                     <p class="text-sm text-gray-400 mb-6 max-w-xs">
                         Sabor y elegancia para tus celebraciones familiares, eventos sociales y reuniones corporativas.
@@ -948,17 +947,13 @@
                 if (rect.top <= window.innerHeight && rect.bottom >= 0) {
                     window.requestAnimationFrame(updateCarousel);
                 }
-            });
+            }, { passive: true });
         });
     </script>
     
     <!-- Scripts no críticos cargados al final -->
     <!-- (El script de Tailwind ya está en el head) -->
-    <script src="js/elastic-nav.js" defer></script>
-    <script src="js/ticker.js" defer></script>
-    <script src="js/historia.js" defer></script>
-    <script src="js/mobile-nav.js" defer></script>
-    <script src="js/process-mobile-animation.js" defer></script>
+    <script src="js/bundle.min.js" defer></script>
 </body>
 </html>
     <!-- ============================================ -->
@@ -967,11 +962,6 @@
     <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
         <i class="fas fa-arrow-up"></i>
     </a>
-    
-    <script src="js/scroll-to-top.js" defer></script>
-    <script src="js/ui-helpers.js" defer></script>
-    <script src="js/parallax.js" defer></script>
-    <script src="js/hero-carousel.js" defer></script>
     <!-- ============================================ -->
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <!-- ============================================ -->
