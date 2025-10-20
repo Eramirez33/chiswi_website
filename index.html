@@ -16,6 +16,7 @@
     <!-- Preload de la imagen LCP (Largest Contentful Paint) y CSS crítico -->
     <link rel="preload" as="image" href="img/image-buffet-mobile.webp" media="(max-width: 768px)">
     <link rel="preload" as="image" href="img/image-buffet.webp" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="img/chiswi_logo-removebg-preview.webp">
     <link rel="preload" href="css/bundle.min.css" as="style">
     
     <!-- Carga asíncrona de Google Fonts -->
@@ -44,7 +45,7 @@
     <!-- ============================================ -->
     <!-- CAMPAIGN BANNER -->
     <!-- ============================================ -->
-    <div id="campaign-banner" class="is-hidden">
+    <div id="campaign-banner" class="is-hidden" style="min-height: 36px;">
         <div class="campaign-banner-content container mx-auto px-6">
             <div class="campaign-marquee-wrapper">
                 <div class="animate-marquee">
@@ -826,41 +827,6 @@
         });
     </script>
 
-
-
-    <!-- Inicialización del Carrusel de Servicios -->
-        <script>
-            // Esperar a que jQuery y Owl Carousel estén disponibles antes de inicializar
-            function initServiceCarousel() {
-                if (window.jQuery && typeof jQuery.fn.owlCarousel === 'function') {
-                    var serviceCarousel = $(".service-carousel");
-                    serviceCarousel.owlCarousel({
-                        autoplay: true,
-                        smartSpeed: 1000,
-                        margin: 30,
-                        dots: false,
-                        loop: true,
-                        nav: false,
-                        responsive: {
-                            0: { items: 1 },
-                            576: { items: 2 },
-                            768: { items: 3 },
-                            992: { items: 4 }
-                        }
-                    });
-                    $('#custom-next').click(function() {
-                        serviceCarousel.trigger('next.owl.carousel');
-                    });
-                    $('#custom-prev').click(function() {
-                        serviceCarousel.trigger('prev.owl.carousel');
-                    });
-                } else {
-                    setTimeout(initServiceCarousel, 50);
-                }
-            }
-            initServiceCarousel();
-        </script>
-
     <script>
         // Animación para la sección de proceso con scroll estilo carrusel
         document.addEventListener('DOMContentLoaded', () => {
@@ -953,14 +919,22 @@
     
     <!-- Scripts no críticos cargados al final -->
     <!-- (El script de Tailwind ya está en el head) -->
+    <!-- jQuery (con defer porque se usa solo para carousel) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <!-- Owl Carousel (con defer porque no es crítico) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+    
+    <!-- Swiper JS (con defer para carruseles) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- Preline UI Script (con defer para UI components) -->
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.1.0/dist/preline.min.js" defer></script>
+
+    <!-- WOW.js for Scroll Animations (con defer y init después de carga) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
     <script src="js/bundle.min.js" defer></script>
 </body>
 
-<!-- Carga diferida de CSS no crítico -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" media="print" onload="this.media='all'">
 </html>
     <!-- ============================================ -->
     <!-- BOTÓN SCROLL TO TOP -->
