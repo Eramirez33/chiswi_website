@@ -6,24 +6,39 @@
     <title>Servicio de Pizza Libre a la Leña para Eventos | Chiswi Catering</title>
     <meta name="description" content="Transforma tu evento con nuestro show de pizza a la leña en vivo. 3 horas de canilla libre con el más auténtico sabor artesanal. ¡Cotiza tu fiesta inolvidable!">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Animate.css for WOW.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- Preload LCP Image -->
-    <link rel="preload" as="image" href="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.webp">
+    <!-- DNS prefetch / preconnect para CDNs -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload de la imagen LCP (Largest Contentful Paint) y CSS crítico -->
+    <link rel="preload" as="image" href="img/delicioso-buffet-festivo-con-canapes-y-diferentes-comidas-deliciosas.webp" fetchpriority="high">
+    <link rel="preload" href="css/bundle.min.css" as="style">
+
+    <!-- Carga asíncrona de Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" media="print" onload="this.media='all'" as="style">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    </noscript>
 
     <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    
+    <!-- Carga asíncrona de Tailwind y configuración en un solo bloque para evitar errores -->
     <script>
-        tailwind.config = { darkMode: 'class' }
+        const tw = document.createElement('script');
+        tw.src = "https://cdn.tailwindcss.com";
+        tw.onload = () => { tailwind.config = { darkMode: 'class' } };
+        document.head.appendChild(tw);
     </script>
 
-    <!-- Estilos personalizados -->
+    <!-- CSS Crítico -->
     <link rel="stylesheet" href="css/bundle.min.css">
     <link rel="icon" href="img/chiswi_logo-removebg-preview.webp" type="image/webp">
+
+    <!-- CSS de librerías (cargado de forma no bloqueante) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'" as="style"/>
 </head>
 <body class="bg-white">
     <!-- Filtros SVG para efectos visuales -->
@@ -453,26 +468,24 @@
         }
     </script>
 
-    <!-- jQuery (con defer porque se usa solo para carousel) -->
+    <!-- Scripts de Librerías (cargados con defer para no bloquear) -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
-    
-    <!-- WOW.js for Scroll Animations (con defer y init después de carga) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof WOW === 'function') {
-                new WOW().init();
-            }
-        });
-    </script>
 
+    <!-- Tu bundle de JavaScript que contiene toda la lógica de inicialización -->
     <script src="js/bundle.min.js" defer></script>
 
     <!-- ============================================ -->
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <!-- ============================================ -->
-    <a href="javascript:void(0)" onclick="return enviarWhatsApp('Consulta desde la web')" class="whatsapp-float">
+    <a href="javascript:void(0)" onclick="return enviarWhatsApp('Consulta desde la web')" class="whatsapp-float" aria-label="Chatea con nosotros por WhatsApp">
         <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- ============================================ -->
+    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- ============================================ -->
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
 </body>
 <script>

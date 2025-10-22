@@ -6,23 +6,39 @@
     <title>Servicio de Almuerzo Ejecutivo para Empresas | Chiswi Catering</title>
     <meta name="description" content="Impresiona en tus reuniones con nuestro servicio de Almuerzo Ejecutivo. Menús creativos y opciones de finger food. ¡Cotiza ahora!">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Animate.css for WOW.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- Preload LCP Image -->
-    <link rel="preload" as="image" href="img/image-buffet.webp">
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- DNS prefetch / preconnect para CDNs -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    
+    <!-- Preload de la imagen LCP (Largest Contentful Paint) y CSS crítico -->
+    <link rel="preload" as="image" href="img/image-buffet.webp" fetchpriority="high">
+    <link rel="preload" href="css/bundle.min.css" as="style">
+
+    <!-- Carga asíncrona de Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" media="print" onload="this.media='all'" as="style">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Tailwind CSS via CDN -->
+    <!-- Carga asíncrona de Tailwind y configuración en un solo bloque para evitar errores -->
     <script>
-        tailwind.config = { darkMode: 'class' }
+        const tw = document.createElement('script');
+        tw.src = "https://cdn.tailwindcss.com";
+        tw.onload = () => { tailwind.config = { darkMode: 'class' } };
+        document.head.appendChild(tw);
     </script>
 
-    <!-- Estilos personalizados -->
+    <!-- CSS Crítico -->
     <link rel="stylesheet" href="css/bundle.min.css">
     <link rel="icon" href="img/chiswi_logo-removebg-preview.webp" type="image/webp">
+
+    <!-- CSS de librerías (cargado de forma no bloqueante) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'" as="style"/>
 </head>
 <body class="bg-white">
     <!-- Filtros SVG para efectos visuales -->
@@ -134,27 +150,6 @@
                     <li class="pt-2 pb-2"><a href="#internacional" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Gestión Internacional</a></li>
                     <li class="pt-2 pb-2"><a href="#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37] block">Preguntas</a></li>
                     <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300 block">Cotiza tu Evento</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
-        <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-1/2 max-w-sm bg-white shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out">
-            <!-- Botón de Cierre -->
-            <button id="close-mobile-menu" class="absolute top-5 right-5 text-gray-600 hover:text-black">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            
-            <!-- Enlaces de Navegación -->
-            <nav class="mt-12">
-                <ul class="space-y-6">
-                    <li><a href="index.html" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Inicio</a></li>
-                    <li><a href="index.html#servicios" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Catálogo</a></li>
-                    <li><a href="index.html#proceso" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestro Proceso</a></li>
-                    <li><a href="index.html#historia" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Nuestra Historia</a></li>
-                    <li><a href="index.html#paquetes" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Paquetes</a></li>
-                    <li><a href="index.html#faq" class="mobile-nav-link text-xl text-gray-800 font-semibold hover:text-[#d4af37]">Preguntas</a></li>
-                    <li class="pt-6"><a href="#contacto" class="cta-button cta-pulse bg-[#d4af37] text-[#1a1a1a] font-bold rounded-full shadow-lg px-8 py-5 hover:bg-yellow-500 transition duration-300">Cotiza tu Evento</a></li>
                 </ul>
             </nav>
         </div>
@@ -395,30 +390,31 @@
         </div>
     </footer>
 
+    <!-- JAVASCRIPT -->
+    <script src="js/config.js"></script>
+    <script>
+        function enviarWhatsApp(asunto) {            
+            const numeroWhatsApp = config.numeroWhatsApp;
+            let mensajeBase = `Hola, me gustaría recibir más información sobre el servicio de ${asunto}.`;
+            const mensaje = encodeURIComponent(mensajeBase);
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+            window.open(url, '_blank');
+            return false;
+        }
+    </script>
+
+    <!-- Scripts de Librerías (cargados con defer para no bloquear) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
+
+    <!-- Tu bundle de JavaScript que contiene toda la lógica de inicialización -->
     <script src="js/bundle.min.js" defer></script>
-    <a href="javascript:void(0)" onclick="return enviarWhatsApp('Consulta desde la web')" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-    </body>
-        <script>
-        // Dropdown Catálogo en menú móvil
-        document.addEventListener('DOMContentLoaded', function() {
-            var catalogoToggle = document.getElementById('mobile-catalogo-toggle');
-            var catalogoDropdown = document.getElementById('mobile-catalogo-dropdown');
-            var mobileMenuPanel = document.getElementById('mobile-menu-panel');
-            if (catalogoToggle && catalogoDropdown) {
-                catalogoToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    catalogoDropdown.classList.toggle('hidden');
-                });
-                catalogoDropdown.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-                document.addEventListener('click', function(e) {
-                    if (!catalogoToggle.contains(e.target) && !catalogoDropdown.contains(e.target)) {
-                        catalogoDropdown.classList.add('hidden');
-                    }
-                });
-            }
-        });
-        </script>
+    <a href="javascript:void(0)" onclick="return enviarWhatsApp('Almuerzo Ejecutivo')" class="whatsapp-float" aria-label="Chatea con nosotros por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <!-- ============================================ -->
+    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- ============================================ -->
+    <a href="#" id="scrollToTopButton" class="scroll-to-top-button" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </a>
 </body>
 </html>

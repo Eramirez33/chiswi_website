@@ -111,4 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initServiceCarousel();
 
+    // --- Parche para Font Awesome font-display ---
+    // Esto asegura que los íconos no causen un cambio de layout (CLS)
+    function patchFontAwesome() {
+        const faStyleSheet = document.querySelector('link[href*="font-awesome"]');
+        if (faStyleSheet && faStyleSheet.sheet) {
+            const style = document.createElement('style');
+            style.innerHTML = `@font-face { font-display: swap; }`;
+            document.head.appendChild(style);
+        }
+    }
+    setTimeout(patchFontAwesome, 1500); // Ejecutar después de un tiempo prudencial
+
 });

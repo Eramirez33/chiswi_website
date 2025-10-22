@@ -26,11 +26,12 @@
     </noscript>
 
     <!-- Tailwind CSS via CDN -->
-    <!-- El script de configuración de Tailwind se mueve justo después de su carga -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer>
-        // Configuración para que Tailwind y Preline UI funcionen bien juntos
-        tailwind.config = { darkMode: 'class' }
+    <!-- Carga asíncrona de Tailwind y configuración en un solo bloque para evitar errores -->
+    <script>
+        const tw = document.createElement('script');
+        tw.src = "https://cdn.tailwindcss.com";
+        tw.onload = () => { tailwind.config = { darkMode: 'class' } };
+        document.head.appendChild(tw);
     </script>
 
     <!-- CSS Crítico -->
