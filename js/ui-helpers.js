@@ -33,8 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Decidir si mostrar u ocultar el banner basado en la sesión
         if (sessionStorage.getItem('campaignBannerClosed') === 'true') {
             campaignBanner.classList.add('is-hidden');
+            campaignBanner.style.display = 'none'; // Asegurarse de que esté oculto
         } else {
             campaignBanner.classList.remove('is-hidden');
+            campaignBanner.style.display = 'block'; // ¡LA LÍNEA CLAVE! Asegurarse de que sea visible
         }
 
         // 3. Ajustar el layout inicial
@@ -86,5 +88,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }, { passive: true });
+
+    // --- Lógica para Inicializar Librerías Externas ---
+
+    // Inicializar WOW.js para animaciones de scroll
+    if (typeof WOW === 'function') {
+        new WOW().init();
+    }
+
+    // Inicializar Owl Carousel para el carrusel de servicios
+    function initServiceCarousel() {
+        // Espera a que jQuery y Owl Carousel estén cargados
+        if (window.jQuery && typeof jQuery.fn.owlCarousel === 'function') {
+            const serviceCarousel = $(".service-carousel");
+            serviceCarousel.owlCarousel({ autoplay: true, smartSpeed: 1000, margin: 30, dots: false, loop: true, nav: false, responsive: { 0: { items: 1 }, 576: { items: 2 }, 768: { items: 3 }, 992: { items: 4 } } });
+            
+            $('#custom-next').click(() => serviceCarousel.trigger('next.owl.carousel'));
+            $('#custom-prev').click(() => serviceCarousel.trigger('prev.owl.carousel'));
+        } else {
+            setTimeout(initServiceCarousel, 100); // Si no están listos, reintenta en 100ms
+        }
+    }
+    initServiceCarousel();
 
 });

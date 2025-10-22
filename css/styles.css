@@ -4,6 +4,11 @@
 @import url("components/services-carousel.css");
 @import url("components/scrolling-process.css");
 
+/* Optimización para Font Awesome */
+@font-face {
+    font-display: swap;
+}
+
 /* Aplicamos la fuente Poppins a todo el cuerpo */
 body {
     font-family: 'Poppins', sans-serif;
