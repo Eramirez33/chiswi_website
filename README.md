@@ -1,122 +1,136 @@
 # Chiswi Catering Website
 
-Repositorio del sitio web oficial de Chiswi Catering, una empresa especializada en soluciones gastronómicas para eventos corporativos y sociales.
+Repository for the official website of Chiswi Catering, a company specializing in gastronomic solutions for corporate and social events.
 
-## Descripción
+## Description
 
-Este proyecto es un sitio web estático de una sola página (Single Page Application) diseñado para presentar los servicios, la historia y la información de contacto de Chiswi Catering. El sitio es completamente responsivo y cuenta con diversas animaciones y secciones interactivas para ofrecer una experiencia de usuario moderna y atractiva.
+This project is a static Single Page Application (SPA) designed to present the services, history, and contact information of Chiswi Catering. The site is fully responsive and features various animations and interactive sections to offer a modern and attractive user experience.
 
-## ✨ Características Principales
+## ✨ Key Features
 
-- **Diseño Responsivo:** Adaptable a dispositivos móviles, tabletas y computadoras de escritorio.
-- **Navegación Elástica y Flotante:** Un menú de navegación moderno con efectos visuales al hacer scroll.
-- **Banner de Campañas:** Un banner superior personalizable para anuncios importantes (ej. promociones de Navidad).
-- **Carrusel de Servicios:** Sección de "Nuestro Catálogo" con un carrusel interactivo para mostrar los diferentes servicios.
-- **Animaciones de Scroll:** Efectos de aparición y movimiento en elementos a medida que el usuario navega por la página (usando WOW.js).
-- **Sección de Historia Interactiva:** Slideshow de imágenes y tooltips informativos.
-- **Proceso Interactivo:** Una sección visual que muestra el proceso de trabajo de la empresa con animaciones de scroll.
-- **Ticker de Clientes:** Carrusel infinito con los logos de los clientes que confían en Chiswi.
-- **Contacto por WhatsApp:** Botones de llamada a la acción que abren una conversación de WhatsApp pre-configurada.
-- **Botón "Volver Arriba":** Facilita la navegación en una página larga.
+-   **Responsive Design:** Adaptable to mobile devices, tablets, and desktops.
+-   **Elastic and Floating Navigation:** A modern navigation menu with visual effects on scroll.
+-   **Campaign Banner:** A customizable top banner for important announcements (e.g., Christmas promotions).
+-   **Services Carousel:** "Our Catalog" section with an interactive carousel to display the different services.
+-   **Scroll Animations:** Appearance and movement effects on elements as the user scrolls down the page (using WOW.js).
+-   **Interactive History Section:** Image slideshow and informational tooltips.
+-   **Interactive Process:** A visual section that shows the company's work process with scroll animations.
+-   **Client Ticker:** Infinite carousel with the logos of clients who trust Chiswi.
+-   **Contact via WhatsApp:** Call-to-action buttons that open a pre-configured WhatsApp conversation.
+-   **"Back to Top" Button:** Facilitates navigation on a long page.
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Technologies Used
 
-Este proyecto está construido principalmente con tecnologías front-end estándar y algunas librerías para mejorar la interactividad y el diseño.
+This project is built primarily with standard front-end technologies and some libraries to enhance interactivity and design.
 
-### Lenguajes
-- **HTML5**
-- **CSS3**
-- **JavaScript (ES6)**
+### Languages
+-   **HTML5**
+-   **CSS3**
+-   **JavaScript (ES6)**
 
-### Frameworks y Librerías
-- **Tailwind CSS (vía CDN):** Framework CSS "utility-first" para un diseño rápido y responsivo.
-- **jQuery (vía CDN):** Librería de JavaScript para simplificar la manipulación del DOM y la gestión de eventos.
-- **Swiper.js (vía CDN):** Utilizado para el carrusel de logos de clientes en la sección "Quienes Confían en Nosotros".
-- **Owl Carousel (vía CDN):** Utilizado para el carrusel de tarjetas de servicios en la sección "Un Servicio para Cada Ocasión".
-- **WOW.js (vía CDN):** Librería para revelar animaciones al hacer scroll. Se apoya en Animate.css.
-- **Animate.css (vía CDN):** Colección de animaciones CSS listas para usar.
-- **Google Fonts:** Para la tipografía del sitio (Poppins, Dancing Script, Playfair Display, Roboto).
-- **Font Awesome:** Para los íconos utilizados en todo el sitio.
-- **Preline UI (vía CDN):** Algunos componentes y funcionalidades de UI.
+### Frameworks and Libraries
+-   **Tailwind CSS (via CDN):** "Utility-first" CSS framework for rapid and responsive design.
+-   **jQuery (via CDN):** JavaScript library to simplify DOM manipulation and event management.
+-   **Swiper.js (via CDN):** Used for the client logo carousel in the "Who Trusts Us" section.
+-   **Owl Carousel (via CDN):** Used for the service card carousel in the "A Service for Every Occasion" section.
+-   **WOW.js (via CDN):** Library to reveal animations on scroll. It relies on Animate.css.
+-   **Animate.css (via CDN):** Collection of ready-to-use CSS animations.
+-   **Google Fonts:** For the site's typography (Poppins, Dancing Script, Playfair Display, Roboto).
+-   **Font Awesome:** For the icons used throughout the site.
+-   **Preline UI (via CDN):** Some UI components and functionalities.
 
-### Herramientas de Desarrollo
-- **Node.js / npm:** Para la gestión de dependencias y la ejecución de scripts.
-- **Uglify-JS:** Para minificar archivos JavaScript.
-- **Clean-CSS-CLI:** Para combinar y minificar archivos CSS.
-- **npm-run-all:** Para ejecutar múltiples scripts simultáneamente.
-- **onchange:** Para observar cambios en los archivos y reconstruir los bundles automáticamente.
+### Development Tools
+-   **Node.js / npm:** For dependency management and script execution.
+-   **Uglify-JS:** To minify JavaScript files.
+-   **Clean-CSS-CLI:** To combine and minify CSS files.
+-   **npm-run-all:** To run multiple scripts simultaneously.
+-   **onchange:** To watch for file changes and automatically rebuild bundles.
 
-## 🚀 Instalación y Uso Local
+## 🚀 Local Installation and Usage
 
-1.  Clona el repositorio.
-2.  Instala las dependencias de desarrollo:
+1.  Clone the repository.
+2.  Install the development dependencies:
     ```bash
     npm install
     ```
-3.  Para generar los archivos de producción (`bundle.min.css` y `bundle.min.js`) una sola vez:
+3.  To generate the production files (`bundle.min.css` and `bundle.min.js`) once:
     ```bash
     npm run build
     ```
-4.  Para trabajar en modo "watch" (observa cambios y reconstruye automáticamente):
+4.  To work in "watch" mode (watches for changes and rebuilds automatically):
     ```bash
     npm run watch
     ```
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
-El repositorio está organizado de la siguiente manera:
+The repository is organized as follows:
 
 ```
 /
 ├── css/
-│   ├── styles.css               # Hoja de estilos principal
-│   └── components/              # Estilos para componentes específicos (botones, hero, etc.)
+│   ├── styles.css               # Main stylesheet
+│   └── components/              # Styles for specific components (buttons, hero, etc.)
 ├── img/
-│   └── ...                      # Imágenes y logos del sitio
+│   └── ...                      # Site images and logos
 ├── js/
-│   ├── config.js                # Configuración central (ej. número de WhatsApp)
-│   ├── campaign-config.js       # Configuración del banner de campaña
-│   ├── ticker.js                # Lógica para el carrusel de clientes (Swiper.js)
-│   ├── historia.js              # Lógica para el slideshow de la sección de historia
-│   ├── mobile-nav.js            # Lógica para el menú de navegación en móviles
-│   └── ...                      # Otros scripts para componentes
-├── index.html                   # Archivo principal del sitio web
-├── package.json                 # Define las dependencias y scripts del proyecto
-├── .gitignore                   # Especifica qué archivos ignorar en Git
-└── README.md                    # Este archivo
+│   ├── config.js                # Central configuration (e.g., WhatsApp number)
+│   ├── campaign-config.js       # Campaign banner configuration
+│   ├── ticker.js                # Logic for the client carousel (Swiper.js)
+│   ├── historia.js              # Logic for the history section slideshow
+│   ├── mobile-nav.js            # Logic for the mobile navigation menu
+│   └── ...                      # Other scripts for components
+├── index.html                   # Main website file
+├── package.json                 # Defines project dependencies and scripts
+├── .gitignore                   # Specifies which files to ignore in Git
+└── README.md                    # This file
 ```
 
-## 🔧 Configuración y Personalización
+## 🔧 Configuration and Customization
 
-La mayor parte del contenido y la configuración se puede modificar fácilmente:
+Most of the content and configuration can be easily modified:
 
-### Banner de Campaña
-Para activar, desactivar o cambiar el texto del banner superior, edita el archivo `js/campaign-config.js`:
+### Campaign Banner
+To enable, disable, or change the text of the top banner, edit the `js/campaign-config.js` file:
 ```javascript
 const campaignConfig = {
-    enabled: true, // Poner en false para desactivar
-    text: "Tu texto aquí",
-    ctaText: "Texto del botón",
-    ctaSubject: "Asunto para WhatsApp"
+    enabled: true, // Set to false to disable
+    text: "Your text here",
+    ctaText: "Button text",
+    ctaSubject: "Subject for WhatsApp"
 };
 ```
 
-### Información de Contacto
-Para cambiar el número de WhatsApp utilizado en los botones de contacto, edita el archivo `js/config.js`:
+### Contact Information
+To change the WhatsApp number used in the contact buttons, edit the `js/config.js` file:
 ```javascript
 const config = {
-    numeroWhatsApp: '598XXXXXXXX' // Reemplaza con tu número
+    numeroWhatsApp: '598XXXXXXXX' // Replace with your number
 };
 ```
 
-### Contenido y Textos
-Todo el contenido textual e imágenes se encuentran directamente en el archivo `index.html`. Puedes editar las secciones correspondientes para actualizar la información.
+### Content and Texts
+All textual content and images are located directly in the `index.html` file. You can edit the corresponding sections to update the information.
 
-## 🛠️ Cómo Ejecutar Localmente
+## 🛠️ How to Run Locally
 
-Al ser un proyecto web estático, no requiere un servidor complejo. Simplemente sigue estos pasos:
+As a static web project, it does not require a complex server. Simply follow these steps:
 
-1.  Clona o descarga este repositorio.
-2.  Abre el archivo `index.html` en tu navegador web preferido (ej. Google Chrome, Firefox).
+1.  Clone or download this repository.
+2.  Open the `index.html` file in your preferred web browser (e.g., Google Chrome, Firefox).
 
-¡Y listo! El sitio debería funcionar localmente.
+And that's it! The site should work locally.
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have suggestions or improvements, please feel free to:
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/your-feature`).
+3.  Commit your changes (`git commit -m 'Add your feature'`).
+4.  Push to the branch (`git push origin feature/your-feature`).
+5.  Open a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
