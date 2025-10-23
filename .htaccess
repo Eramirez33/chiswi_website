@@ -18,3 +18,14 @@ RewriteRule ^(.*)$ https://chiswicatering.uy/$1 [L,R=301]
 
 # PÁGINA DE ERROR 404 PERSONALIZADA
 ErrorDocument 404 /404.html
+
+# CABECERAS DE CACHÉ Y SEGURIDAD
+<IfModule mod_headers.c>
+  # CACHÉ PARA JAVASCRIPT POR 1 AÑO
+  <FilesMatch "\.(js)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+  
+  # HSTS (HTTP STRICT TRANSPORT SECURITY) POR 1 AÑO
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
