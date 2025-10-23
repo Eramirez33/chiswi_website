@@ -1,3 +1,8 @@
+# REDIRECCIÓN A NO-WWW
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.chiswicatering\.uy [NC]
+RewriteRule ^(.*)$ https://chiswicatering.uy/$1 [L,R=301]
+
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/css "access plus 1 year"
@@ -10,3 +15,6 @@
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
 </IfModule>
+
+# PÁGINA DE ERROR 404 PERSONALIZADA
+ErrorDocument 404 /404.html
