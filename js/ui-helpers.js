@@ -101,7 +101,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Espera a que jQuery y Owl Carousel estén cargados
         if (window.jQuery && typeof jQuery.fn.owlCarousel === 'function') {
             const serviceCarousel = $(".service-carousel");
-            serviceCarousel.owlCarousel({ autoplay: true, smartSpeed: 1000, margin: 30, dots: false, loop: true, nav: false, responsive: { 0: { items: 1 }, 576: { items: 2 }, 768: { items: 3 }, 992: { items: 4 } } });
+            serviceCarousel.owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                margin: 30,
+                dots: true,
+                loop: true,
+                nav: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    576: {
+                        items: 2
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
+                    }
+                }
+            });
             
             $('#custom-next').click(() => serviceCarousel.trigger('next.owl.carousel'));
             $('#custom-prev').click(() => serviceCarousel.trigger('prev.owl.carousel'));

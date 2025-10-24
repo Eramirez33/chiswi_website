@@ -19,6 +19,11 @@ This project is a static Single Page Application (SPA) designed to present the s
 -   **Contact via WhatsApp:** Call-to-action buttons that open a pre-configured WhatsApp conversation.
 -   **"Back to Top" Button:** Facilitates navigation on a long page.
 
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+-   [Node.js](https://nodejs.org/) (which includes npm)
+
 ## 🚀 Technologies Used
 
 This project is built primarily with standard front-end technologies and some libraries to enhance interactivity and design.
@@ -29,22 +34,23 @@ This project is built primarily with standard front-end technologies and some li
 -   **JavaScript (ES6)**
 
 ### Frameworks and Libraries
--   **Tailwind CSS (via CDN):** "Utility-first" CSS framework for rapid and responsive design.
--   **jQuery (via CDN):** JavaScript library to simplify DOM manipulation and event management.
--   **Swiper.js (via CDN):** Used for the client logo carousel in the "Who Trusts Us" section.
--   **Owl Carousel (via CDN):** Used for the service card carousel in the "A Service for Every Occasion" section.
--   **WOW.js (via CDN):** Library to reveal animations on scroll. It relies on Animate.css.
--   **Animate.css (via CDN):** Collection of ready-to-use CSS animations.
+-   **Tailwind CSS:** "Utility-first" CSS framework for rapid and responsive design.
+-   **jQuery:** JavaScript library to simplify DOM manipulation and event management.
+-   **Swiper.js:** Used for the client logo carousel in the "Who Trusts Us" section.
+-   **Owl Carousel:** Used for the service card carousel in the "A Service for Every Occasion" section.
+-   **WOW.js:** Library to reveal animations on scroll. It relies on Animate.css.
+-   **Animate.css:** Collection of ready-to-use CSS animations.
 -   **Google Fonts:** For the site's typography (Poppins, Dancing Script, Playfair Display, Roboto).
 -   **Font Awesome:** For the icons used throughout the site.
--   **Preline UI (via CDN):** Some UI components and functionalities.
+-   **Preline UI:** Some UI components and functionalities.
 
 ### Development Tools
 -   **Node.js / npm:** For dependency management and script execution.
--   **Uglify-JS:** To minify JavaScript files.
--   **Clean-CSS-CLI:** To combine and minify CSS files.
--   **npm-run-all:** To run multiple scripts simultaneously.
--   **onchange:** To watch for file changes and automatically rebuild bundles.
+-   **tailwindcss:** `v3.4.0`
+-   **uglify-js:** `v3.17.4`
+-   **clean-css-cli:** `v5.6.3`
+-   **npm-run-all:** `v4.1.5`
+-   **onchange:** `v7.1.0`
 
 ## 🚀 Local Installation and Usage
 
@@ -69,22 +75,35 @@ The repository is organized as follows:
 ```
 /
 ├── css/
-│   ├── styles.css               # Main stylesheet
-│   └── components/              # Styles for specific components (buttons, hero, etc.)
+│   ├── components/              # Styles for specific components
+│   ├── input.css                # Input file for Tailwind CSS
+│   ├── styles.css               # Main custom stylesheet
+│   └── bundle.min.css           # Bundled and minified CSS (generated)
+├── dist/
+│   └── tailwind.css             # Tailwind CSS output (generated)
 ├── img/
 │   └── ...                      # Site images and logos
 ├── js/
-│   ├── config.js                # Central configuration (e.g., WhatsApp number)
-│   ├── campaign-config.js       # Campaign banner configuration
-│   ├── ticker.js                # Logic for the client carousel (Swiper.js)
-│   ├── historia.js              # Logic for the history section slideshow
-│   ├── mobile-nav.js            # Logic for the mobile navigation menu
-│   └── ...                      # Other scripts for components
+│   ├── ...                      # Individual JavaScript modules
+│   └── bundle.min.js            # Bundled and minified JS (generated)
+├── node_modules/                # Project dependencies (managed by npm)
+├── scripts/
+│   └── ...                      # Build-related scripts
 ├── index.html                   # Main website file
 ├── package.json                 # Defines project dependencies and scripts
-├── .gitignore                   # Specifies which files to ignore in Git
+├── tailwind.config.js           # Tailwind CSS configuration
 └── README.md                    # This file
 ```
+
+## Build Process
+
+The build process is managed by npm scripts defined in `package.json`:
+
+-   `npm run build:tailwind`: Compiles `css/input.css` with Tailwind CSS and outputs the result to `dist/tailwind.css`.
+-   `npm run build:css`: Bundles and minifies all CSS files (including the generated Tailwind CSS) into `css/bundle.min.css`.
+-   `npm run build:js`: Bundles and minifies all JavaScript files into `js/bundle.min.js`.
+-   `npm run build`: Runs all the `build:*` scripts in sequence.
+-   `npm run watch`: Watches for changes in CSS and JS files and runs the respective build scripts automatically.
 
 ## 🔧 Configuration and Customization
 
