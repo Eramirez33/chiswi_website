@@ -12,7 +12,7 @@ This is a static, single-page website for Chiswi Catering, a company providing g
 
 ## 2. Technology Stack
 
-The project relies on standard front-end technologies, using CDNs for most libraries.
+The project relies on standard front-end technologies, using a mix of local dependencies and CDNs.
 
 -   **Languages:** HTML5, CSS3, JavaScript (ES6).
 -   **Core Libraries:**
@@ -24,7 +24,28 @@ The project relies on standard front-end technologies, using CDNs for most libra
     -   **Node.js/npm:** Required for running build scripts (minification and bundling).
     -   The main scripts are in `package.json` under `"build"` and `"watch"`.
 
-## 3. Key Configuration Files
+## 3. Project Structure
+
+The repository is organized as follows:
+
+```
+/
+├── css/
+│   ├── components/              # Styles for specific components
+│   ├── input.css                # Input file for Tailwind CSS
+│   ├── styles.css               # Main custom stylesheet
+│   └── bundle.min.css           # Bundled and minified CSS (generated)
+├── dist/
+│   └── tailwind.css             # Tailwind CSS output (generated)
+├── js/
+│   ├── ...                      # Individual JavaScript modules
+│   └── bundle.min.js            # Bundled and minified JS (generated)
+├── index.html                   # Main website file
+├── package.json                 # Defines project dependencies and scripts
+└── tailwind.config.js           # Tailwind CSS configuration
+```
+
+## 4. Key Configuration Files
 
 There are two primary JavaScript files for customizing the site's behavior without altering the main logic:
 
@@ -40,7 +61,7 @@ There are two primary JavaScript files for customizing the site's behavior witho
         -   `campaignConfig.ctaText`: The text for the banner's button.
         -   `campaignConfig.ctaSubject`: The pre-filled message for the WhatsApp chat opened from the banner.
 
-## 4. How to Run and Develop Locally
+## 5. How to Run and Develop Locally
 
 ### Quick Start
 To simply view the website, open the `index.html` file directly in a web browser. No server is needed.
@@ -57,6 +78,11 @@ For development, it is recommended to use the built-in scripts to handle CSS and
     ```bash
     npm run build
     ```
+    This command executes the following steps:
+    -   `build:tailwind`: Compiles Tailwind CSS.
+    -   `build:css`: Bundles and minifies all CSS.
+    -   `build:js`: Bundles and minifies all JavaScript.
+
 3.  **Watch for changes:**
     To automatically rebuild files whenever a change is detected in the `css/` or `js/` directories, run:
     ```bash
